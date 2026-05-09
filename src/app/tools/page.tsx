@@ -12,12 +12,21 @@ const tools = [
     status: 'Live',
   },
   {
+    id: 'reply-generator',
+    title: 'Client Reply Generator',
+    description: 'Paste the client\'s message to generate a persuasive, professional reply that handles objections and closes deals.',
+    icon: '💬',
+    href: '/tools/reply-generator',
+    color: '#7b61ff',
+    status: 'Live',
+  },
+  {
     id: 'coming-soon-1',
     title: 'AI Email Writer',
     description: 'Generate professional client emails, follow-ups, and project updates with AI assistance.',
     icon: '📧',
     href: '#',
-    color: '#7b61ff',
+    color: '#ff6b6b',
     status: 'Coming Soon',
   },
   {
