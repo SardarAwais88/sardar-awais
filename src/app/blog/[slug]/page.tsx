@@ -2,6 +2,10 @@
 
 import { useState, useEffect, use } from 'react';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styles from './page.module.css';
 
 interface BlogPost {
@@ -40,30 +44,6 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
 
     fetchBlog();
   }, [slug]);
-
-  // Simple markdown to HTML converter
-  const renderMarkdown = (md: string) => {
-    let html = md
-      // Code blocks
-      .replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code class="language-$1">$2</code></pre>')
-      // Inline code
-      .replace(/`([^`]+)`/g, '<code>$1</code>')
-      // Headers
-      .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-      .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-      // Bold
-      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      // Italic
-      .replace(/\*(.+?)\*/g, '<em>$1</em>')
-      // Lists
-      .replace(/^- (.+)$/gm, '<li>$1</li>')
-      // Paragraphs
-      .replace(/^(?!<[hlupo])(.*\S.*)$/gm, '<p>$1</p>')
-      // Wrap consecutive <li> in <ul>
-      .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
-
-    return html;
-  };
 
   if (loading) {
     return (
@@ -122,10 +102,32 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
               </div>
             </header>
 
-            <div
-              className={styles.articleContent}
-              dangerouslySetInnerHTML={{ __html: renderMarkdown(blog.content) }}
-            />
+            <div className={styles.articleContent}>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  code({ node, inline, className, children, ...props }: any) {
+                    const match = /language-(\w+)/.exec(className || '');
+                    return !inline && match ? (
+                      <SyntaxHighlighter
+                        style={vscDarkPlus as any}
+                        language={match[1]}
+                        PreTag="div"
+                        {...props}
+                      >
+                        {String(children).replace(/\n$/, '')}
+                      </SyntaxHighlighter>
+                    ) : (
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    );
+                  }
+                }}
+              >
+                {blog.content}
+              </ReactMarkdown>
+            </div>
 
             <footer className={styles.articleFooter}>
               <div className={styles.authorCard}>

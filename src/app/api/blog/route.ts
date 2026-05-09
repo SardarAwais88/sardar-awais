@@ -96,13 +96,45 @@ function getExistingTopics(): string[] {
   });
 }
 
-function getNextTopic(): string {
-  const usedTopics = new Set(getExistingTopics());
-  const available = TRENDING_TOPICS.filter((t) => !usedTopics.has(t));
-  if (available.length === 0) {
+async function getTrendingTopic(): Promise<string> {
+  try {
+    const usedTopics = new Set(getExistingTopics());
+    
+    // Fetch live Google Trends RSS (US region)
+    const res = await fetch('https://trends.google.com/trends/trendingsearches/daily/rss?geo=US', {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      }
+    });
+    
+    if (!res.ok) throw new Error('Failed to fetch trends');
+    const xml = await res.text();
+    
+    // Simple regex to extract titles from the RSS items
+    const matches = [...xml.matchAll(/<title><!\[CDATA\[(.*?)\]\]><\/title>/gi)];
+    // Skip the first match as it's the channel title
+    const trendingSearches = matches.slice(1).map(m => m[1]);
+    
+    // Find a trending search that hasn't been written about
+    const available = trendingSearches.filter(t => !usedTopics.has(t));
+    
+    if (available.length > 0) {
+      return available[0]; // Return the top unused trending topic
+    }
+    
+    // Fallback if all trending topics are used or parsing fails
     return TRENDING_TOPICS[Math.floor(Math.random() * TRENDING_TOPICS.length)] + ' — 2026 Updated Guide';
+  } catch (error) {
+    console.error('Error fetching Google Trends:', error);
+    // Fallback to static list
+    const usedTopics = new Set(getExistingTopics());
+    const available = TRENDING_TOPICS.filter((t) => !usedTopics.has(t));
+    if (available.length === 0) {
+      return TRENDING_TOPICS[Math.floor(Math.random() * TRENDING_TOPICS.length)] + ' — 2026 Updated Guide';
+    }
+    return available[Math.floor(Math.random() * available.length)];
   }
-  return available[Math.floor(Math.random() * available.length)];
 }
 
 function cleanModelOutput(raw: string): string {
@@ -152,7 +184,7 @@ async function generateBlogPost(topic?: string) {
 
   if (!apiKey) throw new Error('API key not configured');
 
-  const selectedTopic = topic || getNextTopic();
+  const selectedTopic = topic || await getTrendingTopic();
 
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',

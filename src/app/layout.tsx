@@ -95,6 +95,8 @@ const jsonLd = {
   ],
 };
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 export default function RootLayout({
   children,
 }: {
@@ -119,6 +121,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </div>
+        <GoogleAnalytics gaId="G-8J6ZM39V0D" />
       </body>
     </html>
   );
