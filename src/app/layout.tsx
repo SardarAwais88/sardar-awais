@@ -110,9 +110,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <video autoPlay loop muted playsInline className="video-bg">
+          <source src="/blackhole.webm" type="video/webm" />
+        </video>
+        <div className="video-overlay"></div>
+        <div className="content-wrapper">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
