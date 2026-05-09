@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+import Chatbot from '@/components/ui/Chatbot';
 
 export const metadata: Metadata = {
   title: 'Awais Mehboob | Full-Stack Developer, AI Engineer & DevOps Expert — Hire Me',
@@ -121,6 +122,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </div>
+        <Chatbot />
         <GoogleAnalytics gaId="G-8J6ZM39V0D" />
       </body>
     </html>
