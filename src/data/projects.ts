@@ -6,6 +6,7 @@ export interface Project {
   tech: string[];
   client?: string;
   platform?: string;
+  link?: string;
   image: string;
   color: string;
 }
@@ -414,11 +415,12 @@ export const projects: Project[] = [
     id: 34,
     title: 'Signal Command Center',
     description:
-      'Trading signal aggregation and command center with real-time market data, automated alerts, and portfolio analytics.',
+      'Live trading signal aggregation tracking X accounts, automated early signal ranking, and Telegram alerts via @Scraper_dashbot. Deployed on VPS with PM2 and Nginx.',
     category: 'Automation',
-    tech: ['Python', 'WebSocket', 'React', 'Redis'],
-    client: 'Zakariaoufaja',
+    tech: ['Python', 'Telegram API', 'X API', 'OpenAI', 'SQLite', 'PM2'],
+    client: 'Matthew',
     platform: 'Fiverr',
+    link: 'https://xsignaltracker.tech',
     image: '📡',
     color: '#7b61ff',
   },

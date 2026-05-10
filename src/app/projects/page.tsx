@@ -92,6 +92,17 @@ export default function ProjectsPage() {
 
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <p className={styles.cardDesc}>{project.description}</p>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.cardLink}
+                    style={{ color: project.color }}
+                  >
+                    View Live Project ↗
+                  </a>
+                )}
 
                 {project.client && (
                   <div className={styles.cardClient}>
