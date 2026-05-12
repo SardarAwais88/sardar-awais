@@ -51,7 +51,20 @@ export async function callAIWithFallback(
       });
 
       if (!response.ok) {
-        errors.push(`${model}: HTTP ${response.status}`);
+        let errorMsg = `HTTP ${response.status}`;
+        try {
+          const errData = await response.json();
+          if (errData.error && errData.error.message) {
+            errorMsg = errData.error.message;
+          }
+        } catch (e) {}
+
+        errors.push(`${model}: ${errorMsg}`);
+        
+        // If it's a global free-tier rate limit, no other free model will work either
+        if (response.status === 429 && errorMsg.includes('free-models-per-day')) {
+          throw new Error('OpenRouter daily free tier limit exceeded. Please add credits or try again tomorrow.');
+        }
         continue;
       }
 
@@ -72,10 +85,20 @@ export async function callAIWithFallback(
       }
       errors.push(`${model}: too short (${result.length})`);
     } catch (err: any) {
+      if (err.message.includes('OpenRouter daily free tier limit exceeded')) {
+        throw err;
+      }
       errors.push(`${model}: ${err.message}`);
     }
   }
 
   console.error('All models failed:', errors);
+  
+  // If we have a 429 error anywhere in the logs, bubble it up to user
+  const rateLimitError = errors.find(e => e.includes('429') || e.includes('Rate limit'));
+  if (rateLimitError) {
+    throw new Error('AI Provider Rate Limit Exceeded. Please try again later.');
+  }
+
   throw new Error('AI service temporarily unavailable. Please try again.');
 }
