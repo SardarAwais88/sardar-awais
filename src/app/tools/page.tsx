@@ -21,6 +21,15 @@ const tools = [
     status: 'Live',
   },
   {
+    id: 'humanizer',
+    title: 'AI Humanizer & Plagiarism Checker',
+    description: 'Detect AI-generated text, check plagiarism risk, and rewrite content to sound 100% human — undetectable by any tool.',
+    icon: '🛡️',
+    href: '/tools/humanizer',
+    color: '#ff6b6b',
+    status: 'Live',
+  },
+  {
     id: 'coming-soon-1',
     title: 'AI Email Writer',
     description: 'Generate professional client emails, follow-ups, and project updates with AI assistance.',
