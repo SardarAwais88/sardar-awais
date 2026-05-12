@@ -1,40 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const HUMANIZER_PROMPT = `You are a professional human text rewriter. Your ONLY job is to rewrite the given text.
+const HUMANIZER_PROMPT = `Rewrite the user's text completely. Rules:
+- Make it sound like a natural human wrote it
+- Mix short and medium sentences
+- Use contractions (don't, it's, we've)
+- NEVER use: delve, landscape, multifaceted, leverage, tapestry, plethora, game-changer, crucial, moreover, furthermore
+- Keep the same meaning and all facts
+- Use active voice
+- Output ONLY the rewritten text, nothing else. No intro, no "Here is...", just the text.`;
 
-RULES:
-- Rewrite completely so no plagiarism checker can match it
-- Make it sound like a real human wrote it naturally
-- Mix short sentences with medium ones
-- Use contractions like don't, it's, we've
-- NEVER use these AI words: delve, landscape, multifaceted, leverage, tapestry, plethora, game-changer, crucial, moreover, furthermore, in conclusion
-- Keep the same meaning and facts
-- Use active voice mostly
-- Add natural phrases like "honestly", "the thing is", "from what I've seen"
-- DO NOT add any explanation or commentary
-- DO NOT say "Here is the rewritten text" or similar
-- Just output the rewritten text directly, nothing else`;
+const DETECTOR_PROMPT = `Analyze the user's text and respond in EXACTLY this format:
 
-const DETECTOR_PROMPT = `Analyze this text and respond in EXACTLY this format, nothing else:
-
-AI_SCORE: [0-100 number, how likely AI wrote this]
-PLAG_SCORE: [0-100 number, plagiarism risk]
+AI_SCORE: [number 0-100]
+PLAG_SCORE: [number 0-100]
 INDICATORS:
-- [pattern 1 that looks AI-generated]
-- [pattern 2]
-- [pattern 3]
-VERDICT: [one sentence summary]
+- [indicator 1]
+- [indicator 2]
+- [indicator 3]
+VERDICT: [one sentence]`;
 
-Do NOT add any other text before or after this format.`;
+// Free models that DON'T waste tokens on reasoning blocks
+const FREE_MODELS = [
+  'google/gemma-2-9b-it:free',
+  'qwen/qwen-2.5-7b-instruct:free',
+  'mistralai/mistral-7b-instruct:free',
+];
 
-async function callAI(systemPrompt: string, userContent: string, retries = 2): Promise<string> {
+async function callAI(systemPrompt: string, userContent: string): Promise<string> {
   const apiKey = process.env.OPENROUTER_API_KEY;
-  const model = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free';
-
   if (!apiKey) throw new Error('API key not configured');
 
-  for (let attempt = 0; attempt <= retries; attempt++) {
+  // Try each model until one works
+  for (const model of FREE_MODELS) {
     try {
+      console.log(`Trying model: ${model}`);
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -55,34 +54,66 @@ async function callAI(systemPrompt: string, userContent: string, retries = 2): P
       });
 
       if (!response.ok) {
-        const errText = await response.text();
-        console.error(`OpenRouter error (attempt ${attempt + 1}):`, errText);
-        if (attempt === retries) throw new Error('AI service unavailable');
-        continue;
+        console.error(`Model ${model} failed:`, response.status);
+        continue; // Try next model
       }
 
       const data = await response.json();
       let result = data.choices?.[0]?.message?.content || '';
 
-      // Strip <think> reasoning blocks
+      // Strip any think tags just in case
       result = result.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
 
-      // If result is still empty after stripping, retry
-      if (result.length < 30) {
-        console.log(`Result too short (${result.length} chars), attempt ${attempt + 1}`);
-        if (attempt === retries) {
-          return result || 'The AI could not process this text. Please try again with different content.';
-        }
-        continue;
+      // Remove common AI prefixes
+      result = result
+        .replace(/^(Here is|Here's|Below is|The following is)[^:.\n]*[:.\n]\s*/i, '')
+        .replace(/^(Sure|Certainly|Of course)[^:.\n]*[:.\n]\s*/i, '')
+        .trim();
+
+      if (result.length > 50) {
+        console.log(`Model ${model} returned ${result.length} chars — success`);
+        return result;
       }
 
-      return result;
+      console.log(`Model ${model} returned too short (${result.length} chars), trying next`);
     } catch (err) {
-      if (attempt === retries) throw err;
+      console.error(`Model ${model} error:`, err);
     }
   }
 
-  throw new Error('All retry attempts failed');
+  // Last resort: try the env model (nemotron) with very short prompt
+  try {
+    const envModel = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free';
+    console.log(`Fallback to env model: ${envModel}`);
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+        'X-Title': 'Awais Portfolio - AI Humanizer',
+      },
+      body: JSON.stringify({
+        model: envModel,
+        messages: [
+          { role: 'user', content: `Rewrite this text to sound human. Only output the rewritten text:\n\n${userContent}` },
+        ],
+        temperature: 0.8,
+        max_tokens: 3000,
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      let result = data.choices?.[0]?.message?.content || '';
+      result = result.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+      if (result.length > 50) return result;
+    }
+  } catch (err) {
+    console.error('Fallback model error:', err);
+  }
+
+  throw new Error('All models failed to generate a response');
 }
 
 export async function POST(request: NextRequest) {
@@ -97,8 +128,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (mode === 'detect') {
-      const userContent = `Analyze this text:\n\n${text}`;
-      const result = await callAI(DETECTOR_PROMPT, userContent);
+      const result = await callAI(DETECTOR_PROMPT, text);
 
       const aiScoreMatch = result.match(/AI_SCORE:\s*(\d+)/i);
       const plagScoreMatch = result.match(/PLAG_SCORE:\s*(\d+)/i);
@@ -111,15 +141,14 @@ export async function POST(request: NextRequest) {
         plagScore: plagScoreMatch ? parseInt(plagScoreMatch[1]) : 30,
         indicators: indicatorsMatch
           ? indicatorsMatch[1].trim().split('\n').map((l: string) => l.replace(/^-\s*/, '').trim()).filter(Boolean)
-          : ['Analysis could not be completed. Try again.'],
-        verdict: verdictMatch ? verdictMatch[1].trim() : 'Please try again for a more accurate analysis.',
+          : ['Analysis could not be completed'],
+        verdict: verdictMatch ? verdictMatch[1].trim() : 'Try again for accurate results.',
         raw: result,
       });
     }
 
     // Humanize mode
-    const userContent = `Rewrite this text completely to sound human and be plagiarism-free:\n\n${text}`;
-    const result = await callAI(HUMANIZER_PROMPT, userContent);
+    const result = await callAI(HUMANIZER_PROMPT, text);
 
     return NextResponse.json({
       mode: 'humanize',
@@ -129,7 +158,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Humanizer API Error:', error);
     return NextResponse.json(
-      { error: 'Could not process your text. Please try again — the AI sometimes needs a second attempt.' },
+      { error: 'Could not process your text. Please try again.' },
       { status: 500 }
     );
   }
