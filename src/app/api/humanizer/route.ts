@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
     }
 
     const apiKey = process.env.OPENROUTER_API_KEY;
-    const model = 'meta-llama/llama-3-8b-instruct:free';
+    const model = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free';
 
     if (!apiKey) {
       return NextResponse.json(
