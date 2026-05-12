@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { callAIWithFallback, MODELS_FAST } from '@/lib/ai';
 
 const SYSTEM_PROMPT = `You are an expert Upwork freelancer bidder for Awais Mehboob — a Full-Stack Developer, AI Engineer, and DevOps Specialist with 6+ years of experience and 50+ delivered projects.
 
@@ -34,70 +35,19 @@ export async function POST(request: NextRequest) {
     const { jobDescription } = await request.json();
 
     if (!jobDescription || jobDescription.trim().length < 20) {
-      return NextResponse.json(
-        { error: 'Please provide a valid job description (at least 20 characters).' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Please provide a valid job description (at least 20 characters).' }, { status: 400 });
     }
 
-    const apiKey = process.env.OPENROUTER_API_KEY;
-    const model = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free';
-
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: 'OpenRouter API key not configured.' },
-        { status: 500 }
-      );
-    }
-
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-        'X-Title': 'Awais Portfolio - AI Proposal Writer',
-      },
-      body: JSON.stringify({
-        model,
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          {
-            role: 'user',
-            content: `Write a winning Upwork proposal for this job posting:\n\n${jobDescription}`,
-          },
-        ],
-        temperature: 0.7,
-        max_tokens: 2000,
-      }),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      console.error('OpenRouter error:', errorData);
-      return NextResponse.json(
-        { error: 'Failed to generate proposal. Please try again.' },
-        { status: 500 }
-      );
-    }
-
-    const data = await response.json();
-    let proposal = data.choices?.[0]?.message?.content || '';
-
-    // Strip <think> reasoning tags from model output
-    proposal = proposal.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
-
-    // If still empty, the model may have only produced thinking — retry indication
-    if (!proposal || proposal.length < 30) {
-      return NextResponse.json({ proposal: 'The AI model is still learning. Please click Generate again — it often works on the second try!' });
-    }
+    const proposal = await callAIWithFallback(
+      SYSTEM_PROMPT,
+      `Write a winning Upwork proposal for this job posting:\n\n${jobDescription}`,
+      MODELS_FAST,
+      { maxTokens: 2000, temperature: 0.7, title: 'AI Proposal Writer' }
+    );
 
     return NextResponse.json({ proposal });
-  } catch (error) {
-    console.error('Proposal generation error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error. Please try again.' },
-      { status: 500 }
-    );
+  } catch (error: any) {
+    console.error('Proposal error:', error);
+    return NextResponse.json({ error: error.message || 'Please try again.' }, { status: 500 });
   }
 }

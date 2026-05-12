@@ -1,0 +1,81 @@
+// ─── Shared AI Model Configuration ──────────────────────────────────────────
+// Best free models on OpenRouter, ordered by quality for different tasks
+
+export const MODELS_FAST = [
+  'google/gemma-4-26b-a4b-it:free',    // Gemma 4 MoE — fast, high quality
+  'google/gemma-4-31b-it:free',         // Gemma 4 Dense — reliable
+  'meta-llama/llama-3.3-70b-instruct:free', // Llama 3.3 70B
+  'qwen/qwen3-next-80b-a3b-instruct:free', // Qwen3 Next 80B
+  'nvidia/nemotron-3-super:free',       // Nemotron 3 Super 120B
+];
+
+export const MODELS_QUALITY = [
+  'google/gemma-4-31b-it:free',         // Gemma 4 Dense — best text quality
+  'google/gemma-4-26b-a4b-it:free',     // Gemma 4 MoE
+  'nousresearch/hermes-3-llama-3.1-405b:free', // Hermes 3 405B — massive
+  'meta-llama/llama-3.3-70b-instruct:free',
+  'nvidia/nemotron-3-super:free',
+];
+
+export async function callAIWithFallback(
+  systemPrompt: string,
+  userContent: string,
+  models: string[],
+  options: { temperature?: number; maxTokens?: number; referer?: string; title?: string } = {}
+): Promise<string> {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) throw new Error('API key not configured');
+
+  const { temperature = 0.7, maxTokens = 2500, referer, title } = options;
+  const errors: string[] = [];
+
+  for (const model of models) {
+    try {
+      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+          'HTTP-Referer': referer || process.env.NEXT_PUBLIC_SITE_URL || 'https://awaismehboob.dev',
+          'X-Title': title || 'Awais Portfolio',
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userContent },
+          ],
+          temperature,
+          max_tokens: maxTokens,
+        }),
+      });
+
+      if (!response.ok) {
+        errors.push(`${model}: HTTP ${response.status}`);
+        continue;
+      }
+
+      const data = await response.json();
+      let result = data.choices?.[0]?.message?.content || '';
+
+      // Strip reasoning/thinking blocks
+      result = result.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+      result = result.replace(/<reasoning>[\s\S]*?<\/reasoning>/gi, '').trim();
+
+      // Strip common AI prefixes
+      result = result
+        .replace(/^(Here is|Here's|Below is|The following is|Sure|Certainly|Of course|Absolutely)[^:\n]*[:\n]\s*/i, '')
+        .trim();
+
+      if (result.length > 50) {
+        return result;
+      }
+      errors.push(`${model}: too short (${result.length})`);
+    } catch (err: any) {
+      errors.push(`${model}: ${err.message}`);
+    }
+  }
+
+  console.error('All models failed:', errors);
+  throw new Error('AI service temporarily unavailable. Please try again.');
+}

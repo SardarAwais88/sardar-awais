@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { callAIWithFallback, MODELS_FAST } from '@/lib/ai';
 import { projects } from '@/data/projects';
 import { skillCategories } from '@/data/skills';
 import { services } from '@/data/services';
 import { timeline } from '@/data/timeline';
 
-// Flatten skills from categories
 const skills = skillCategories.flatMap(c => c.skills);
 
-// Pre-compute the context string once to save processing time
 const contextData = `
 NAME: Awais Mehboob
 ROLE: Full-Stack Developer, AI Engineer, & DevOps Expert
@@ -49,57 +48,25 @@ ${contextData}
 export async function POST(request: NextRequest) {
   try {
     const { messages } = await request.json();
-
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json({ error: 'Invalid messages array' }, { status: 400 });
     }
 
-    const apiKey = process.env.OPENROUTER_API_KEY;
-    const model = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free';
+    // Build chat history for the AI
+    const chatHistory = messages.slice(-6).map((m: any) => ({
+      role: m.role === 'user' ? 'user' : 'assistant',
+      content: m.content
+    }));
 
-    if (!apiKey) {
-      return NextResponse.json({ error: 'API key not configured' }, { status: 500 });
-    }
+    const fullPrompt = chatHistory.map((m: any) => `${m.role}: ${m.content}`).join('\n');
 
-    // Format messages for OpenRouter
-    const formattedMessages = [
-      { role: 'system', content: SYSTEM_PROMPT },
-      ...messages.map((m: any) => ({
-        role: m.role === 'user' ? 'user' : 'assistant',
-        content: m.content
-      }))
-    ];
-
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-        'X-Title': 'Awais Portfolio - Chatbot',
-      },
-      body: JSON.stringify({
-        model,
-        messages: formattedMessages,
-        temperature: 0.7,
-        max_tokens: 500,
-      }),
+    const reply = await callAIWithFallback(SYSTEM_PROMPT, fullPrompt, MODELS_FAST, {
+      maxTokens: 500, temperature: 0.7, title: 'Awais Portfolio - Chatbot',
     });
-
-    if (!response.ok) {
-      console.error('OpenRouter error:', await response.text());
-      return NextResponse.json({ error: 'Failed to generate response' }, { status: 500 });
-    }
-
-    const data = await response.json();
-    let reply = data.choices?.[0]?.message?.content || '';
-
-    // Strip any potential think tags just in case
-    reply = reply.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
 
     return NextResponse.json({ reply });
   } catch (error) {
-    console.error('Chat API Error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    console.error('Chat Error:', error);
+    return NextResponse.json({ reply: "I'm having a little trouble right now. Please reach out to Awais directly on WhatsApp at +923472725754!" });
   }
 }

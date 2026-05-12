@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { callAIWithFallback, MODELS_QUALITY } from '@/lib/ai';
 import fs from 'fs';
 import path from 'path';
 
@@ -179,46 +180,16 @@ function generateTags(topic: string): string[] {
 }
 
 async function generateBlogPost(topic?: string) {
-  const apiKey = process.env.OPENROUTER_API_KEY;
-  const model = process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free';
-
-  if (!apiKey) throw new Error('API key not configured');
-
   const selectedTopic = topic || await getTrendingTopic();
 
-  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-      'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-      'X-Title': 'Awais Portfolio - Blog Generator',
-    },
-    body: JSON.stringify({
-      model,
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        {
-          role: 'user',
-          content: `Write a COMPLETE, detailed, SEO-optimized blog post about: "${selectedTopic}". 
+  const rawContent = await callAIWithFallback(
+    SYSTEM_PROMPT,
+    `Write a COMPLETE, detailed, SEO-optimized blog post about: "${selectedTopic}".\n\nWrite at least 800 words. Include code examples. Use ## headings. Start with an engaging introduction paragraph. End with a conclusion. Write in markdown format. Do NOT return JSON — just write the full article.`,
+    MODELS_QUALITY,
+    { maxTokens: 4000, temperature: 0.75, title: 'Blog Generator' }
+  );
 
-Write at least 800 words. Include code examples. Use ## headings. Start with an engaging introduction paragraph. End with a conclusion. Write in markdown format. Do NOT return JSON — just write the full article.`,
-        },
-      ],
-      temperature: 0.75,
-      max_tokens: 4000,
-    }),
-  });
-
-  if (!response.ok) {
-    const err = await response.json().catch(() => ({}));
-    throw new Error(`API error: ${JSON.stringify(err)}`);
-  }
-
-  const data = await response.json();
-  const rawContent = data.choices?.[0]?.message?.content || '';
   const content = cleanModelOutput(rawContent);
-
   if (content.length < 100) {
     throw new Error('Generated content too short. Model may need retry.');
   }
