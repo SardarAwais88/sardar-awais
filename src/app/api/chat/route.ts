@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
     const fullPrompt = chatHistory.map((m: any) => `${m.role}: ${m.content}`).join('\n');
 
     const reply = await callAIWithFallback(SYSTEM_PROMPT, fullPrompt, MODELS_QUALITY, {
-      maxTokens: 800, temperature: 0.6, title: 'Awais Portfolio - Chatbot',
+      maxTokens: 800, temperature: 0.6, title: 'Awais Portfolio - Chatbot', minLength: 2
     });
 
     return NextResponse.json({ reply });

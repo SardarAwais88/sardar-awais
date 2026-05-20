@@ -21,12 +21,12 @@ export async function callAIWithFallback(
   systemPrompt: string,
   userContent: string,
   models: string[],
-  options: { temperature?: number; maxTokens?: number; referer?: string; title?: string } = {}
+  options: { temperature?: number; maxTokens?: number; referer?: string; title?: string; minLength?: number } = {}
 ): Promise<string> {
   const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) throw new Error('API key not configured');
 
-  const { temperature = 0.7, maxTokens = 2500, referer, title } = options;
+  const { temperature = 0.7, maxTokens = 2500, referer, title, minLength = 10 } = options;
   const errors: string[] = [];
 
   for (const model of models) {
@@ -80,10 +80,10 @@ export async function callAIWithFallback(
         .replace(/^(Here is|Here's|Below is|The following is|Sure|Certainly|Of course|Absolutely)[^:\n]*[:\n]\s*/i, '')
         .trim();
 
-      if (result.length > 50) {
+      if (result.length >= minLength) {
         return result;
       }
-      errors.push(`${model}: too short (${result.length})`);
+      errors.push(`${model}: too short (${result.length} chars)`);
     } catch (err: any) {
       if (err.message.includes('OpenRouter daily free tier limit exceeded')) {
         throw err;
