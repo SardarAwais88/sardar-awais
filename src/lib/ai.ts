@@ -2,19 +2,21 @@
 // Best free models on OpenRouter, ordered by quality for different tasks
 
 export const MODELS_FAST = [
-  'google/gemma-4-26b-a4b-it:free',    // Gemma 4 MoE — fast, high quality
-  'google/gemma-4-31b-it:free',         // Gemma 4 Dense — reliable
-  'meta-llama/llama-3.3-70b-instruct:free', // Llama 3.3 70B
-  'qwen/qwen3-next-80b-a3b-instruct:free', // Qwen3 Next 80B
-  'nvidia/nemotron-3-super:free',       // Nemotron 3 Super 120B
+  'google/gemma-4-26b-a4b-it:free',    // Gemma 4 MoE
+  'openai/gpt-oss-120b:free',           // Highly available
+  'meta-llama/llama-3.3-70b-instruct:free',
+  'qwen/qwen3-coder:free',
+  'google/gemma-4-31b-it:free',
+  'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
+  'liquid/lfm-2.5-1.2b-instruct:free',
 ];
 
 export const MODELS_QUALITY = [
-  'google/gemma-4-31b-it:free',         // Gemma 4 Dense — best text quality
-  'google/gemma-4-26b-a4b-it:free',     // Gemma 4 MoE
-  'nousresearch/hermes-3-llama-3.1-405b:free', // Hermes 3 405B — massive
+  'google/gemma-4-31b-it:free',         // Best quality
+  'openai/gpt-oss-120b:free',           // Highly available 120B
+  'nousresearch/hermes-3-llama-3.1-405b:free', // Huge
   'meta-llama/llama-3.3-70b-instruct:free',
-  'nvidia/nemotron-3-super:free',
+  'nvidia/nemotron-3-super-120b-a12b:free',
 ];
 
 export async function callAIWithFallback(
