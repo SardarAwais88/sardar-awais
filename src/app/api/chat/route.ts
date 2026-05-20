@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { callAIWithFallback, MODELS_FAST } from '@/lib/ai';
+import { callAIWithFallback, MODELS_QUALITY } from '@/lib/ai';
 import { projects } from '@/data/projects';
 import { skillCategories } from '@/data/skills';
 import { services } from '@/data/services';
