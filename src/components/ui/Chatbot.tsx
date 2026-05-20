@@ -111,13 +111,21 @@ export default function Chatbot() {
 
           {/* Messages Area */}
           <div className={styles.messagesArea}>
-            {messages.map((msg, idx) => (
-              <div key={idx} className={`${styles.messageWrapper} ${styles[msg.role]}`}>
-                <div className={styles.message}>
-                  {msg.content}
+            {messages.map((msg, idx) => {
+              // Convert Markdown links [Text](URL) to HTML tags and newlines to <br/>
+              const parsedContent = msg.content
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline; font-weight: 500;">$1</a>')
+                .replace(/\n/g, '<br/>');
+
+              return (
+                <div key={idx} className={`${styles.messageWrapper} ${styles[msg.role]}`}>
+                  <div 
+                    className={styles.message}
+                    dangerouslySetInnerHTML={{ __html: parsedContent }}
+                  />
                 </div>
-              </div>
-            ))}
+              );
+            })}
             
             {isTyping && (
               <div className={`${styles.messageWrapper} ${styles.ai}`}>
