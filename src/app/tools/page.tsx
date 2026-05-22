@@ -3,6 +3,15 @@ import styles from './page.module.css';
 
 const tools = [
   {
+    id: 'video-generator',
+    title: 'AI Video Generator',
+    description: 'Create high-quality short and long videos from text or images using the best open-source models like Wan 2.6 and Hailuo 2.3.',
+    icon: '🎬',
+    href: '/tools/video-generator',
+    color: '#ff4d4d',
+    status: 'Live',
+  },
+  {
     id: 'proposal-writer',
     title: 'AI Proposal Writer',
     description: 'Generate winning Upwork & Fiverr proposals instantly. Paste a job description and get a tailored, client-focused cover letter.',
