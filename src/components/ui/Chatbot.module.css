@@ -50,7 +50,7 @@
   position: absolute;
   bottom: 80px;
   right: 0;
-  width: 380px;
+  width: min(380px, calc(100vw - 48px));
   height: 600px;
   max-height: calc(100vh - 120px);
   background: var(--bg-secondary);

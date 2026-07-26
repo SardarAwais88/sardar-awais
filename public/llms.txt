@@ -1,0 +1,95 @@
+# Awais Mehboob — Full-Stack Developer, AI Engineer & Automation Specialist
+
+## Who I Am
+
+Awais Mehboob is a full-stack developer and AI engineer based in Pakistan with 7+ years of professional experience. He has delivered 500+ projects across Fiverr, Upwork, Truelancer, and direct clients worldwide, specializing in custom AI agent development, agentic AI systems, voice bots, e-commerce, and automation.
+
+## What I Do
+
+### Core Services
+- **AI Agent Development** — Multi-agent systems using CrewAI, LangChain, AutoGen. Autonomous pipelines that plan, reason, and execute complex workflows.
+- **AI Voice Agent Development** — VAPI-powered voice bots for dental clinics, customer service, sales, and appointment booking. Integrates with Twilio, ElevenLabs, OpenAI.
+- **Full-Stack Web Development** — React, Next.js, Node.js, Python/FastAPI, PHP/Laravel. Complete end-to-end web applications.
+- **E-Commerce Development** — Custom Shopify themes, headless commerce, WooCommerce, Shopify-ERPNext integrations, composable architecture.
+- **Automation & Bots** — WhatsApp bots, Telegram bots, trading bots (Polymarket), social media automation, web scraping, n8n workflows.
+- **DevOps & Cloud** — Docker, Kubernetes, AWS, GitHub Actions, CI/CD pipelines, Wazuh SIEM security.
+- **Chrome Extensions** — Manifest v3 extensions for lead generation, video translation, productivity.
+
+### Specializations
+- Agentic AI (CrewAI, LangChain, AutoGen, custom tool-calling)
+- VAPI voice agent systems (dental, customer service, sales)
+- RAG (Retrieval-Augmented Generation) systems with ChromaDB, pgvector
+- Shopify composable/headless commerce
+- Local LLM deployment (Ollama, DeepSeek-R1, Llama3)
+- Real-time AI (streaming responses, voice-to-voice pipelines)
+
+## Top Projects
+
+### AI Voice & Agents
+- **VAPI Dental Clinic System** — 3-agent voice system (Triage, Emergency, Appointment) for dental clinics. Built on VAPI + CrewAI + Node.js. Client: Upwork.
+- **8 AI Voice Agents Suite** — Enterprise suite of 8 specialized voice agents for customer service, sales, and support. Client: Nigeria (Upwork).
+- **Private AI Voice Assistant** — Local private voice pipeline: Whisper STT + Ollama/Llama3 + Piper TTS + Twilio phone support. Python/FastAPI.
+- **VoiceAI Real-Time Assistant** — Production voice-to-voice assistant with Whisper + GPT-4o + ElevenLabs. Next.js 15 + TypeScript.
+- **InvestorIQ** — AI-native investment research platform with multi-agent RAG pipelines, pgvector, real-time financial analysis.
+
+### AI & Automation
+- **AmazonSpy Pro** — SaaS for Amazon sellers: AI-powered competitive intelligence with Anthropic Claude, Supabase, Stripe subscriptions. Next.js 14.
+- **AutoComply** — AI compliance automation (AI Agent Olympics Hackathon). xAI Grok API + FastAPI + Next.js.
+- **BTC Polymarket Trading Bot** — Automated crypto prediction market trading with Telegram alerts. Python + Web3.
+- **Claude Content Creation Agent** — Automated pipeline: Claude → PPTX → ElevenLabs voiceover → HeyGen avatar video.
+- **Signal Command Center** — Live trading signal aggregator tracking X accounts. Python + PM2 + Nginx on VPS. Live: xsignaltracker.tech
+- **CrewAI Housing Agents** — Multi-agent real estate research system (grant research, land scouting, builder outreach). Python + Airtable.
+
+### Full-Stack & SaaS
+- **WatchesLuxury.org** — Premium luxury watch e-commerce platform with MVC, affiliate system, and admin dashboard. PHP/MySQL.
+- **EduFlow Suite** — School management SaaS: student/teacher portals, JWT auth, timetable, attendance. React + FastAPI + SQLite.
+- **Zameen.com Clone** — Real estate listing platform. Next.js + Prisma + TypeScript.
+- **Lovable.dev Alternative** — Self-hosted open-source AI code generator with Ollama, ChromaDB RAG, Monaco editor. Docker/K8s.
+- **ProspectAI** — B2B prospecting SaaS: build lead lists, find decision makers, personalize outreach. PHP + MySQL + OpenAI.
+
+### E-Commerce
+- **Composable Commerce Engine** — Headless Shopify with multi-vendor support, real-time inventory sync. GraphQL + Node.js. Client: GreenSystemsInc (Fiverr).
+- **GlobalStoreTrends Shopify Theme** — Single-product dropshipping theme with 3D model support.
+- **KBC Kashmir Luxury Beauty Store** — Custom Shopify theme for luxury cosmetics brand.
+- **NowaCash WooCommerce Gateway** — Custom payment gateway plugin with webhook verification. PHP/WooCommerce.
+
+### Android
+- **AIDeal Finder** — Android app: scan receipts, AI negotiation emails, cashback suggestions. Kotlin + Jetpack Compose + Firebase + ML Kit.
+
+## Tech Stack
+
+**Languages:** Python, TypeScript, JavaScript, PHP, Kotlin, Java, SQL  
+**Frameworks:** React, Next.js, FastAPI, Node.js, Express, Laravel, Django  
+**AI/ML:** OpenAI, Anthropic Claude, Google Gemini, LangChain, CrewAI, VAPI, ElevenLabs, Whisper, Ollama, ChromaDB, pgvector  
+**E-Commerce:** Shopify, WooCommerce, PrestaShop, Shopify Liquid  
+**DevOps:** Docker, Kubernetes, AWS, GitHub Actions, Nginx, PM2, Wazuh SIEM  
+**Databases:** PostgreSQL, MongoDB, MySQL, SQLite, Redis, Supabase  
+
+## Freelance Profiles
+
+- **Fiverr:** https://www.fiverr.com/sellers/mahboobhussa500
+- **Upwork:** https://www.upwork.com/freelancers/sardara32
+- **LinkedIn:** https://www.linkedin.com/in/awais-mahboob-25202a13b/
+
+## Contact
+
+- **Email:** khanowais8888@gmail.com
+- **WhatsApp:** +923472725754
+- **Website:** https://sardar-awais.vercel.app/
+- **Portfolio:** https://sardar-awais.vercel.app/projects
+
+## Availability
+
+Available for freelance projects, contract work, and long-term collaborations. Specializes in high-value projects ($2,000–$20,000+). Works with clients in UK, US, Canada, Australia, Middle East, and worldwide.
+
+## Pricing Ranges
+
+- Full-Stack Web App: $2,000–$15,000
+- AI Agent System: $3,000–$20,000
+- E-Commerce Store: $1,500–$10,000
+- Automation/Bots: $1,000–$8,000
+- Chrome Extension: $500–$5,000
+- WordPress/CMS: $800–$6,000
+- DevOps/Cloud: $2,000–$12,000
+
+*Last updated: July 2026*

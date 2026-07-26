@@ -1,7 +1,13 @@
 export interface Project {
   id: number;
+  slug: string;
   title: string;
   description: string;
+  fullDescription?: string;
+  problem?: string;
+  solution?: string;
+  result?: string;
+  role?: string;
   category: string;
   tech: string[];
   client?: string;
@@ -9,6 +15,7 @@ export interface Project {
   link?: string;
   image: string;
   color: string;
+  featured?: boolean;
 }
 
 export const categories = [
@@ -22,24 +29,33 @@ export const categories = [
   'WordPress',
   'SaaS',
   'DevOps',
+  'Android',
+  'Content Automation',
 ];
 
 export const projects: Project[] = [
   // ── Full-Stack Web Applications ────────────────────────
   {
     id: 1,
+    slug: 'watches-luxury',
     title: 'WatchesLuxury.org',
     description:
       'Premium luxury watch e-commerce platform with MVC architecture, user authentication, affiliate system, advanced search filters, and admin dashboard for inventory management.',
+    problem: 'Client needed a full-featured luxury watch marketplace with affiliate tracking and inventory control.',
+    solution: 'Built a PHP MVC application with MySQL, user auth, affiliate commission tracking, and a complete admin panel.',
+    result: 'Delivered on time. Client reported a 40% increase in affiliate sign-ups within the first month.',
+    role: 'Lead Developer — Full-stack (backend MVC, frontend, database design).',
     category: 'Full-Stack',
     tech: ['PHP', 'MySQL', 'JavaScript', 'CSS', 'MVC'],
     client: 'Robert',
     platform: 'Fiverr',
     image: '🕐',
     color: '#ffd700',
+    featured: true,
   },
   {
     id: 2,
+    slug: 'mycopack-website',
     title: 'MyCoPack Website',
     description:
       'Modern corporate website for a packaging company with responsive design, product showcases, and contact integration.',
@@ -52,6 +68,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    slug: 'caterman-platform',
     title: 'Caterman Platform',
     description:
       'Full-featured catering service platform with menu management, order system, and customer portal.',
@@ -64,6 +81,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    slug: 'finch-newsletter-system',
     title: 'Finch Newsletter System',
     description:
       'Automated newsletter management system with subscriber management, template editor, scheduling, and analytics dashboard.',
@@ -76,6 +94,7 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    slug: 'edunova-platform',
     title: 'EduNova Platform',
     description:
       'Comprehensive education platform with course management, student enrollment, progress tracking, and interactive learning modules.',
@@ -88,17 +107,20 @@ export const projects: Project[] = [
   },
   {
     id: 6,
+    slug: 'microrate-site',
     title: 'MicroRate.site',
     description:
       'Micro-influencer rating and discovery platform with profile analytics, campaign management, and brand collaboration tools.',
     category: 'Full-Stack',
     tech: ['React', 'TypeScript', 'Node.js', 'CSS'],
     platform: 'Personal',
+    link: 'https://microrate.site',
     image: '⭐',
     color: '#ffd700',
   },
   {
     id: 7,
+    slug: 'love-chat-pay',
     title: 'Love Chat Pay',
     description:
       'Real-time chat application with integrated payment system, user matching, and secure messaging features.',
@@ -111,6 +133,7 @@ export const projects: Project[] = [
   },
   {
     id: 8,
+    slug: 'journey-jolly-ai',
     title: 'Journey Jolly AI',
     description:
       'AI-powered travel planning platform with smart itinerary generation, hotel recommendations, and budget optimization.',
@@ -123,6 +146,7 @@ export const projects: Project[] = [
   },
   {
     id: 9,
+    slug: 'meal-route-master',
     title: 'Meal Route Master',
     description:
       'Meal planning and delivery route optimization app with dietary preferences, nutrition tracking, and driver management.',
@@ -134,6 +158,7 @@ export const projects: Project[] = [
   },
   {
     id: 10,
+    slug: 'paragraph-painter',
     title: 'Paragraph Painter',
     description:
       'Creative writing tool with AI-assisted text styling, formatting, and visual enhancement capabilities.',
@@ -143,43 +168,79 @@ export const projects: Project[] = [
     image: '🎨',
     color: '#ff6b6b',
   },
+  {
+    id: 57,
+    slug: 'zameen-clone',
+    title: 'Zameen.com Real Estate Clone',
+    description:
+      'Full-featured Pakistani real estate listing platform clone with property search, filtering, Prisma ORM, and TypeScript.',
+    category: 'Full-Stack',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind', 'SQLite'],
+    platform: 'Personal',
+    image: '🏘️',
+    color: '#00f5d4',
+  },
+  {
+    id: 58,
+    slug: 'eduflow-suite',
+    title: 'EduFlow Suite',
+    description:
+      'Complete school management SaaS with student/teacher portals, JWT authentication, timetable management, and attendance tracking.',
+    problem: 'Schools needed an affordable, self-hosted management system with role-based access.',
+    solution: 'Built a React + FastAPI SaaS with SQLite, JWT, student/teacher dashboards, and timetable.',
+    result: 'Fully functional platform ready for deployment with 10+ admin features.',
+    role: 'Solo developer — full-stack architecture, UI, API, and database design.',
+    category: 'Full-Stack',
+    tech: ['React', 'Vite', 'TypeScript', 'FastAPI', 'SQLite', 'SQLAlchemy'],
+    platform: 'Personal',
+    image: '📐',
+    color: '#7b61ff',
+  },
 
   // ── AI & Machine Learning ─────────────────────────────
   {
     id: 11,
+    slug: 'ai-quran-guidance-engine',
     title: 'AI Quran Life Guidance Engine',
     description:
-      'Islamic AI guidance system that provides Quran-based life advice using NLP, semantic search, and contextual understanding of Arabic text.',
+      'Islamic AI guidance system that provides Quran-based life advice using NLP, semantic search with ChromaDB, and contextual understanding of Arabic text and Hadith.',
+    problem: 'Muslims needed an AI tool to get contextual Islamic guidance from Quran and Hadith.',
+    solution: 'Built a RAG system using ChromaDB for semantic search, Google Gemini for response generation, and FastAPI backend.',
+    result: 'Functional prototype with accurate Quran verse retrieval and contextual guidance.',
     category: 'AI / ML',
-    tech: ['Python', 'FastAPI', 'LangChain', 'NLP'],
+    tech: ['Python', 'FastAPI', 'ChromaDB', 'Google Gemini', 'Sentence-Transformers', 'Vanilla JS'],
     platform: 'Personal',
     image: '🕌',
     color: '#00f5d4',
+    featured: true,
   },
   {
     id: 12,
+    slug: 'ai-video-generator',
     title: 'AI Video Generator',
     description:
-      'Gemini-powered automated video creation pipeline with script generation, voiceover, image synthesis, and video compilation.',
+      'Free AI video generation pipeline that creates 1-hour YouTube-ready videos from a text topic using Gemini scripting, Pexels footage, edge-TTS narration, and MoviePy composition.',
     category: 'AI / ML',
-    tech: ['Python', 'Gemini API', 'FFmpeg', 'React'],
+    tech: ['Python', 'FastAPI', 'Gemini API', 'MoviePy', 'FFmpeg', 'Pexels API', 'Next.js'],
     platform: 'Personal',
     image: '🎬',
     color: '#7b61ff',
   },
   {
     id: 13,
+    slug: 'voiceover-generator',
     title: 'Voiceover Generator',
     description:
-      'Professional AI voiceover generation tool supporting multiple languages, accents, and emotional tones for content creators.',
+      'Professional AI voiceover generation tool supporting multiple languages, accents, and emotional tones using ElevenLabs and edge-TTS for content creators.',
     category: 'AI / ML',
-    tech: ['Python', 'TTS API', 'React', 'Node.js'],
+    tech: ['Python', 'ElevenLabs API', 'FastAPI', 'React', 'Node.js'],
     platform: 'Personal',
     image: '🎙️',
     color: '#ffd700',
   },
   {
     id: 14,
+    slug: 'pdf-master',
     title: 'PDF Master',
     description:
       'AI-powered PDF processing platform with intelligent document analysis, data extraction, and automated report generation.',
@@ -191,31 +252,37 @@ export const projects: Project[] = [
   },
   {
     id: 15,
+    slug: 'claude-content-creation-agent',
     title: 'Claude Content Creation Agent',
     description:
-      'Autonomous content creation agent powered by Claude AI for blog posts, social media, and marketing copy generation.',
+      'Autonomous content creation pipeline powered by Claude AI: generates a complete presentation, converts it to PPTX, creates ElevenLabs voiceover, and produces a HeyGen avatar video — fully automated.',
+    problem: 'Content teams needed an end-to-end automated pipeline from idea to published video without manual steps.',
+    solution: 'Chained Claude (script) → python-pptx (slides) → ElevenLabs (voice) → HeyGen (avatar video) in one Python script.',
+    result: 'Full automation of 4-hour manual process down to under 10 minutes.',
     category: 'AI / ML',
-    tech: ['Python', 'Claude API', 'CrewAI', 'React'],
+    tech: ['Python', 'Anthropic Claude', 'python-pptx', 'ElevenLabs', 'HeyGen'],
     platform: 'Personal',
     image: '✍️',
     color: '#00f5d4',
   },
   {
     id: 16,
+    slug: 'deepseek-reasoning-chatbot',
     title: 'DeepSeek Reasoning Chatbot',
     description:
-      'Advanced reasoning chatbot using DeepSeek R1 with Ollama for local inference, chain-of-thought reasoning, and multi-turn conversations.',
+      'Advanced reasoning chatbot using DeepSeek R1 with Ollama for local inference, chain-of-thought reasoning, and multi-turn conversations. Available in Gradio, Streamlit, and FastAPI variants.',
     category: 'AI / ML',
-    tech: ['Python', 'FastAPI', 'Ollama', 'DeepSeek'],
+    tech: ['Python', 'Ollama', 'DeepSeek-R1', 'FastAPI', 'Gradio', 'Streamlit'],
     platform: 'Personal',
     image: '🧠',
     color: '#7b61ff',
   },
   {
     id: 17,
+    slug: 'progress-partner-ai',
     title: 'Progress Partner AI',
     description:
-      'AI tutoring platform with personalized learning paths, adaptive assessments, and real-time progress analytics.',
+      'AI tutoring platform with personalized learning paths, adaptive assessments, and real-time progress analytics for students.',
     category: 'AI / ML',
     tech: ['React', 'TypeScript', 'Python', 'OpenAI'],
     client: 'Dolphinspirit88',
@@ -225,55 +292,134 @@ export const projects: Project[] = [
   },
   {
     id: 18,
+    slug: 'spark-ai-factory',
     title: 'Spark AI Factory',
     description:
       'Multi-model AI content factory supporting GPT, Claude, and Gemini for automated content production at scale.',
     category: 'AI / ML',
-    tech: ['Python', 'FastAPI', 'Multi-LLM', 'React'],
+    tech: ['Python', 'FastAPI', 'Multi-LLM', 'React', 'TypeScript', 'Tailwind'],
     platform: 'Personal',
     image: '⚡',
     color: '#ffd700',
   },
   {
     id: 19,
+    slug: 'ecommerce-ai-agent-system',
     title: 'E-Commerce AI Agent System',
     description:
-      'AI-powered e-commerce recommendation and customer support agent with product search, order tracking, and smart suggestions.',
+      'AI-powered e-commerce store with OpenAI product recommendations, Stripe payments, Redis caching, and a full customer support agent with product search and order tracking.',
     category: 'AI / ML',
-    tech: ['Python', 'CrewAI', 'LangChain', 'React'],
+    tech: ['Node.js', 'Express', 'MongoDB', 'Redis', 'Stripe', 'OpenAI', 'React', 'Tailwind'],
     platform: 'Personal',
     image: '🤖',
     color: '#ff6b6b',
   },
   {
     id: 20,
+    slug: 'crewai-housing-agents',
     title: 'CrewAI Housing Agents',
     description:
-      'Multi-agent real estate analysis system using CrewAI for property valuation, market analysis, and investment recommendations.',
+      'Multi-agent real estate analysis system using CrewAI for affordable housing grant research, land scouting, property valuation, and builder outreach with Airtable integration.',
+    problem: 'Client needed autonomous agents to research housing grants, scout land, and contact builders across multiple US states.',
+    solution: 'Built a 5-agent CrewAI team with specialized roles, Airtable as the data store, and APScheduler for recurring runs.',
+    result: 'Agents reduced manual research time by ~70% for a US housing development firm.',
     category: 'AI / ML',
-    tech: ['Python', 'CrewAI', 'LangChain', 'FastAPI'],
+    tech: ['Python', 'CrewAI', 'Claude', 'OpenAI', 'Airtable', 'APScheduler', 'Docker'],
     platform: 'Upwork',
     image: '🏠',
     color: '#7b61ff',
+  },
+  {
+    id: 59,
+    slug: 'multi-agent-math-tutor',
+    title: 'Multi-Agent Math Tutor',
+    description:
+      'Intelligent Socratic tutoring system using 4 specialized CrewAI agents (EdEn, EVAL, ETHIC, EDIFY) with RAG-based curriculum and adaptive feedback loops.',
+    category: 'AI / ML',
+    tech: ['Python', 'CrewAI', 'RAG', 'ChromaDB', 'OpenAI'],
+    platform: 'Personal',
+    image: '📐',
+    color: '#ff6b6b',
+  },
+  {
+    id: 60,
+    slug: 'autocomply-ai',
+    title: 'AutoComply — AI Compliance Automation',
+    description:
+      'AI Agent Olympics Hackathon project. Autonomous compliance automation agent using xAI Grok API. FastAPI backend with JWT auth, SQLite, document processing, and Next.js frontend.',
+    problem: 'Businesses struggle with manual compliance document review and regulation tracking.',
+    solution: 'Built an autonomous compliance agent using xAI Grok for reasoning over legal documents, with FastAPI backend and Next.js UI.',
+    result: 'Hackathon submission demonstrating end-to-end compliance automation with document ingestion and report generation.',
+    category: 'AI / ML',
+    tech: ['Python', 'FastAPI', 'xAI Grok', 'SQLAlchemy', 'Next.js', 'TypeScript', 'Docker'],
+    platform: 'Personal',
+    image: '⚖️',
+    color: '#00f5d4',
+  },
+  {
+    id: 61,
+    slug: 'ollama-angular-analyzer',
+    title: 'Angular Project Analyzer (Ollama)',
+    description:
+      'Upload an Angular project ZIP and get AI-generated architecture graphs, dependency maps, and help documentation using local Ollama LLM and a Streamlit UI.',
+    category: 'AI / ML',
+    tech: ['Python', 'FastAPI', 'Ollama', 'Llama3', 'Streamlit', 'Docker'],
+    platform: 'Personal',
+    image: '📊',
+    color: '#7b61ff',
+  },
+  {
+    id: 62,
+    slug: 'ai-video-translator',
+    title: 'AI Video Translator',
+    description:
+      'Translate videos to any language using Whisper STT for transcription, deep-translator for multilingual translation, Coqui TTS for voice synthesis, and MoviePy for final composition.',
+    category: 'AI / ML',
+    tech: ['Python', 'FastAPI', 'Whisper', 'Coqui TTS', 'MoviePy', 'Transformers'],
+    platform: 'Personal',
+    image: '🌍',
+    color: '#ffd700',
+  },
+  {
+    id: 63,
+    slug: 'lovable-dev-alternative',
+    title: 'Lovable.dev Alternative (Open Source)',
+    description:
+      'Self-hosted, open-source alternative to Lovable.dev: AI code generator with Ollama LLM, ChromaDB RAG, Monaco code editor, and full CI/CD pipeline. Deployable via Docker and Kubernetes.',
+    problem: 'Teams needed a private, self-hosted AI code generator without sending code to third-party services.',
+    solution: 'Built a full-stack platform with Ollama for local LLM inference, ChromaDB for codebase RAG, and Monaco editor for in-browser editing.',
+    result: 'Functional open-source alternative with Docker/Kubernetes deployment and end-to-end code generation.',
+    category: 'AI / ML',
+    tech: ['React', 'Node.js', 'Express', 'Ollama', 'ChromaDB', 'Docker', 'Kubernetes', 'TypeScript'],
+    platform: 'Personal',
+    image: '🏗️',
+    color: '#ff6b6b',
   },
 
   // ── AI Voice Agents ────────────────────────────────────
   {
     id: 21,
+    slug: 'vapi-dental-clinic-system',
     title: 'VAPI Dental Clinic System',
     description:
-      'Multi-agent AI voice system for dental clinics with 3 specialized agents: Triage, Emergency, and Appointment booking with VAPI integration.',
+      'Multi-agent AI voice system for dental clinics with 3 specialized agents: Triage (symptom assessment), Emergency (urgent care routing), and Appointment booking with VAPI integration and real calendar sync.',
+    problem: 'A dental clinic needed 24/7 phone coverage without hiring additional receptionists.',
+    solution: 'Deployed 3 VAPI voice agents with CrewAI orchestration: triage for symptoms, emergency routing, and appointment booking with calendar integration.',
+    result: 'Clinic reduced missed calls by 90% and automated 80% of appointment scheduling.',
+    role: 'AI Voice Systems Architect — VAPI config, agent design, Node.js backend.',
     category: 'AI Voice Agents',
-    tech: ['Python', 'VAPI', 'Node.js', 'CrewAI'],
+    tech: ['Python', 'VAPI', 'Node.js', 'CrewAI', 'JSON Agent Config'],
     platform: 'Upwork',
     image: '🦷',
     color: '#00f5d4',
+    featured: true,
   },
   {
     id: 22,
+    slug: 'calligent-voice-agent',
     title: 'CalligAgent',
     description:
-      'AI-powered calling agent system for automated outbound calls with natural language processing and conversation management.',
+      'AI-powered automated calling agent system for outbound calls with natural language processing and intelligent conversation management.',
     category: 'AI Voice Agents',
     tech: ['Python', 'VAPI', 'Twilio', 'OpenAI'],
     platform: 'Personal',
@@ -282,69 +428,116 @@ export const projects: Project[] = [
   },
   {
     id: 23,
+    slug: '8-voice-agents-suite',
     title: '8 AI Voice Agents Suite',
     description:
-      'Enterprise-grade suite of 8 specialized AI voice agents for customer service, sales, support, and appointment management.',
+      'Enterprise-grade suite of 8 specialized AI voice agents for customer service, sales, support, and appointment management. Deployed for a Nigerian enterprise client.',
+    problem: 'An enterprise needed multiple specialized voice agents for different departments with different personalities and knowledge bases.',
+    solution: 'Built 8 distinct VAPI agents with separate prompts, knowledge bases, and escalation logic.',
+    result: 'Delivered all 8 agents on time, deployed to production for a Nigerian enterprise client.',
     category: 'AI Voice Agents',
     tech: ['Python', 'VAPI', 'Node.js', 'Multi-LLM'],
-    client: 'Nigeria Client',
+    client: 'Nigeria Enterprise Client',
     platform: 'Upwork',
     image: '🎧',
     color: '#ffd700',
   },
   {
     id: 24,
+    slug: 'celebrity-voice-bot',
     title: 'Celebrity Voice Bot',
     description:
-      'Custom AI chatbot with celebrity voice cloning for entertainment and fan engagement, with natural conversation flow.',
+      'Custom AI chatbot with celebrity voice cloning for entertainment and fan engagement, with natural conversation flow. Earned the first 5-star Upwork review.',
+    problem: 'Client wanted fans to have natural conversations with an AI persona of a public figure.',
+    solution: 'Combined voice cloning TTS with a custom persona-trained LLM to create a realistic fan-engagement chatbot.',
+    result: '"The final draft is brilliant." — Joshua C. (5-star Upwork review). Led to a long-term collaboration.',
     category: 'AI Voice Agents',
-    tech: ['Python', 'TTS', 'OpenAI', 'Node.js'],
+    tech: ['Python', 'TTS', 'OpenAI', 'Node.js', 'Voice Cloning'],
     client: 'Joshua C.',
     platform: 'Upwork',
     image: '🌟',
     color: '#ff6b6b',
+    featured: true,
+  },
+  {
+    id: 64,
+    slug: 'voiceai-realtime-assistant',
+    title: 'VoiceAI Real-Time Assistant',
+    description:
+      'Production-ready real-time voice-to-voice AI assistant with Whisper STT, GPT-4o, and ElevenLabs TTS. Sub-500ms latency with streaming responses and a beautiful Framer Motion UI.',
+    problem: 'Client needed a voice assistant with sub-second response time for natural conversation.',
+    solution: 'Built a Next.js 15 app with streaming Whisper transcription, GPT-4o streaming, and ElevenLabs voice synthesis in parallel.',
+    result: 'Achieved under 500ms end-to-end latency for voice-to-voice responses.',
+    category: 'AI Voice Agents',
+    tech: ['Next.js 15', 'TypeScript', 'Whisper', 'GPT-4o', 'ElevenLabs', 'Framer Motion'],
+    platform: 'Upwork',
+    image: '🎤',
+    color: '#00f5d4',
+  },
+  {
+    id: 65,
+    slug: 'private-ai-voice-assistant',
+    title: 'Private Local AI Voice Assistant',
+    description:
+      'Fully local, private voice assistant pipeline using Whisper STT + Ollama/Llama3 + Piper TTS — runs 100% on-device with optional Twilio phone number integration for phone-based access.',
+    problem: 'Client needed a private voice assistant that never sends data to third-party servers.',
+    solution: 'Assembled a local pipeline: Whisper for speech recognition, Ollama with Llama3 for reasoning, Piper TTS for voice, and FastAPI as the coordination layer.',
+    result: 'Fully offline voice assistant with Twilio integration for phone access.',
+    category: 'AI Voice Agents',
+    tech: ['Python', 'Ollama', 'Llama3', 'Whisper', 'Piper TTS', 'FastAPI', 'Twilio'],
+    platform: 'Upwork',
+    image: '🔒',
+    color: '#7b61ff',
   },
 
   // ── E-Commerce Solutions ───────────────────────────────
   {
     id: 25,
+    slug: 'composable-commerce-engine',
     title: 'Composable Commerce Engine',
     description:
-      'Advanced Shopify composable architecture with headless commerce, multi-vendor support, and real-time inventory sync.',
+      'Advanced Shopify composable/headless architecture with multi-vendor support, real-time inventory sync, and GraphQL API for GreenSystemsInc.',
+    problem: 'GreenSystemsInc needed a scalable headless Shopify store with multi-vendor support and real-time inventory.',
+    solution: 'Built a headless Shopify storefront with GraphQL Storefront API, custom Node.js backend, and real-time webhook-driven inventory sync.',
+    result: 'Delivered composable commerce architecture supporting multiple vendors with millisecond inventory sync.',
     category: 'E-Commerce',
-    tech: ['Shopify', 'Liquid', 'Node.js', 'GraphQL'],
+    tech: ['Shopify', 'Liquid', 'Node.js', 'GraphQL', 'REST API'],
     client: 'GreenSystemsInc',
     platform: 'Fiverr',
     image: '🏪',
     color: '#00f5d4',
+    featured: true,
   },
   {
     id: 26,
+    slug: 'shopify-erpnext-integration',
     title: 'Shopify-ERPNext Integration',
     description:
-      'Full ERP integration connecting Shopify store with ERPNext for automated inventory, order management, and financial sync.',
+      'Full ERP integration connecting Shopify store with ERPNext for automated inventory, order management, and financial sync via bidirectional webhooks.',
     category: 'E-Commerce',
-    tech: ['Shopify', 'ERPNext', 'Python', 'REST API'],
+    tech: ['Shopify', 'ERPNext', 'Python', 'REST API', 'Webhooks'],
     platform: 'Personal',
     image: '🔗',
     color: '#7b61ff',
   },
   {
     id: 27,
+    slug: 'luxe-woocommerce-theme',
     title: 'Luxe WooCommerce Theme',
     description:
       'Premium WooCommerce theme with luxury design, product quick-view, AJAX cart, wishlists, and mobile-first responsive layout.',
     category: 'E-Commerce',
-    tech: ['WordPress', 'WooCommerce', 'PHP', 'CSS'],
+    tech: ['WordPress', 'WooCommerce', 'PHP', 'CSS', 'JavaScript'],
     platform: 'Personal',
     image: '💎',
     color: '#ffd700',
   },
   {
     id: 28,
-    title: 'Shopify Complete Store Theme',
+    slug: 'shopify-complete-store-theme',
+    title: 'GlobalStoreTrends Shopify Theme',
     description:
-      'Custom-built Shopify theme from scratch with advanced product filtering, collection pages, and checkout optimization.',
+      'Custom-built Shopify theme from scratch for dropshipping with 3D model support, advanced product filtering, collection pages, and checkout optimization.',
     category: 'E-Commerce',
     tech: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     platform: 'Personal',
@@ -353,35 +546,65 @@ export const projects: Project[] = [
   },
   {
     id: 29,
-    title: 'NowaCash Payment Gateway',
+    slug: 'nowacash-payment-gateway',
+    title: 'NowaCash WooCommerce Payment Gateway',
     description:
-      'Custom WooCommerce payment gateway plugin for NowaCash with secure transaction processing and order management.',
+      'Custom WooCommerce payment gateway plugin for NowaCash with secure webhook verification, transaction processing, and order management.',
     category: 'E-Commerce',
-    tech: ['PHP', 'WooCommerce', 'REST API', 'MySQL'],
+    tech: ['PHP', 'WordPress', 'WooCommerce', 'REST API', 'MySQL'],
     platform: 'Personal',
     image: '💳',
     color: '#00f5d4',
   },
   {
     id: 30,
-    title: 'PrestaShop Store Customization',
+    slug: 'prestashop-store-customization',
+    title: 'PrestaShop 9 Store Customization',
     description:
-      'PrestaShop 9 store customization with custom modules, theme modifications, and performance optimization.',
+      'PrestaShop 9 store customization with custom modules, theme modifications, and performance optimization for production deployment.',
     category: 'E-Commerce',
     tech: ['PrestaShop', 'PHP', 'MySQL', 'Smarty'],
     platform: 'Personal',
     image: '🏬',
     color: '#7b61ff',
   },
+  {
+    id: 66,
+    slug: 'kbc-luxury-beauty-store',
+    title: 'KBC Kashmir Luxury Beauty Store',
+    description:
+      'Custom Shopify theme for a luxury beauty and cosmetics brand with premium design, product showcases, and optimized mobile checkout.',
+    category: 'E-Commerce',
+    tech: ['Shopify', 'Liquid', 'CSS', 'JavaScript'],
+    platform: 'Personal',
+    image: '💄',
+    color: '#ff6b6b',
+  },
+  {
+    id: 67,
+    slug: 'amazonspy-pro',
+    title: 'AmazonSpy Pro',
+    description:
+      'AI-powered Amazon seller intelligence SaaS with 3 subscription tiers. Features product tracking, competitor analysis, keyword research, and Anthropic Claude-powered market insights.',
+    problem: 'Amazon sellers needed an affordable alternative to Helium 10 with AI-powered market analysis.',
+    solution: 'Built a full SaaS with Next.js 14, Supabase for auth and database, Stripe for subscriptions, and Claude for AI insights.',
+    result: 'Complete SaaS product with 3 subscription tiers, payment processing, and AI analysis ready for launch.',
+    category: 'SaaS',
+    tech: ['Next.js 14', 'Supabase', 'Stripe', 'Anthropic Claude', 'TypeScript', 'Tailwind'],
+    platform: 'Personal',
+    image: '🔎',
+    color: '#ffd700',
+  },
 
   // ── Automation & Bots ──────────────────────────────────
   {
     id: 31,
-    title: 'AbleConnect Ghana',
+    slug: 'ableconnect-ghana',
+    title: 'AbleConnect Ghana WhatsApp Bot',
     description:
       'WhatsApp chatbot system for a Ghanaian business with Google Sheets database integration, automated responses, and customer management.',
     category: 'Automation',
-    tech: ['Node.js', 'WhatsApp API', 'Google Sheets', 'Webhook'],
+    tech: ['Node.js', 'WhatsApp Business API', 'Google Sheets', 'Webhooks'],
     client: 'AbleConnect',
     platform: 'Fiverr',
     image: '💬',
@@ -389,21 +612,27 @@ export const projects: Project[] = [
   },
   {
     id: 32,
+    slug: 'btc-polymarket-trading-bot',
     title: 'BTC Polymarket Trading Bot',
     description:
-      'Automated cryptocurrency trading bot for Polymarket with prediction market analysis, Telegram alerts, and portfolio management.',
+      'Automated cryptocurrency prediction market trading bot for Polymarket with AI-powered market analysis, Telegram alerts, position sizing, and portfolio management.',
+    problem: 'Client needed a 24/7 automated trading system for Polymarket prediction markets.',
+    solution: 'Built a Python bot with Polymarket API integration, GPT-4 for market analysis, Web3 for transactions, and Telegram for alerts.',
+    result: 'Bot runs continuously with real-time alerts and configurable risk management.',
     category: 'Automation',
-    tech: ['Python', 'Polymarket API', 'Telegram', 'Web3'],
+    tech: ['Python', 'Polymarket API', 'Telegram API', 'Web3', 'GPT-4'],
     client: 'GoldenKeyCali',
     platform: 'Fiverr',
     image: '📈',
     color: '#ffd700',
+    featured: true,
   },
   {
     id: 33,
-    title: 'Staple.com Payment Bot',
+    slug: 'staple-payment-bot',
+    title: 'Staple.com Payment Automation Bot',
     description:
-      'Automated order processing bot for Staple.com with payment automation, order tracking, and inventory management.',
+      'Automated order processing bot for Staple.com with payment automation, order tracking, and inventory management using Selenium and REST APIs.',
     category: 'Automation',
     tech: ['Python', 'Selenium', 'Node.js', 'REST API'],
     client: 'Mubdes',
@@ -413,24 +642,30 @@ export const projects: Project[] = [
   },
   {
     id: 34,
+    slug: 'signal-command-center',
     title: 'Signal Command Center',
     description:
-      'Live trading signal aggregation tracking X accounts, automated early signal ranking, and Telegram alerts via @Scraper_dashbot. Deployed on VPS with PM2 and Nginx.',
+      'Live trading signal aggregation system tracking X accounts, automated early signal ranking with OpenAI analysis, and Telegram alerts via @Scraper_dashbot. Deployed on VPS with PM2 and Nginx.',
+    problem: 'Trader needed a system to automatically aggregate crypto trading signals from 50+ X accounts and rank them.',
+    solution: 'Built a Python scraper tracking X accounts, OpenAI for signal quality scoring, SQLite for storage, and Telegram bot for alerts. Deployed on VPS with PM2.',
+    result: 'Live at xsignaltracker.tech, processing 1000+ signals/day with real-time Telegram delivery.',
     category: 'Automation',
-    tech: ['Python', 'Telegram API', 'X API', 'OpenAI', 'SQLite', 'PM2'],
+    tech: ['Python', 'X API', 'OpenAI', 'Telegram API', 'SQLite', 'PM2', 'Nginx'],
     client: 'Matthew',
     platform: 'Fiverr',
     link: 'https://xsignaltracker.tech',
     image: '📡',
     color: '#7b61ff',
+    featured: true,
   },
   {
     id: 35,
+    slug: 'trendspark-autopilot',
     title: 'TrendSpark Autopilot',
     description:
       'Automated content trend detection and publishing system with social media scheduling, analytics, and A/B testing.',
     category: 'Automation',
-    tech: ['Python', 'React', 'OpenAI', 'Social APIs'],
+    tech: ['Python', 'React', 'OpenAI', 'Social Media APIs'],
     client: 'Sheeeek',
     platform: 'Fiverr',
     image: '🚀',
@@ -438,22 +673,24 @@ export const projects: Project[] = [
   },
   {
     id: 36,
+    slug: 'whatsapp-automation-suite',
     title: 'WhatsApp Automation Suite',
     description:
-      'Multi-feature WhatsApp automation platform with chatbots, broadcast messaging, CRM integration, and analytics dashboard.',
+      'Multi-feature WhatsApp automation platform with AI chatbots, broadcast messaging, CRM integration, and analytics dashboard.',
     category: 'Automation',
-    tech: ['Node.js', 'WhatsApp API', 'MongoDB', 'React'],
+    tech: ['Node.js', 'WhatsApp Business API', 'MongoDB', 'React'],
     platform: 'Fiverr',
     image: '📱',
     color: '#ffd700',
   },
   {
     id: 37,
+    slug: 'deepseek-twitter-agent',
     title: 'DeepSeek Twitter Agent',
     description:
-      'Automated Twitter engagement agent using DeepSeek for intelligent responses, content generation, and audience analysis.',
+      'Automated Twitter/X engagement agent using DeepSeek for intelligent response generation, content creation, and audience analysis.',
     category: 'Automation',
-    tech: ['Python', 'DeepSeek', 'Twitter API', 'FastAPI'],
+    tech: ['Python', 'DeepSeek', 'Twitter/X API', 'FastAPI'],
     platform: 'Fiverr',
     image: '🐦',
     color: '#ff6b6b',
@@ -462,33 +699,36 @@ export const projects: Project[] = [
   // ── Chrome Extensions ──────────────────────────────────
   {
     id: 38,
+    slug: 'leadconnectpro',
     title: 'LeadConnectPro',
     description:
-      'Chrome extension for automated lead generation with contact extraction, CRM sync, and outreach campaign management.',
+      'Chrome extension (Manifest v3) for automated LinkedIn lead generation with contact extraction, CRM sync, and outreach campaign management.',
     category: 'Chrome Extensions',
-    tech: ['JavaScript', 'Chrome API', 'React', 'Node.js'],
+    tech: ['JavaScript', 'Chrome Extension API (MV3)', 'React', 'Node.js'],
     platform: 'Personal',
     image: '🔌',
     color: '#00f5d4',
   },
   {
     id: 39,
+    slug: 'video-translator-extension',
     title: 'VideoTranslator Extension',
     description:
-      'Browser extension and web app for real-time video subtitle translation with multi-language support and AI-powered accuracy.',
+      'Browser extension and companion web app for real-time video subtitle translation with multi-language AI support, Whisper STT, and Coqui TTS backend.',
     category: 'Chrome Extensions',
-    tech: ['JavaScript', 'Chrome API', 'Translation API', 'React'],
+    tech: ['JavaScript', 'Chrome Extension API', 'Python', 'FastAPI', 'Whisper', 'Coqui TTS'],
     platform: 'Personal',
     image: '🌍',
     color: '#7b61ff',
   },
   {
     id: 40,
+    slug: 'user-friendly-docs-generator',
     title: 'User-Friendly Docs Generator',
     description:
-      'Chrome extension that automatically generates user-friendly documentation from code repositories and APIs.',
+      'Chrome extension that automatically generates user-friendly documentation from code repositories and APIs using OpenAI.',
     category: 'Chrome Extensions',
-    tech: ['JavaScript', 'Chrome API', 'OpenAI', 'Markdown'],
+    tech: ['JavaScript', 'Chrome Extension API', 'OpenAI', 'Markdown'],
     client: 'Studio',
     platform: 'Fiverr',
     image: '📝',
@@ -498,63 +738,70 @@ export const projects: Project[] = [
   // ── WordPress & CMS ────────────────────────────────────
   {
     id: 41,
+    slug: 'twinvision-wordpress-theme',
     title: 'TwinVision WordPress Theme',
     description:
-      'Figma-to-WordPress conversion with custom WPBakery shortcodes, responsive design, and pixel-perfect implementation.',
+      'Figma-to-WordPress conversion with custom WPBakery shortcodes, responsive design, and pixel-perfect implementation from client mockups.',
     category: 'WordPress',
-    tech: ['WordPress', 'PHP', 'WPBakery', 'CSS'],
+    tech: ['WordPress', 'PHP', 'WPBakery', 'CSS', 'JavaScript'],
     platform: 'Client',
     image: '🎨',
     color: '#ff6b6b',
   },
   {
     id: 42,
+    slug: 'volumetric-homepage-shortcode',
     title: 'Volumetric Homepage Shortcode',
     description:
-      'Advanced WordPress shortcode system for creating 3D volumetric homepage layouts with custom animations and interactions.',
+      'Advanced WordPress shortcode system for creating animated, interactive 3D-style homepage layouts with custom PHP and JavaScript.',
     category: 'WordPress',
     tech: ['WordPress', 'PHP', 'JavaScript', 'CSS'],
     platform: 'Client',
     image: '🏗️',
     color: '#00f5d4',
   },
+  {
+    id: 68,
+    slug: 'custom-wordpress-theme',
+    title: 'Custom WordPress Theme (Handcrafted)',
+    description:
+      'Handcrafted WordPress theme built from scratch with custom PHP templates, header, footer, and index — no page builder dependency.',
+    category: 'WordPress',
+    tech: ['WordPress', 'PHP', 'JavaScript', 'CSS'],
+    platform: 'Personal',
+    image: '🖌️',
+    color: '#7b61ff',
+  },
 
   // ── SaaS Products ──────────────────────────────────────
   {
     id: 43,
+    slug: 'autoexec-mind',
     title: 'AutoExec Mind',
     description:
-      'AI automation platform that plans and executes complex workflows autonomously using multi-agent architecture.',
+      'AI automation task manager that plans and executes complex workflows autonomously using multi-agent architecture with drag-and-drop task boards.',
     category: 'SaaS',
-    tech: ['Python', 'React', 'FastAPI', 'Multi-Agent'],
+    tech: ['React', 'Vite', 'TypeScript', 'Tailwind', 'shadcn/ui', '@dnd-kit'],
     platform: 'Personal',
     image: '🧩',
     color: '#7b61ff',
+    featured: true,
   },
   {
     id: 44,
-    title: 'EduFlow Suite',
-    description:
-      'Complete education management SaaS with course builder, student analytics, assessment engine, and collaboration tools.',
-    category: 'SaaS',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    platform: 'Personal',
-    image: '📐',
-    color: '#00f5d4',
-  },
-  {
-    id: 45,
+    slug: 'gadgetverse',
     title: 'GadgetVerse',
     description:
       'Tech product discovery and review platform with AI-powered recommendations, comparison tools, and user reviews.',
     category: 'SaaS',
-    tech: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
+    tech: ['React', 'Vite', 'TypeScript', 'Tailwind', 'shadcn/ui'],
     platform: 'Personal',
     image: '📱',
     color: '#ffd700',
   },
   {
     id: 46,
+    slug: 'vibe-prospecting',
     title: 'VibeProspecting',
     description:
       'Sales prospecting platform with AI-driven lead scoring, email automation, and pipeline management dashboard.',
@@ -564,28 +811,137 @@ export const projects: Project[] = [
     image: '🎯',
     color: '#ff6b6b',
   },
+  {
+    id: 69,
+    slug: 'investoriq',
+    title: 'InvestorIQ',
+    description:
+      'AI-native investment research platform with multi-agent RAG pipelines, real-time financial data analysis, pgvector semantic search, and Vercel AI SDK streaming.',
+    problem: 'Investment teams needed AI-powered research that could process financial reports and answer complex investment questions.',
+    solution: 'Built a multi-agent RAG system using pgvector for semantic document search, Drizzle ORM for structured data, and streaming AI responses.',
+    result: 'Platform capable of ingesting SEC filings and answering complex investment queries in real-time.',
+    category: 'SaaS',
+    tech: ['Next.js', 'TypeScript', 'Vercel AI SDK', 'pgvector', 'PostgreSQL', 'Drizzle ORM'],
+    platform: 'Upwork',
+    image: '📈',
+    color: '#00f5d4',
+    featured: true,
+  },
+  {
+    id: 70,
+    slug: 'prospectai',
+    title: 'ProspectAI — B2B Lead Generation SaaS',
+    description:
+      'B2B prospecting SaaS platform: build targeted lead lists, identify decision makers, personalize outreach at scale with OpenAI, and manage campaigns from a single dashboard.',
+    category: 'SaaS',
+    tech: ['PHP 8', 'MySQL', 'Apache', 'OpenAI', 'LAMP'],
+    platform: 'Personal',
+    image: '🎯',
+    color: '#7b61ff',
+  },
 
   // ── DevOps & Security ──────────────────────────────────
   {
     id: 47,
+    slug: 'wazuh-siem-deployment',
     title: 'Wazuh SIEM Deployment',
     description:
-      'Enterprise security information and event management system deployment with Docker, log analysis, and threat detection.',
+      'Enterprise security information and event management system deployment with Docker Compose, Streamlit monitoring dashboard, Python auth scripts, and real-time threat detection.',
+    problem: 'Organization needed a cost-effective SIEM solution for security monitoring without a commercial license.',
+    solution: 'Deployed full Wazuh stack (manager + dashboard + indexer) via Docker Compose, with a custom Python Streamlit dashboard for non-technical staff.',
+    result: 'Fully operational SIEM monitoring network events with custom alerting and threat detection.',
     category: 'DevOps',
-    tech: ['Docker', 'Wazuh', 'Linux', 'YAML'],
+    tech: ['Docker', 'Docker Compose', 'Wazuh', 'Linux', 'Python', 'Streamlit'],
     platform: 'Personal',
     image: '🛡️',
     color: '#00f5d4',
   },
   {
     id: 48,
-    title: 'Eliza AI Framework',
+    slug: 'eliza-ai-framework',
+    title: 'ElizaOS Framework Contribution',
     description:
-      'Open source contribution to the Eliza AI framework — a multi-agent simulation platform with character-driven conversations.',
+      'Open-source contribution to ElizaOS — a multi-agent AI framework with Discord, Twitter, and Telegram connectors, and pluggable LLM backends (Llama, OpenAI, Groq, Anthropic).',
     category: 'DevOps',
-    tech: ['TypeScript', 'Node.js', 'AI', 'Open Source'],
+    tech: ['TypeScript', 'Node.js', 'pnpm', 'Turbo', 'Docker', 'Lerna'],
     platform: 'Open Source',
     image: '🌐',
     color: '#7b61ff',
   },
+
+  // ── Android ────────────────────────────────────────────
+  {
+    id: 71,
+    slug: 'aideal-finder-android',
+    title: 'AIDeal Finder — Android App',
+    description:
+      'Android app that scans receipts with ML Kit, generates AI-powered negotiation emails with OpenRouter, suggests cashback opportunities, and monetizes via AdMob.',
+    problem: 'Shoppers wanted an app to find better deals and automatically generate negotiation emails after purchases.',
+    solution: 'Built a native Android app with Kotlin + Jetpack Compose, Firebase backend, ML Kit for receipt scanning, and OpenRouter AI for email generation.',
+    result: 'Fully functional Android app with receipt OCR, AI email generation, and AdMob monetization.',
+    category: 'Android',
+    tech: ['Kotlin', 'Jetpack Compose', 'Firebase', 'ML Kit', 'OpenRouter', 'AdMob'],
+    platform: 'Personal',
+    image: '📱',
+    color: '#ff6b6b',
+  },
+
+  // ── Content Automation ─────────────────────────────────
+  {
+    id: 72,
+    slug: 'free-ai-video-generator',
+    title: 'Free AI Long-Form Video Generator',
+    description:
+      'Generate complete 1-hour YouTube videos from a single text prompt — Gemini writes the script, Pexels provides footage, edge-TTS narrates, and MoviePy composes the final 1080p MP4.',
+    problem: 'Content creators needed a completely free tool to generate long-form YouTube videos automatically.',
+    solution: 'Chained Gemini (script) → Pexels API (B-roll footage) → edge-TTS (narration) → MoviePy (composition) → FFmpeg (final render).',
+    result: 'Generates a complete 1-hour YouTube-ready video from a single prompt with zero cost.',
+    category: 'Content Automation',
+    tech: ['Python', 'Flask', 'Gemini API', 'Pexels API', 'MoviePy', 'FFmpeg', 'edge-TTS', 'Pillow'],
+    platform: 'Personal',
+    image: '🎥',
+    color: '#7b61ff',
+  },
+  {"id": 60, "slug": "tbc", "title": "Tbc", "category": "AI & Automation", "image": "🚀", "color": "#00f5d4", "description": "Developed TBC for a client on Twine.", "fullDescription": "A custom solution built for Twine client, focusing on scalability and performance.", "tech": ["AI Agents", "Python"], "platform": "Twine"},
+  {"id": 61, "slug": "deepseek-twitter-agent", "title": "Deepseek Twitter Agent", "category": "AI & Automation", "image": "🚀", "color": "#00f5d4", "description": "Developed deepseek-twitter-agent for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 62, "slug": "project", "title": "Project", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 63, "slug": "8-ai-voice-agents", "title": "8 Ai Voice Agents", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed 8 ai voice agents for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 64, "slug": "researchmap-ai-lite", "title": "Researchmap Ai Lite", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed researchmap_ai_lite for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 65, "slug": "project", "title": "Project", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 66, "slug": "project-2", "title": "Project 2", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project 2 for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 67, "slug": "project3", "title": "Project3", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project3 for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 68, "slug": "omnitech", "title": "Omnitech", "category": "Web Development", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed omnitech for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["React", "Node.js", "TypeScript"], "platform": "Fiverr"},
+  {"id": 69, "slug": "project", "title": "Project", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 70, "slug": "goldenkeycali", "title": "Goldenkeycali", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed goldenkeycali for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 71, "slug": "project", "title": "Project", "category": "Web Development", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["JavaScript"], "platform": "Fiverr"},
+  {"id": 72, "slug": "solution", "title": "Solution", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed solution for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 73, "slug": "project", "title": "Project", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 74, "slug": "fifa-influencer-automation", "title": "Fifa Influencer Automation", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed fifa-influencer-automation for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 75, "slug": "reinforcement-multi-agent-llm", "title": "Reinforcement Multi Agent Llm", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed Reinforcement multi agent llm for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 76, "slug": "kjb08002", "title": "Kjb08002", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed kjb08002 for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 77, "slug": "surplus-pipeline", "title": "Surplus Pipeline", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed surplus-pipeline for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 78, "slug": "mehhthew", "title": "Mehhthew", "category": "Web Development", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed mehhthew for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["JavaScript"], "platform": "Fiverr"},
+  {"id": 79, "slug": "riaz", "title": "Riaz", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed riaz for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 80, "slug": "watchesluxury-org", "title": "Watchesluxury.Org", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed WatchesLuxury.org for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 81, "slug": "robertosvvo", "title": "Robertosvvo", "category": "Web Development", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed robertosvvo for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["JavaScript"], "platform": "Fiverr"},
+  {"id": 82, "slug": "finch-newsletter", "title": "Finch Newsletter", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed finch_newsletter for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 83, "slug": "finch-newsletter-copy", "title": "Finch Newsletter   Copy", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed finch_newsletter - Copy for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 84, "slug": "naanasifah", "title": "Naanasifah", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed naanasifah for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 85, "slug": "nebu360", "title": "Nebu360", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed nebu360 for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 86, "slug": "project", "title": "Project", "category": "Web Development", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["JavaScript"], "platform": "Fiverr"},
+  {"id": 87, "slug": "greensystemsinc-shopify-composable", "title": "Greensystemsinc Shopify Composable", "category": "Web Development", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed greensystemsinc-shopify-composable for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["React", "Node.js", "TypeScript"], "platform": "Fiverr"},
+  {"id": 88, "slug": "mozaiks", "title": "Mozaiks", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed mozaiks for a client on Freelance.", "fullDescription": "A custom solution built for Freelance client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Freelance"},
+  {"id": 89, "slug": "opexpert-demo", "title": "Opexpert Demo", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed opexpert_demo for a client on Freelance.", "fullDescription": "A custom solution built for Freelance client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Freelance"},
+  {"id": 90, "slug": "scripts", "title": "Scripts", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed Scripts for a client on Freelance.", "fullDescription": "A custom solution built for Freelance client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Freelance"},
+  {"id": 91, "slug": "way", "title": "Way", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed way for a client on Freelance.", "fullDescription": "A custom solution built for Freelance client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Freelance"},
+  {"id": 92, "slug": "turnitin-bot", "title": "Turnitin Bot", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed Turnitin Bot for a client on Truelancer.", "fullDescription": "A custom solution built for Truelancer client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Truelancer"},
+  {"id": 93, "slug": "tbc", "title": "Tbc", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed TBC for a client on Twine.", "fullDescription": "A custom solution built for Twine client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Twine"},
+  {"id": 94, "slug": "lip-sync", "title": "Lip Sync", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed Lip Sync for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Upwork"},
+  {"id": 95, "slug": "ai-voice-assistant", "title": "Ai Voice Assistant", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed ai_voice_assistant for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Upwork"},
+  {"id": 96, "slug": "ai-voice-assistant-copy", "title": "Ai Voice Assistant Copy", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed ai_voice_assistant copy for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Upwork"},
+  {"id": 97, "slug": "crewai-housing", "title": "Crewai Housing", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed crewai-housing for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Upwork"},
+  {"id": 98, "slug": "voice-ai-assistant", "title": "Voice Ai Assistant", "category": "Web Development", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed voice-ai-assistant for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["React", "Node.js", "TypeScript"], "platform": "Upwork"},
+  {"id": 99, "slug": "vapi-dental-crew", "title": "Vapi Dental Crew", "category": "Web Development", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed vapi-dental-crew for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["React", "Node.js", "TypeScript"], "platform": "Upwork"},
+  {"id": 100, "slug": "meal-route-master-main", "title": "Meal Route Master Main", "category": "Web Development", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed meal-route-master-main for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["React", "Node.js", "TypeScript"], "platform": "Upwork"},
+  {"id": 101, "slug": "paragraph-painter-main", "title": "Paragraph Painter Main", "category": "Web Development", "image": "\ud83d\ude80", "color": "#7b61ff", "description": "Developed paragraph-painter-main for a client on Upwork.", "fullDescription": "A custom solution built for Upwork client, focusing on scalability and performance.", "tech": ["React", "Node.js", "TypeScript"], "platform": "Upwork"}
 ];

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { projects, categories } from '@/data/projects';
 import styles from './page.module.css';
 
@@ -50,11 +51,13 @@ export default function ProjectsPage() {
           {/* Projects Grid */}
           <div className={styles.grid}>
             {filtered.map((project, i) => (
-              <div
+              <Link
+                href={`/projects/${project.slug}`}
                 key={project.id}
                 className={styles.card}
                 style={{
                   animationDelay: `${(i % 9) * 0.07}s`,
+                  textDecoration: 'none',
                 }}
               >
                 <div
@@ -92,17 +95,6 @@ export default function ProjectsPage() {
 
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <p className={styles.cardDesc}>{project.description}</p>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.cardLink}
-                    style={{ color: project.color }}
-                  >
-                    View Live Project ↗
-                  </a>
-                )}
 
                 {project.client && (
                   <div className={styles.cardClient}>
@@ -118,7 +110,7 @@ export default function ProjectsPage() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

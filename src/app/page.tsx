@@ -1,16 +1,12 @@
-'use client';
-
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import TypeWriter from '@/components/ui/TypeWriter';
 import Counter from '@/components/ui/Counter';
 import { projects } from '@/data/projects';
-import { stats } from '@/data/timeline';
+import { stats, testimonials } from '@/data/timeline';
 import styles from './page.module.css';
 
-const Scene3D = dynamic(() => import('@/components/three/Scene3D'), {
-  ssr: false,
-});
+import Scene3DWrapper from '@/components/three/Scene3DWrapper';
 
 const techStack = [
   { name: 'React', icon: '⚛️' },
@@ -52,7 +48,7 @@ const featuredProjects = projects.filter((p) =>
 export default function HomePage() {
   return (
     <>
-      <Scene3D />
+      <Scene3DWrapper />
       <div className="page-content">
         {/* ── HERO ──────────────────────────────────────── */}
         <section className={styles.hero}>
@@ -183,12 +179,14 @@ export default function HomePage() {
 
             <div className={styles.projectsGrid}>
               {featuredProjects.map((project, i) => (
-                <div
+                <Link
+                  href={`/projects/${project.slug}`}
                   key={project.id}
                   className={styles.projectCard}
                   style={{
                     animationDelay: `${i * 0.1}s`,
                     borderColor: `${project.color}20`,
+                    textDecoration: 'none',
                   }}
                 >
                   <div
@@ -216,7 +214,7 @@ export default function HomePage() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -247,6 +245,37 @@ export default function HomePage() {
                 >
                   <span className={styles.techItemIcon}>{tech.icon}</span>
                   <span className={styles.techItemName}>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── TESTIMONIALS ──────────────────────────────── */}
+        <section className={`section ${styles.testimonials}`}>
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">// Client Feedback</span>
+              <h2 className="section-title">
+                What People <span className="gradient-text">Say</span>
+              </h2>
+            </div>
+            
+            <div className={styles.testimonialsGrid}>
+              {testimonials.map((testimonial, i) => (
+                <div key={i} className={styles.testimonialCard}>
+                  <div className={styles.testimonialHeader}>
+                    <div className={styles.testimonialAvatar}>{testimonial.avatar}</div>
+                    <div>
+                      <h4 className={styles.testimonialName}>{testimonial.name}</h4>
+                      <p className={styles.testimonialRole}>{testimonial.role} · {testimonial.platform}</p>
+                    </div>
+                  </div>
+                  <div className={styles.testimonialRating}>
+                    {"⭐".repeat(testimonial.rating)}
+                  </div>
+                  <p className={styles.testimonialText}>"{testimonial.text}"</p>
+                  <p className={styles.testimonialProject}>Project: {testimonial.project}</p>
                 </div>
               ))}
             </div>

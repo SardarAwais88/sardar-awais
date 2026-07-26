@@ -1,7 +1,7 @@
 'use client';
 
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
 
 function Particles({ count = 200 }: { count?: number }) {
@@ -102,6 +102,25 @@ function FloatingShape({ position, color, speed = 1, shape = 'box' }: {
 }
 
 export default function Scene3D() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768 || navigator.hardwareConcurrency < 4);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (!mounted) return null;
+
+  if (isMobile) {
+    return (
+      <div className="canvas-container" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0,245,212,0.05), transparent)' }} />
+    );
+  }
+
   return (
     <div className="canvas-container">
       <Canvas
@@ -113,7 +132,7 @@ export default function Scene3D() {
         <pointLight position={[10, 10, 10]} intensity={0.5} color="#00f5d4" />
         <pointLight position={[-10, -10, -10]} intensity={0.3} color="#7b61ff" />
 
-        <Particles count={250} />
+        <Particles count={150} />
 
         <FloatingShape position={[-4, 2, -3]} color="#00f5d4" speed={0.8} shape="octahedron" />
         <FloatingShape position={[4, -1, -4]} color="#7b61ff" speed={0.6} shape="torus" />
