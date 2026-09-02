@@ -1,12 +1,21 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
-import Chatbot from '@/components/ui/Chatbot';
-import FloatingCTA from '@/components/ui/FloatingCTA';
-import ExitPopup from '@/components/ui/ExitPopup';
-import ScrollReveal3D from '@/components/ui/ScrollReveal3D';
-import Scene3DWrapper from '@/components/three/Scene3DWrapper';
+
+// Load fonts
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
+const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' });
+
+// Dynamically import heavy components
+const Scene3DWrapper = dynamic(() => import('@/components/three/Scene3DWrapper'));
+const Chatbot = dynamic(() => import('@/components/ui/Chatbot'));
+const FloatingCTA = dynamic(() => import('@/components/ui/FloatingCTA'));
+const ExitPopup = dynamic(() => import('@/components/ui/ExitPopup'));
+const ScrollReveal3D = dynamic(() => import('@/components/ui/ScrollReveal3D'));
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sardarawais.com'),
@@ -139,7 +148,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetBrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
