@@ -42,21 +42,7 @@ export const metadata: Metadata = {
     'RAG system developer',
     'LLM integration specialist',
     'AI automation engineer',
-    'Fiverr top rated developer',
-    'Upwork developer',
     'hire agentic AI developer',
-    'AI solutions provider',
-    'custom software development',
-    'SaaS development',
-    'Docker DevOps',
-    'CI/CD pipeline',
-    'full stack AI application developer',
-    'Android app developer',
-    'n8n automation developer',
-    'Amazon seller tools developer',
-    'POS system developer',
-    'trading bot developer',
-    'influencer marketing platform developer',
     'hire Pakistani AI developer for US clients',
     'hire Pakistani developer for UK clients',
     'Wazuh SIEM deployment',
@@ -64,7 +50,6 @@ export const metadata: Metadata = {
     'ElevenLabs developer',
     'Whisper STT developer',
     'Ollama local LLM developer',
-    'composable commerce developer',
   ],
   authors: [{ name: 'Sardar Awais', url: 'https://sardarawais.com' }],
   creator: 'Sardar Awais',
@@ -92,53 +77,73 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sardar Awais | Web Dev & AI Agents',
     description: 'Looking for urgent website development or AI chatbot solutions? Hire Sardar Awais for full-stack apps and AI agents.',
-    creator: '@awaismehboob',
+    creator: '@sardarawais',
   },
   alternates: {
     canonical: 'https://sardarawais.com',
   },
+  other: {
+    'geo.region': 'PK-PB',
+    'geo.placename': 'Punjab, Pakistan',
+    'geo.position': '31.1471;75.3412',
+    'ICBM': '31.1471, 75.3412',
+    'coverage': 'Worldwide',
+    'distribution': 'Global',
+    'rating': 'General',
+  }
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Sardar Awais',
-  url: 'https://sardarawais.com',
-  logo: 'https://sardarawais.com/logo.png',
-  jobTitle: 'Full-Stack Developer & AI Engineer',
-  description: 'Expert in urgent website development, AI agents, chatbots, and full-stack solutions.',
-  sameAs: [
-    'https://www.linkedin.com/company/nexusai-dev',
-    'https://twitter.com/awaismehboob',
-    'https://www.upwork.com/freelancers/sardara32',
-    'https://www.fiverr.com/sellers/mahboobhussa500'
-  ],
-  contactPoint: [{
-    '@type': 'ContactPoint',
-    email: 'info@sardarawais.com',
-    telephone: '+923472725754',
-    contactType: 'Customer Service',
-    availableLanguage: ['English', 'Urdu'],
-    areaServed: ['US', 'UK', 'CA', 'AU', 'AE'],
-  }],
-  founder: {
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Sardar Awais',
-    jobTitle: 'CEO & Founder',
-    url: 'https://nexusai.dev',
+    url: 'https://sardarawais.com',
+    logo: 'https://sardarawais.com/logo.png',
+    jobTitle: 'Full-Stack Developer & AI Engineer',
+    description: 'Expert in urgent website development, AI agents, chatbots, and full-stack solutions.',
     sameAs: [
+      'https://www.linkedin.com/company/nexusai-dev',
+      'https://twitter.com/sardarawais',
       'https://www.upwork.com/freelancers/sardara32',
-      'https://www.fiverr.com/sellers/mahboobhussa500',
-      'https://www.linkedin.com/in/awais-mahboob-25202a13b/'
+      'https://www.fiverr.com/sellers/mahboobhussa500'
+    ],
+    knowsAbout: ['Artificial Intelligence', 'Machine Learning', 'Voice AI', 'Full-Stack Development', 'DevOps', 'Next.js'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Sardar Awais AI & Web Development Services',
+    url: 'https://sardarawais.com',
+    image: 'https://sardarawais.com/logo.png',
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Punjab',
+      addressRegion: 'PB',
+      addressCountry: 'PK'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '31.1471',
+      longitude: '75.3412'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'info@sardarawais.com',
+      telephone: '+923472725754',
+      contactType: 'Customer Support',
+      availableLanguage: ['English', 'Urdu']
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'US' },
+      { '@type': 'Country', name: 'UK' },
+      { '@type': 'Country', name: 'CA' },
+      { '@type': 'Country', name: 'AU' },
+      { '@type': 'Country', name: 'AE' }
     ]
-  },
-  address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'PK',
-    addressRegion: 'Punjab',
-  },
-  knowsAbout: ['Artificial Intelligence', 'Machine Learning', 'Voice AI', 'Full-Stack Development', 'DevOps', 'LangChain', 'VAPI', 'CrewAI', 'Shopify', 'Next.js'],
-};
+  }
+];
 
 import { GoogleAnalytics } from '@next/third-parties/google';
 
