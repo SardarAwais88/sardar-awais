@@ -1,0 +1,134 @@
+/* ── Floating CTA ──────────────────────────────────────── */
+.wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* ── Action buttons ───────── */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-end;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+
+.actionsOpen {
+  max-height: 250px;
+  opacity: 1;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem 0.6rem 0.8rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid transparent;
+}
+
+.actionBtn:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.actionIcon {
+  font-size: 1.1rem;
+}
+
+.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.call {
+  background: var(--accent-secondary);
+  color: #fff;
+}
+
+.quote {
+  background: var(--gradient-accent);
+  color: #000;
+}
+
+/* ── Main button ───────── */
+.mainBtn {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gradient-accent);
+  color: #000;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(0, 245, 212, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mainBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 32px rgba(0, 245, 212, 0.45);
+}
+
+.mainBtnOpen {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+.mainIcon {
+  display: block;
+  transition: transform 0.25s;
+}
+
+/* Pulse ring */
+.pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  animation: pulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    bottom: 1.2rem;
+    right: 1.2rem;
+  }
+}

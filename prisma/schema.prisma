@@ -1,0 +1,17 @@
+// Prisma schema for a simple leads table using SQLite
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String?
+  createdAt DateTime @default(now())
+}

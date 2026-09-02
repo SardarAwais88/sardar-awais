@@ -43,3 +43,6 @@ src/data/.blog-generated-today
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*

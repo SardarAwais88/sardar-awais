@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://sardar-awais.vercel.app';
+  const baseUrl = 'https://awaisaisolutions.com';
   const now = new Date();
 
   // Static pages

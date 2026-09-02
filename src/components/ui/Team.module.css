@@ -1,0 +1,186 @@
+/* ── Team Section ─────────────────────────────────────── */
+.section {
+  position: relative;
+  padding: 120px 24px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(123, 97, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ─────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-secondary);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  background: linear-gradient(135deg, #7b61ff, #00f5d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Grid ─────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Card ─────────────────────────── */
+.card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(var(--accent), 0.3);
+}
+
+.card:hover .cardGlow {
+  opacity: 1;
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+/* Avatar */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.avatarEmoji {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* Text */
+.name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+
+.bio {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.skill {
+  padding: 0.3rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

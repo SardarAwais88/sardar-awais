@@ -12,14 +12,14 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              <span className={styles.logoIcon}>⚡</span>
+              <span className={styles.logoIcon}>🧠</span>
               <span className={styles.logoText}>
-                Awais<span className={styles.logoAccent}>.</span>
+                Awais<span className={styles.logoAccent}>AI</span>
               </span>
             </Link>
             <p className={styles.tagline}>
-              Full-Stack Developer, AI Engineer & DevOps Expert crafting
-              digital experiences that push boundaries.
+              AI-first digital agency led by <strong>Awais Mehboob</strong>. We build
+              intelligent software, voice agents &amp; immersive apps that scale globally.
             </p>
             <div className={styles.socials}>
               <a href="https://www.fiverr.com/sellers/mahboobhussa500" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>© {currentYear} Awais Mehboob. All rights reserved.</p>
+          <p>© {currentYear} <span style={{color:'var(--accent-primary)'}}>AwaisAI Solutions</span> — Founded by Awais Mehboob. All rights reserved.</p>
           <p className={styles.builtWith}>
             Built with <span className={styles.heart}>♥</span> using Next.js & Three.js
           </p>

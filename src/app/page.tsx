@@ -5,8 +5,8 @@ import Counter from '@/components/ui/Counter';
 import { projects } from '@/data/projects';
 import { stats, testimonials } from '@/data/timeline';
 import styles from './page.module.css';
-
-import Scene3DWrapper from '@/components/three/Scene3DWrapper';
+import Team from '@/components/ui/Team';
+import LeadForm from '@/components/ui/LeadForm';
 
 const techStack = [
   { name: 'React', icon: '⚛️' },
@@ -48,7 +48,6 @@ const featuredProjects = projects.filter((p) =>
 export default function HomePage() {
   return (
     <>
-      <Scene3DWrapper />
       <div className="page-content">
         {/* ── HERO ──────────────────────────────────────── */}
         <section className={styles.hero}>
@@ -59,8 +58,7 @@ export default function HomePage() {
             </div>
 
             <h1 className={styles.heroTitle}>
-              Hi, I&apos;m{' '}
-              <span className="gradient-text">Awais Mehboob</span>
+              Hi, we're <span className="gradient-text">AwaisAI Solutions</span>
             </h1>
 
             <div className={styles.heroRole}>
@@ -83,10 +81,7 @@ export default function HomePage() {
             </div>
 
             <p className={styles.heroDescription}>
-              I build powerful web applications, AI agents, and automation
-              systems that help businesses scale. With 50+ projects delivered
-              across Fiverr, Upwork, and direct clients — I turn complex ideas
-              into reality.
+              We are <strong>AwaisAI Solutions</strong> — an AI-first digital agency led by <strong>Awais Mehboob</strong>. We build AI agents, voice bots, full-stack apps &amp; immersive 3D web experiences for clients worldwide.
             </p>
 
             <div className={styles.heroCTA}>
@@ -309,6 +304,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <LeadForm />
+        <Team />
       </div>
     </>
   );

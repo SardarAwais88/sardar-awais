@@ -1,0 +1,340 @@
+/* ── Lead / Get a Quote Section ─────────────────────────── */
+.section {
+  position: relative;
+  padding: 120px 24px;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.blob1 {
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 245, 212, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.blob2 {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(123, 97, 255, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── LEFT COLUMN ─────────────────────────────── */
+.left {
+  padding-top: 1rem;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-primary);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.accent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.perk {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+}
+
+/* ── RIGHT COLUMN — FORM ─────────────────────────────── */
+.right {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-medium);
+}
+
+.right:focus-within {
+  border-color: rgba(0, 245, 212, 0.2);
+}
+
+.formTitle {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent-primary);
+  background: rgba(0, 245, 212, 0.04);
+  box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.08);
+}
+
+.textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.4rem 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.chipActive {
+  background: rgba(0, 245, 212, 0.12);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* Submit */
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: var(--gradient-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 245, 212, 0.25);
+}
+
+.submitBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.errorMsg {
+  font-size: 0.88rem;
+  color: var(--accent-tertiary);
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+}
+
+/* Success state */
+.successState {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.successIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.successState h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.successState p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.resetBtn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  color: var(--accent-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.resetBtn:hover {
+  background: rgba(0, 245, 212, 0.1);
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    padding: 1.5rem;
+  }
+}

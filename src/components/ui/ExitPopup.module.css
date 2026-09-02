@@ -1,0 +1,220 @@
+/* ── Exit Intent Popup ────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 760px;
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  z-index: 2;
+}
+
+.close:hover {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--accent-tertiary);
+}
+
+/* ── Left ─────────────────────────── */
+.left {
+  background: linear-gradient(145deg, rgba(0, 245, 212, 0.06), rgba(123, 97, 255, 0.06));
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.emoji {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.desc strong {
+  color: var(--accent-primary);
+}
+
+.perks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.perks li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* ── Right ─────────────────────────── */
+.right {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formLabel {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.input {
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.1);
+}
+
+.btn {
+  padding: 0.95rem;
+  background: var(--gradient-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.skip {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.skip:hover {
+  color: var(--text-secondary);
+}
+
+/* Success state */
+.success {
+  text-align: center;
+}
+
+.successIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.success h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.success p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .modal {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .right {
+    padding: 1.5rem;
+  }
+}

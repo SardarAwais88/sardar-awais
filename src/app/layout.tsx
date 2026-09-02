@@ -3,29 +3,20 @@ import './globals.css';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Chatbot from '@/components/ui/Chatbot';
+import FloatingCTA from '@/components/ui/FloatingCTA';
+import ExitPopup from '@/components/ui/ExitPopup';
+import ScrollReveal3D from '@/components/ui/ScrollReveal3D';
+import Scene3DWrapper from '@/components/three/Scene3DWrapper';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sardar-awais.vercel.app'),
+  metadataBase: new URL('https://awaisaisolutions.com'),
   title: {
-    default: 'Awais Mehboob | Full-Stack Developer, AI Engineer & Automation Specialist',
-    template: '%s | Awais Mehboob',
+    default: 'AwaisAI Solutions – #1 AI Agency | AI Agents, Full-Stack Dev & Automation',
+    template: '%s | AwaisAI Solutions',
   },
   description:
-    'Awais Mehboob — Expert Full-Stack Developer, AI Engineer & Agentic AI Specialist. 500+ projects delivered across Fiverr, Upwork, and direct clients. Hire me for AI agent development, VAPI voice bots, Shopify e-commerce, web apps, automation, and DevOps. 7+ years experience.',
+    'AwaisAI Solutions is a premier AI-first digital agency led by Awais Mehboob. We build AI agents, voice bots, full-stack web apps, Shopify stores, and enterprise automation. 50+ projects, 5★ rated on Upwork & Fiverr. Hire us for any AI or software development project.',
   keywords: [
-    'hire full stack developer',
-    'hire AI developer',
-    'hire AI engineer',
-    'freelance AI developer',
-    'custom AI agent development services',
-    'agentic AI developer',
-    'AI agent development',
-    'hire software developer',
-    'website development services',
-    'software development freelancer',
-    'full stack web developer for hire',
-    'React developer for hire',
-    'Next.js developer',
     'Python developer',
     'Node.js developer',
     'AI chatbot development',
@@ -72,9 +63,9 @@ export const metadata: Metadata = {
     'composable commerce developer',
     'headless Shopify developer',
   ],
-  authors: [{ name: 'Awais Mehboob', url: 'https://sardar-awais.vercel.app' }],
+  authors: [{ name: 'Awais Mehboob', url: 'https://awaisaisolutions.com' }],
   creator: 'Awais Mehboob',
-  publisher: 'Awais Mehboob',
+  publisher: 'AwaisAI Solutions',
   robots: {
     index: true,
     follow: true,
@@ -87,74 +78,62 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Awais Mehboob | Full-Stack Developer & AI Engineer — 500+ Projects Delivered',
-    description:
-      '500+ projects delivered across AI agents, web apps, e-commerce & automation. Expert in React, Next.js, Python, VAPI, CrewAI, Shopify & DevOps. Available for freelance projects worldwide.',
+    title: 'AwaisAI Solutions – AI Agency | AI Agents, Voice Bots, Full-Stack Dev',
+    description: 'Top-rated AI agency. We build AI agents, VAPI voice bots, full-stack apps, Shopify stores & automation. Led by Awais Mehboob. 50+ delivered projects. Get a free quote.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://sardar-awais.vercel.app',
-    siteName: 'Awais Mehboob Portfolio',
+    url: 'https://awaisaisolutions.com',
+    siteName: 'AwaisAI Solutions',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Awais Mehboob | Full-Stack Developer & AI Engineer',
-    description: 'Hire a top-rated freelance developer with 500+ projects in AI, web, e-commerce & automation.',
+    title: 'AwaisAI Solutions – AI Agency | Awais Mehboob',
+    description: 'Top-rated AI agency led by Awais Mehboob. 50+ AI agents, voice bots & full-stack projects delivered. 5★ on Upwork & Fiverr.',
     creator: '@awaismehboob',
   },
   alternates: {
-    canonical: 'https://sardar-awais.vercel.app',
+    canonical: 'https://awaisaisolutions.com',
   },
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Awais Mehboob',
-  jobTitle: 'Full-Stack Developer & AI Engineer',
-  description:
-    'Expert Full-Stack Developer, AI Engineer, and Automation Specialist with 7+ years experience and 500+ projects delivered worldwide.',
-  url: 'https://sardar-awais.vercel.app',
-  email: 'khanowais8888@gmail.com',
-  telephone: '+923472725754',
+  '@type': 'Organization',
+  name: 'AwaisAI Solutions',
+  url: 'https://awaisaisolutions.com',
+  logo: 'https://awaisaisolutions.com/logo.png',
+  description: 'AI-first digital agency specializing in AI agents, voice bots, full-stack development, and automation.',
+  sameAs: [
+    'https://www.linkedin.com/company/nexusai-dev',
+    'https://twitter.com/awaismehboob',
+    'https://www.upwork.com/freelancers/sardara32',
+    'https://www.fiverr.com/sellers/mahboobhussa500'
+  ],
+  contactPoint: [{
+    '@type': 'ContactPoint',
+    email: 'khanowais8888@gmail.com',
+    telephone: '+923472725754',
+    contactType: 'Customer Service',
+    availableLanguage: ['English', 'Urdu'],
+    areaServed: ['US', 'UK', 'CA', 'AU', 'AE'],
+  }],
+  founder: {
+    '@type': 'Person',
+    name: 'Awais Mehboob',
+    jobTitle: 'CEO & Founder',
+    url: 'https://nexusai.dev',
+    sameAs: [
+      'https://www.upwork.com/freelancers/sardara32',
+      'https://www.fiverr.com/sellers/mahboobhussa500',
+      'https://www.linkedin.com/in/awais-mahboob-25202a13b/'
+    ]
+  },
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'PK',
     addressRegion: 'Punjab',
   },
-  sameAs: [
-    'https://www.fiverr.com/sellers/mahboobhussa500',
-    'https://www.upwork.com/freelancers/sardara32',
-    'https://www.linkedin.com/in/awais-mahboob-25202a13b/',
-  ],
-  knowsAbout: [
-    'Full Stack Development',
-    'AI Engineering',
-    'Agentic AI',
-    'React',
-    'Next.js',
-    'Python',
-    'Node.js',
-    'DevOps',
-    'Shopify Development',
-    'AI Voice Agents',
-    'VAPI',
-    'LangChain',
-    'CrewAI',
-    'Automation',
-    'Android Development',
-    'Chrome Extensions',
-  ],
-  hasOccupation: {
-    '@type': 'Occupation',
-    name: 'Full-Stack Developer & AI Engineer',
-    occupationLocation: { '@type': 'Country', name: 'Pakistan' },
-    estimatedSalary: {
-      '@type': 'MonetaryAmountDistribution',
-      name: 'Hourly',
-      currency: 'USD',
-      median: 45,
-    },
-  },
+  knowsAbout: ['Artificial Intelligence', 'Machine Learning', 'Voice AI', 'Full-Stack Development', 'DevOps', 'LangChain', 'VAPI', 'CrewAI', 'Shopify', 'Next.js'],
 };
 
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -173,12 +152,16 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Scene3DWrapper />
         <div className="content-wrapper">
           <Navbar />
           <main>{children}</main>
           <Footer />
         </div>
         <Chatbot />
+        <FloatingCTA />
+        <ExitPopup />
+        <ScrollReveal3D />
         <GoogleAnalytics gaId="G-8J6ZM39V0D" />
       </body>
     </html>

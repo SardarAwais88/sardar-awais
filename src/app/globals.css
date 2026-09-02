@@ -85,6 +85,36 @@ body {
   min-height: 100vh;
 }
 
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 245, 212, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 245, 212, 0.4);
+}
+
+/* Subtle cinematic noise overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
 .video-bg {
   position: fixed;
   top: 0;
@@ -419,4 +449,185 @@ p {
     padding: 12px 24px;
     font-size: 0.85rem;
   }
+}
+
+/* ══════════════════════════════════════════════════════════
+   3D SCROLL REVEAL SYSTEM
+   ══════════════════════════════════════════════════════════ */
+
+/* Every direct child of page-content gets a reveal treatment */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(1200px) translateZ(-60px) translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-3d.visible {
+  opacity: 1;
+  transform: perspective(1200px) translateZ(0) translateY(0);
+}
+
+/* Staggered children */
+.reveal-3d:nth-child(2) { transition-delay: 0.08s; }
+.reveal-3d:nth-child(3) { transition-delay: 0.16s; }
+.reveal-3d:nth-child(4) { transition-delay: 0.24s; }
+.reveal-3d:nth-child(5) { transition-delay: 0.32s; }
+.reveal-3d:nth-child(6) { transition-delay: 0.40s; }
+
+/* ══════════════════════════════════════════════════════════
+   HOLOGRAPHIC / SHIMMER EFFECTS
+   ══════════════════════════════════════════════════════════ */
+
+.holographic {
+  background: linear-gradient(
+    135deg,
+    #00f5d4 0%,
+    #7b61ff 25%,
+    #ff6b6b 50%,
+    #ffd700 75%,
+    #00f5d4 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographicShift 4s ease infinite;
+}
+
+@keyframes holographicShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Neon border glow pulse */
+.neon-border {
+  border: 1px solid var(--accent-primary);
+  box-shadow:
+    0 0 5px rgba(0, 245, 212, 0.4),
+    0 0 20px rgba(0, 245, 212, 0.15),
+    inset 0 0 10px rgba(0, 245, 212, 0.05);
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(0,245,212,0.4), 0 0 20px rgba(0,245,212,0.15); }
+  50%       { box-shadow: 0 0 15px rgba(0,245,212,0.7), 0 0 40px rgba(0,245,212,0.3); }
+}
+
+/* ══════════════════════════════════════════════════════════
+   3D CARD DEPTH LAYERS
+   ══════════════════════════════════════════════════════════ */
+
+/* Apply to any card for 3D depth */
+.depth-card {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.depth-card:hover {
+  transform: perspective(1000px) translateZ(20px) rotateX(-3deg);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,245,212,0.1);
+}
+
+/* 3D floating badge */
+.badge-3d {
+  transform: perspective(400px) rotateX(8deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.badge-3d:hover {
+  transform: perspective(400px) rotateX(0deg) translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION DEPTH SEPARATORS
+   ══════════════════════════════════════════════════════════ */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,245,212,0.3), rgba(123,97,255,0.3), transparent);
+  margin: 0;
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+  filter: blur(2px);
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCANLINES OVERLAY (Cyberpunk effect)
+   ══════════════════════════════════════════════════════════ */
+
+.scanlines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════════════════════════
+   MORPHING GRADIENT BACKGROUNDS
+   ══════════════════════════════════════════════════════════ */
+
+.morph-bg {
+  background: linear-gradient(-45deg, #0a0a0f, #12121a, #0d0d1f, #0a0a0f);
+  background-size: 400% 400%;
+  animation: morphBg 12s ease infinite;
+}
+
+@keyframes morphBg {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CORNER BRACKET DECORATION
+   ══════════════════════════════════════════════════════════ */
+
+.corner-brackets {
+  position: relative;
+}
+
+.corner-brackets::before,
+.corner-brackets::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.4;
+}
+
+.corner-brackets::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--accent-primary);
+  border-left: 2px solid var(--accent-primary);
+}
+
+.corner-brackets::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid var(--accent-secondary);
+  border-right: 2px solid var(--accent-secondary);
 }

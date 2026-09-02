@@ -36,9 +36,9 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>⚡</span>
+          <span className={styles.logoIcon}>🧠</span>
           <span className={styles.logoText}>
-            Awais<span className={styles.logoAccent}>.</span>
+            Awais<span className={styles.logoAccent}>AI</span>
           </span>
         </Link>
 
@@ -53,8 +53,8 @@ export default function Navbar() {
               {pathname === link.href && <span className={styles.indicator} />}
             </Link>
           ))}
-          <Link href="/contact" className={styles.cta}>
-            Hire Me
+          <Link href="#get-quote" className={styles.cta}>
+            Hire Us 🚀
           </Link>
         </div>
 
