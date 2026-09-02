@@ -221,18 +221,24 @@
   font-weight: 600;
 }
 
-/* Submit */
-.submitBtn {
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.submitBtn,
+.whatsappBtn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
   padding: 1rem;
-  background: var(--gradient-accent);
   border: none;
   border-radius: var(--radius-md);
-  color: #000;
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
@@ -240,13 +246,32 @@
   transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
-.submitBtn:hover:not(:disabled) {
+.submitBtn {
+  background: var(--gradient-accent);
+  color: #000;
+}
+
+.whatsappBtn {
+  background: #25D366; /* WhatsApp Green */
+  color: #fff;
+}
+
+.submitBtn:hover:not(:disabled),
+.whatsappBtn:hover:not(:disabled) {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+.submitBtn:hover:not(:disabled) {
   box-shadow: 0 10px 30px rgba(0, 245, 212, 0.25);
 }
 
-.submitBtn:disabled {
+.whatsappBtn:hover:not(:disabled) {
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.25);
+}
+
+.submitBtn:disabled,
+.whatsappBtn:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }

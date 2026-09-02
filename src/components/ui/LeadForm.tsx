@@ -27,27 +27,60 @@ export default function LeadForm() {
 
   const set = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }));
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
     setErrorMsg('');
     try {
-      const res = await fetch('/api/lead', {
+      const res = await fetch('https://formsubmit.co/ajax/info@sardarawais.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify({
+          _subject: `New Lead from ${form.name}`,
           name: form.name,
           email: form.email,
-          message: `Service: ${form.service} | Budget: ${form.budget}\n\n${form.message}`,
+          service: form.service || 'Not specified',
+          budget: form.budget || 'Not specified',
+          message: form.message,
         }),
       });
-      if (!res.ok) throw new Error('Server error');
+      if (!res.ok) throw new Error('Failed to send email');
       setStatus('sent');
       setForm({ name: '', email: '', service: '', budget: '', message: '' });
     } catch (err) {
       setStatus('error');
       setErrorMsg((err as Error).message);
     }
+  };
+
+  const handleWhatsApp = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation for WhatsApp
+    if (!form.name || !form.email) {
+      setErrorMsg('Please enter your Name and Email first.');
+      setStatus('error');
+      return;
+    }
+
+    const text = `Hi Sardar Awais! I want to discuss a project.
+    
+*Name:* ${form.name}
+*Email:* ${form.email}
+*Service:* ${form.service || 'Not specified'}
+*Budget:* ${form.budget || 'Not specified'}
+
+*Message:*
+${form.message}`;
+
+    const whatsappMsg = encodeURIComponent(text);
+    window.open(`https://wa.me/923472725754?text=${whatsappMsg}`, '_blank');
+    
+    setStatus('sent');
+    setForm({ name: '', email: '', service: '', budget: '', message: '' });
   };
 
   return (
@@ -104,7 +137,7 @@ export default function LeadForm() {
               </button>
             </div>
           ) : (
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form className={styles.form}>
               <h3 className={styles.formTitle}>Get a Free Quote</h3>
 
               {/* Row 1 */}
@@ -183,15 +216,31 @@ export default function LeadForm() {
                 <p className={styles.errorMsg}>⚠️ {errorMsg || 'Something went wrong. Try again.'}</p>
               )}
 
-              <button type="submit" disabled={status === 'sending'} className={styles.submitBtn}>
-                {status === 'sending' ? (
-                  <>
-                    <span className={styles.spinner} /> Sending...
-                  </>
-                ) : (
-                  <>🚀 Get Free Proposal</>
-                )}
-              </button>
+              <div className={styles.actionButtons}>
+                <button 
+                  type="button" 
+                  onClick={handleWhatsApp}
+                  disabled={status === 'sending'} 
+                  className={styles.whatsappBtn}
+                >
+                  🚀 Send via WhatsApp
+                </button>
+                
+                <button 
+                  type="button" 
+                  onClick={handleEmailSubmit}
+                  disabled={status === 'sending'} 
+                  className={styles.submitBtn}
+                >
+                  {status === 'sending' ? (
+                    <>
+                      <span className={styles.spinner} /> Sending...
+                    </>
+                  ) : (
+                    <>📧 Send my Email</>
+                  )}
+                </button>
+              </div>
 
               <p className={styles.note}>
                 🔒 Your info is safe. We never share or sell your data.
