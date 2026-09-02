@@ -56,6 +56,7 @@ export const metadata: Metadata = {
     'Whisper STT developer',
     'Ollama local LLM developer',
     'composable commerce developer',
+  ],
   authors: [{ name: 'Sardar Awais', url: 'https://sardarawais.com' }],
   creator: 'Sardar Awais',
   publisher: 'Sardar Awais',
