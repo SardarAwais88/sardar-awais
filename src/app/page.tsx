@@ -58,7 +58,7 @@ export default function HomePage() {
             </div>
 
             <h1 className={styles.heroTitle}>
-              Hi, we're <span className="gradient-text">AwaisAI Solutions</span>
+              Hi, I'm <span className="gradient-text">Sardar Awais</span>
             </h1>
 
             <div className={styles.heroRole}>
@@ -81,7 +81,7 @@ export default function HomePage() {
             </div>
 
             <p className={styles.heroDescription}>
-              We are <strong>AwaisAI Solutions</strong> — an AI-first digital agency led by <strong>Awais Mehboob</strong>. We build AI agents, voice bots, full-stack apps &amp; immersive 3D web experiences for clients worldwide.
+              I am <strong>Sardar Awais</strong> — an AI Engineer & Full-Stack Developer. I build urgent custom websites, AI agents, voice bots, and enterprise software solutions for clients worldwide. Let's build something amazing together.
             </p>
 
             <div className={styles.heroCTA}>

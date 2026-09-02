@@ -36,9 +36,9 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>🧠</span>
+          <span className={styles.logoIcon}>👨‍💻</span>
           <span className={styles.logoText}>
-            Awais<span className={styles.logoAccent}>AI</span>
+            Sardar<span className={styles.logoAccent}>Awais</span>
           </span>
         </Link>
 

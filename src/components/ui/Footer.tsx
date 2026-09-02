@@ -12,9 +12,9 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              <span className={styles.logoIcon}>🧠</span>
+              <span className={styles.logoIcon}>👨‍💻</span>
               <span className={styles.logoText}>
-                Awais<span className={styles.logoAccent}>AI</span>
+                Sardar<span className={styles.logoAccent}>Awais</span>
               </span>
             </Link>
             <p className={styles.tagline}>
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>© {currentYear} <span style={{color:'var(--accent-primary)'}}>AwaisAI Solutions</span> — Founded by Awais Mehboob. All rights reserved.</p>
+          <p>© {currentYear} <span style={{color:'var(--accent-primary)'}}>Sardar Awais</span> — All rights reserved.</p>
           <p className={styles.builtWith}>
             Built with <span className={styles.heart}>♥</span> using Next.js & Three.js
           </p>

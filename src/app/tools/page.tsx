@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'AI Tools | AwaisAI Solutions – Free & Premium AI Tools by Awais Mehboob',
+  title: 'AI Tools | Sardar Awais – Free & Premium AI Tools',
   description:
-    'Powerful AI tools built by Awais Mehboob at AwaisAI Solutions. Free tools: AI Proposal Writer, Client Reply Generator, Email Writer. Premium tools: AI Video Generator, AI Humanizer, Project Estimator, Code Reviewer. Start free today.',
+    'Powerful AI tools built by Sardar Awais. Free tools: AI Proposal Writer, Client Reply Generator, Email Writer. Premium tools: AI Video Generator, AI Humanizer, Project Estimator, Code Reviewer. Start free today.',
   keywords: [
     'AI tools for freelancers',
     'AI proposal writer free',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     'AI video generator',
     'Upwork proposal AI',
     'Fiverr proposal generator',
-    'AwaisAI Solutions tools',
-    'Awais Mehboob tools',
+    'Sardar Awais tools',
+    'Sardar Awais AI',
   ],
 };
 
@@ -121,12 +121,12 @@ export default function ToolsPage() {
         <div className="container">
           {/* Header */}
           <div className="section-header">
-            <span className="section-label">// AwaisAI Solutions Tools</span>
+            <span className="section-label">// Sardar Awais Tools</span>
             <h1 className="section-title">
               AI-Powered <span className="gradient-text">Tools</span>
             </h1>
             <p className="section-subtitle">
-              Built by <strong>Awais Mehboob</strong> at AwaisAI Solutions — practical tools that save
+              Built by <strong>Sardar Awais</strong> — practical tools that save
               hours of work every day. Free tools available instantly. Premium tools unlock
               advanced AI features.
             </p>
@@ -237,8 +237,8 @@ export default function ToolsPage() {
                 Need a <span className="holographic">Custom AI Tool</span>?
               </h2>
               <p className={styles.ctaDesc}>
-                Awais Mehboob &amp; the AwaisAI Solutions team build custom AI solutions tailored to your
-                business. From internal tools to client-facing SaaS platforms.
+                Sardar Awais builds custom AI solutions tailored to your
+                business. From internal tools to client-facing SaaS platforms. Let's discuss your project.
               </p>
               <div className={styles.ctaActions}>
                 <Link href="/contact" className="btn btn-primary">
