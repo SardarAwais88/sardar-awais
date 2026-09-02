@@ -4,6 +4,7 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+import LazyMount from '@/components/ui/LazyMount';
 
 // Load fonts
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
@@ -161,16 +162,23 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Scene3DWrapper />
+        <LazyMount delay={3500}>
+          <Scene3DWrapper />
+        </LazyMount>
+        
         <div className="content-wrapper">
           <Navbar />
           <main>{children}</main>
           <Footer />
         </div>
-        <Chatbot />
-        <FloatingCTA />
-        <ExitPopup />
-        <ScrollReveal3D />
+
+        <LazyMount delay={4000}>
+          <Chatbot />
+          <FloatingCTA />
+          <ExitPopup />
+          <ScrollReveal3D />
+        </LazyMount>
+
         <GoogleAnalytics gaId="G-8J6ZM39V0D" />
       </body>
     </html>
