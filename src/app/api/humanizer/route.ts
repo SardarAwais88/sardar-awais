@@ -1,7 +1,7 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { callAIWithFallback, MODELS_FAST } from '@/lib/ai';
 
-// â”€â”€â”€ PROMPTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── PROMPTS ────────────────────────────────────────────────────────────────
 
 const HUMANIZER_PROMPT = `You are an expert academic writer who rewrites text to sound completely natural and human-written.
 
@@ -11,10 +11,10 @@ TASK: Rewrite the text below so that:
 3. It maintains academic quality and scholarly tone
 
 STRICT REWRITING RULES:
-- Completely restructure every sentence â€” change word order, split long sentences, merge short ones
+- Completely restructure every sentence — change word order, split long sentences, merge short ones
 - Replace ALL of these AI-giveaway words: "delve", "crucial", "comprehensive", "landscape", "multifaceted", "leverage", "tapestry", "plethora", "furthermore", "moreover", "in conclusion", "it is important to note", "it is worth noting", "plays a pivotal role"
 - Use natural academic voice: "This study looks at...", "The findings suggest...", "One possible explanation is..."
-- Vary sentence length deliberately â€” alternate between short (6-10 words) and medium (15-20 words) sentences
+- Vary sentence length deliberately — alternate between short (6-10 words) and medium (15-20 words) sentences
 - Use occasional contractions where appropriate (it's, don't, hasn't)
 - Keep ALL facts, citations, numbers, and references exactly as they are
 - Maintain the same section structure and headings
@@ -25,7 +25,7 @@ OUTPUT ONLY the rewritten text. No commentary. No "Here is..." prefix. Just the 
 
 const DETECTOR_PROMPT = `You are an AI content detection expert. Analyze the text and give scores.
 
-You MUST respond in this EXACT format â€” no other text before or after:
+You MUST respond in this EXACT format — no other text before or after:
 
 AI_SCORE: [number from 0 to 100]
 PLAG_SCORE: [number from 0 to 100]
@@ -45,7 +45,7 @@ Look for these AI indicators: uniform sentence length, passive voice overuse, wo
 
 Now analyze this text:`;
 
-// â”€â”€â”€ FLEXIBLE SCORE PARSER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── FLEXIBLE SCORE PARSER ──────────────────────────────────────────────────
 
 function extractNumber(text: string, pattern: RegExp): number | null {
   const match = text.match(pattern);
@@ -69,12 +69,12 @@ function parseDetectionResult(raw: string) {
   if (indicatorsMatch) {
     indicators = indicatorsMatch[1]
       .split('\n')
-      .map((l: string) => l.replace(/^[-â€¢*]\s*/, '').replace(/^\d+\.\s*/, '').trim())
+      .map((l: string) => l.replace(/^[-•*]\s*/, '').replace(/^\d+\.\s*/, '').trim())
       .filter((l: string) => l.length > 5);
   }
   if (indicators.length === 0) {
-    const bullets = raw.match(/[-â€¢*]\s+.{10,}/g);
-    if (bullets) indicators = bullets.map((b: string) => b.replace(/^[-â€¢*]\s+/, '').trim()).slice(0, 5);
+    const bullets = raw.match(/[-•*]\s+.{10,}/g);
+    if (bullets) indicators = bullets.map((b: string) => b.replace(/^[-•*]\s+/, '').trim()).slice(0, 5);
   }
   if (indicators.length === 0) {
     indicators = raw.split(/[.!?]+/)
@@ -101,7 +101,7 @@ function parseDetectionResult(raw: string) {
   };
 }
 
-// â”€â”€â”€ API HANDLER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── API HANDLER ────────────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
   try {

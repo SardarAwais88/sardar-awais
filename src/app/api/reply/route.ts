@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { callAIWithFallback, MODELS_FAST } from '@/lib/ai';
 
 const SYSTEM_PROMPT = `You are an expert Upwork/Fiverr negotiator and communication assistant for Sardar Awais (Full-Stack Developer & AI Automation Expert).

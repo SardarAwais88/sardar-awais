@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { callAIWithFallback, MODELS_QUALITY } from '@/lib/ai';
 
 const SYSTEM_PROMPT = `You are an expert Technical Project Manager and Senior Software Architect. 

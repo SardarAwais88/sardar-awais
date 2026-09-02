@@ -1,4 +1,4 @@
-﻿// â”€â”€â”€ Shared AI Model Configuration â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Shared AI Model Configuration ──────────────────────────────────────────
 // Best free models on OpenRouter, ordered by quality for different tasks
 
 export const MODELS_FAST = [

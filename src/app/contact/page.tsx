@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import styles from './page.module.css';
@@ -44,13 +44,13 @@ export default function ContactPage() {
                 <h3 className={styles.infoTitle}>Let&apos;s Build Together</h3>
                 <p className={styles.infoDesc}>
                   Whether you need a full-stack web application, an AI agent,
-                  an e-commerce solution, DevOps setup, or automation tools â€” I&apos;m here
+                  an e-commerce solution, DevOps setup, or automation tools — I&apos;m here
                   to help turn your vision into reality.
                 </p>
 
                 <div className={styles.infoItems}>
                   <div className={styles.infoItem}>
-                    <span className={styles.infoIcon}>ðŸ“§</span>
+                    <span className={styles.infoIcon}>📧</span>
                     <div>
                       <span className={styles.infoLabel}>Email</span>
                       <a href="mailto:info@sardarawais.com" className={styles.infoValue} style={{ textDecoration: 'none', color: 'var(--text-primary)' }}>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className={styles.infoItem}>
-                    <span className={styles.infoIcon}>ðŸ“±</span>
+                    <span className={styles.infoIcon}>📱</span>
                     <div>
                       <span className={styles.infoLabel}>Phone</span>
                       <a href="tel:+923472725754" className={styles.infoValue} style={{ textDecoration: 'none', color: 'var(--text-primary)' }}>
@@ -68,21 +68,21 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className={styles.infoItem}>
-                    <span className={styles.infoIcon}>ðŸ“</span>
+                    <span className={styles.infoIcon}>📍</span>
                     <div>
                       <span className={styles.infoLabel}>Location</span>
                       <span className={styles.infoValue}>Pakistan (Remote Worldwide)</span>
                     </div>
                   </div>
                   <div className={styles.infoItem}>
-                    <span className={styles.infoIcon}>â°</span>
+                    <span className={styles.infoIcon}>⏰</span>
                     <div>
                       <span className={styles.infoLabel}>Availability</span>
                       <span className={styles.infoValue}>Mon - Sat, 9:00 AM - 11:00 PM PKT</span>
                     </div>
                   </div>
                   <div className={styles.infoItem}>
-                    <span className={styles.infoIcon}>âš¡</span>
+                    <span className={styles.infoIcon}>⚡</span>
                     <div>
                       <span className={styles.infoLabel}>Response Time</span>
                       <span className={styles.infoValue}>Within 2-4 hours</span>
@@ -121,7 +121,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className={styles.platformLink}
                     >
-                      <span>ðŸŸ¢</span> Fiverr
+                      <span>🟢</span> Fiverr
                     </a>
                     <a
                       href="https://www.upwork.com/freelancers/sardara32"
@@ -129,7 +129,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className={styles.platformLink}
                     >
-                      <span>ðŸŸ¢</span> Upwork
+                      <span>🟢</span> Upwork
                     </a>
                     <a
                       href="https://github.com"
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className={styles.platformLink}
                     >
-                      <span>âš«</span> GitHub
+                      <span>⚫</span> GitHub
                     </a>
                     <a
                       href="https://www.linkedin.com/in/awais-mahboob-25202a13b/"
@@ -145,7 +145,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className={styles.platformLink}
                     >
-                      <span>ðŸ”µ</span> LinkedIn
+                      <span>🔵</span> LinkedIn
                     </a>
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
             <div className={styles.formWrapper}>
               {submitted ? (
                 <div className={styles.successCard}>
-                  <span className={styles.successIcon}>ðŸŽ‰</span>
+                  <span className={styles.successIcon}>🎉</span>
                   <h3>Message Sent!</h3>
                   <p>Thanks for reaching out. I&apos;ll get back to you within 24 hours.</p>
                 </div>
@@ -236,7 +236,7 @@ export default function ContactPage() {
                   </div>
 
                   <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                    Send via WhatsApp ðŸš€
+                    Send via WhatsApp 🚀
                   </button>
                   <p className={styles.formNote}>
                     Your message will open WhatsApp for instant communication

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { timeline, testimonials, stats } from '@/data/timeline';
 import Counter from '@/components/ui/Counter';
@@ -7,7 +7,7 @@ import styles from './page.module.css';
 export default function AboutPage() {
   return (
     <div className="page-content">
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Hero ──────────────────────────────────────── */}
       <section className={styles.aboutHero}>
         <div className="container">
           <div className={styles.heroGrid}>
@@ -15,7 +15,7 @@ export default function AboutPage() {
               <div className={styles.avatarWrapper}>
                 <div className={styles.avatarGlow} />
                 <div className={styles.avatar}>
-                  <span className={styles.avatarEmoji}>ðŸ‘¨â€ðŸ’»</span>
+                  <span className={styles.avatarEmoji}>👨‍💻</span>
                 </div>
                 <div className={styles.avatarRing} />
               </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
               </p>
               <p className={styles.heroBio}>
                 Since then, I&apos;ve expanded into freelancing across Fiverr, Upwork,
-                and Truelancer â€” delivering 500+ projects ranging from AI voice agents
+                and Truelancer — delivering 500+ projects ranging from AI voice agents
                 and trading bots to full e-commerce platforms and SaaS products. My
                 mission is to help businesses leverage cutting-edge technology to scale.
               </p>
@@ -62,7 +62,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Timeline ──────────────────────────────────── */}
       <section className={`section ${styles.timelineSection}`}>
         <div className="container">
           <div className="section-header">
@@ -100,7 +100,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Testimonials â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Testimonials ──────────────────────────────── */}
       <section className={`section ${styles.testimonialSection}`}>
         <div className="container">
           <div className="section-header">
@@ -122,7 +122,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className={styles.testimonialName}>{t.name}</h4>
                     <p className={styles.testimonialRole}>
-                      {t.role} â€” {t.project}
+                      {t.role} — {t.project}
                     </p>
                     <div className={styles.testimonialMeta}>
                       <span className={styles.testimonialPlatform}>
@@ -130,7 +130,7 @@ export default function AboutPage() {
                       </span>
                       <span className={styles.testimonialDate}>{t.date}</span>
                       <span className={styles.testimonialStars}>
-                        {'â­'.repeat(t.rating)}
+                        {'⭐'.repeat(t.rating)}
                       </span>
                     </div>
                   </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* â”€â”€ What I Bring â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── What I Bring ──────────────────────────────── */}
       <section className={`section ${styles.valuesSection}`}>
         <div className="container">
           <div className="section-header">
@@ -153,12 +153,12 @@ export default function AboutPage() {
 
           <div className={styles.valuesGrid}>
             {[
-              { icon: 'ðŸŽ¯', title: 'Results-Driven', desc: 'Every project is built with measurable outcomes in mind. I focus on delivering real business value, not just code.' },
-              { icon: 'âš¡', title: 'Fast Delivery', desc: 'I believe in agile development with regular milestones. You see progress from day one, not just at the deadline.' },
-              { icon: 'ðŸ”’', title: 'Reliable & Secure', desc: 'Clean, well-documented code with security best practices. Your project is built to last and scale.' },
-              { icon: 'ðŸ’¬', title: 'Clear Communication', desc: 'Regular updates, transparent timelines, and always available for questions. No surprises.' },
-              { icon: 'ðŸš€', title: 'Cutting-Edge Tech', desc: 'I stay ahead of the curve with the latest AI, web, and automation technologies to give you a competitive edge.' },
-              { icon: 'ðŸ¤', title: 'Long-Term Partner', desc: 'I don\'t just deliver and disappear. I provide ongoing support and grow with your business needs.' },
+              { icon: '🎯', title: 'Results-Driven', desc: 'Every project is built with measurable outcomes in mind. I focus on delivering real business value, not just code.' },
+              { icon: '⚡', title: 'Fast Delivery', desc: 'I believe in agile development with regular milestones. You see progress from day one, not just at the deadline.' },
+              { icon: '🔒', title: 'Reliable & Secure', desc: 'Clean, well-documented code with security best practices. Your project is built to last and scale.' },
+              { icon: '💬', title: 'Clear Communication', desc: 'Regular updates, transparent timelines, and always available for questions. No surprises.' },
+              { icon: '🚀', title: 'Cutting-Edge Tech', desc: 'I stay ahead of the curve with the latest AI, web, and automation technologies to give you a competitive edge.' },
+              { icon: '🤝', title: 'Long-Term Partner', desc: 'I don\'t just deliver and disappear. I provide ongoing support and grow with your business needs.' },
             ].map((v, i) => (
               <div key={i} className={styles.valueCard}>
                 <span className={styles.valueIcon}>{v.icon}</span>

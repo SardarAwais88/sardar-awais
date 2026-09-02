@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useRef, useEffect } from 'react';
 import styles from './Chatbot.module.css';
@@ -13,7 +13,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'ai',
-      content: "Hi there! ðŸ‘‹ I'm Awais's personal AI assistant. Looking to build an AI agent, automate workflows, or develop a custom web app? Ask me anything about Awais's skills, experience, or pricing!",
+      content: "Hi there! 👋 I'm Awais's personal AI assistant. Looking to build an AI agent, automate workflows, or develop a custom web app? Ask me anything about Awais's skills, experience, or pricing!",
     },
   ]);
   const [input, setInput] = useState('');
@@ -85,7 +85,7 @@ export default function Chatbot() {
           aria-label="Open chat"
         >
           <span className={styles.notificationBadge}></span>
-          ðŸ’¬
+          💬
         </button>
       )}
 
@@ -95,7 +95,7 @@ export default function Chatbot() {
           {/* Header */}
           <div className={styles.chatHeader}>
             <div className={styles.chatTitle}>
-              <div className={styles.avatar}>ðŸ¤–</div>
+              <div className={styles.avatar}>🤖</div>
               <div className={styles.statusInfo}>
                 <h3>Awais AI</h3>
                 <span className={styles.status}>
@@ -105,7 +105,7 @@ export default function Chatbot() {
               </div>
             </div>
             <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
-              âœ–
+              ✖
             </button>
           </div>
 
@@ -152,7 +152,7 @@ export default function Chatbot() {
               onClick={handleSend}
               disabled={!input.trim() || isTyping}
             >
-              âž¤
+              ➤
             </button>
           </div>
         </div>

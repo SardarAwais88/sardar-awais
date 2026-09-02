@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -62,7 +62,7 @@ export default function ReplyGeneratorPage() {
       <section className={`section ${styles.replySection}`}>
         <div className="container">
           <div className={styles.breadcrumb}>
-            <Link href="/tools">â† Back to Tools</Link>
+            <Link href="/tools">← Back to Tools</Link>
           </div>
 
           <div className="section-header">
@@ -79,7 +79,7 @@ export default function ReplyGeneratorPage() {
             {/* Input Panel */}
             <div className={styles.inputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>ðŸ“„</span>
+                <span className={styles.panelIcon}>📄</span>
                 <h3>Original Offer / Context (Optional)</h3>
               </div>
               <textarea
@@ -91,7 +91,7 @@ export default function ReplyGeneratorPage() {
               />
 
               <div className={styles.panelHeader} style={{ marginTop: '20px' }}>
-                <span className={styles.panelIcon}>ðŸ’¬</span>
+                <span className={styles.panelIcon}>💬</span>
                 <h3>Client&apos;s Message</h3>
               </div>
               <textarea
@@ -114,7 +114,7 @@ export default function ReplyGeneratorPage() {
                       Generating...
                     </>
                   ) : (
-                    <>ðŸ’¬ Generate Reply</>
+                    <>💬 Generate Reply</>
                   )}
                 </button>
                 <button onClick={handleClear} className="btn btn-outline">
@@ -127,11 +127,11 @@ export default function ReplyGeneratorPage() {
             {/* Output Panel */}
             <div className={styles.outputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>ðŸŽ¯</span>
+                <span className={styles.panelIcon}>🎯</span>
                 <h3>Generated Reply</h3>
                 {generatedReply && (
                   <button onClick={handleCopy} className={styles.copyBtn}>
-                    {copied ? 'âœ… Copied!' : 'ðŸ“‹ Copy'}
+                    {copied ? '✅ Copied!' : '📋 Copy'}
                   </button>
                 )}
               </div>
@@ -153,7 +153,7 @@ export default function ReplyGeneratorPage() {
                   </div>
                 ) : (
                   <div className={styles.emptyState}>
-                    <span className={styles.emptyIcon}>âœï¸</span>
+                    <span className={styles.emptyIcon}>✍️</span>
                     <p>Your AI-generated reply will appear here</p>
                     <span className={styles.emptyHint}>
                       Paste the conversation context and click &quot;Generate Reply&quot;

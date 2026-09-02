@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useState } from 'react';
 import styles from './LeadForm.module.css';
 
@@ -12,7 +12,7 @@ const services = [
   'Other',
 ];
 
-const budgets = ['< $500', '$500â€“$2k', '$2kâ€“$5k', '$5kâ€“$15k', '$15k+'];
+const budgets = ['< $500', '$500–$2k', '$2k–$5k', '$5k–$15k', '$15k+'];
 
 export default function LeadForm() {
   const [form, setForm] = useState({
@@ -70,11 +70,11 @@ export default function LeadForm() {
 
           <ul className={styles.perks}>
             {[
-              'âœ… Free project proposal in 24h',
-              'âœ… No upfront payment required',
-              'âœ… Dedicated project manager',
-              'âœ… Weekly progress updates',
-              'âœ… Post-launch support included',
+              '✅ Free project proposal in 24h',
+              '✅ No upfront payment required',
+              '✅ Dedicated project manager',
+              '✅ Weekly progress updates',
+              '✅ Post-launch support included',
             ].map((p) => (
               <li key={p} className={styles.perk}>
                 {p}
@@ -83,17 +83,17 @@ export default function LeadForm() {
           </ul>
 
           <div className={styles.badges}>
-            <span className={styles.badge}>â­ 5.0 Upwork Rating</span>
-            <span className={styles.badge}>ðŸš€ 500+ Projects</span>
-            <span className={styles.badge}>ðŸŒ Clients Worldwide</span>
+            <span className={styles.badge}>⭐ 5.0 Upwork Rating</span>
+            <span className={styles.badge}>🚀 500+ projects</span>
+            <span className={styles.badge}>🌍 Clients Worldwide</span>
           </div>
         </div>
 
-        {/* Right column â€” form */}
+        {/* Right column — form */}
         <div className={styles.right}>
           {status === 'sent' ? (
             <div className={styles.successState}>
-              <div className={styles.successIcon}>ðŸŽ‰</div>
+              <div className={styles.successIcon}>🎉</div>
               <h3>Request Received!</h3>
               <p>
                 We&apos;ll review your project and send a detailed proposal to{' '}
@@ -180,7 +180,7 @@ export default function LeadForm() {
               </div>
 
               {status === 'error' && (
-                <p className={styles.errorMsg}>âš ï¸ {errorMsg || 'Something went wrong. Try again.'}</p>
+                <p className={styles.errorMsg}>⚠️ {errorMsg || 'Something went wrong. Try again.'}</p>
               )}
 
               <button type="submit" disabled={status === 'sending'} className={styles.submitBtn}>
@@ -189,12 +189,12 @@ export default function LeadForm() {
                     <span className={styles.spinner} /> Sending...
                   </>
                 ) : (
-                  <>ðŸš€ Get Free Proposal</>
+                  <>🚀 Get Free Proposal</>
                 )}
               </button>
 
               <p className={styles.note}>
-                ðŸ”’ Your info is safe. We never share or sell your data.
+                🔒 Your info is safe. We never share or sell your data.
               </p>
             </form>
           )}

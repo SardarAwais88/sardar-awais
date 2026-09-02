@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -46,7 +46,7 @@ export default function BlogPage() {
         await fetchBlogs();
       }
     } catch {
-      // Silent fail â€” will retry next visit
+      // Silent fail — will retry next visit
     }
   };
 
@@ -85,7 +85,7 @@ export default function BlogPage() {
               disabled={generating}
               className={`btn btn-primary ${styles.genBtn}`}
             >
-              {generating ? 'â³ Generating...' : 'ðŸ¤– Generate New Blog Post'}
+              {generating ? '⏳ Generating...' : '🤖 Generate New Blog Post'}
             </button>
           </div>
 
@@ -98,7 +98,7 @@ export default function BlogPage() {
             </div>
           ) : blogs.length === 0 ? (
             <div className={styles.emptyState}>
-              <span className={styles.emptyIcon}>ðŸ“</span>
+              <span className={styles.emptyIcon}>📝</span>
               <h3>No Blog Posts Yet</h3>
               <p>Click &quot;Generate New Blog Post&quot; to create your first AI-generated article</p>
             </div>
@@ -121,7 +121,7 @@ export default function BlogPage() {
                       <span key={tag} className={styles.blogTag}>{tag}</span>
                     ))}
                   </div>
-                  <span className={styles.readMore}>Read Article â†’</span>
+                  <span className={styles.readMore}>Read Article →</span>
                 </Link>
               ))}
             </div>

@@ -1,9 +1,9 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'AI Tools | Sardar Awais â€“ Free & Premium AI Tools',
+  title: 'AI Tools | Sardar Awais – Free & Premium AI Tools',
   description:
     'Powerful AI tools built by Sardar Awais. Free tools: AI Proposal Writer, Client Reply Generator, Email Writer. Premium tools: AI Video Generator, AI Humanizer, Project Estimator, Code Reviewer. Start free today.',
   keywords: [
@@ -22,17 +22,17 @@ export const metadata: Metadata = {
 };
 
 const tools = [
-  // â”€â”€ FREE TOOLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── FREE TOOLS ──────────────────────────────────────────
   {
     id: 'proposal-writer',
     title: 'AI Proposal Writer',
     description:
       'Generate winning Upwork & Fiverr proposals instantly. Paste a job description and get a tailored, client-focused cover letter in seconds.',
-    icon: 'âœï¸',
+    icon: '✍️',
     href: '/tools/proposal-writer',
     color: '#00f5d4',
     tier: 'free',
-    badge: 'ðŸ†“ Free',
+    badge: '🆓 Free',
     badgeColor: '#00f5d4',
   },
   {
@@ -40,11 +40,11 @@ const tools = [
     title: 'Client Reply Generator',
     description:
       "Paste the client's message to generate a persuasive, professional reply that handles objections and closes deals.",
-    icon: 'ðŸ’¬',
+    icon: '💬',
     href: '/tools/reply-generator',
     color: '#7b61ff',
     tier: 'free',
-    badge: 'ðŸ†“ Free',
+    badge: '🆓 Free',
     badgeColor: '#00f5d4',
   },
   {
@@ -52,37 +52,37 @@ const tools = [
     title: 'AI Email Writer',
     description:
       'Generate professional client emails, follow-ups, and project updates with AI assistance. Never write a cold email from scratch again.',
-    icon: 'ðŸ“§',
+    icon: '📧',
     href: '/tools/email-writer',
     color: '#ff9f43',
     tier: 'free',
-    badge: 'ðŸ†“ Free',
+    badge: '🆓 Free',
     badgeColor: '#00f5d4',
   },
 
-  // â”€â”€ PREMIUM TOOLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── PREMIUM TOOLS ──────────────────────────────────────────
   {
     id: 'video-generator',
     title: 'AI Video Generator',
     description:
       'Create high-quality short and long videos from text or images using the best open-source models like Wan 2.6 and Hailuo 2.3.',
-    icon: 'ðŸŽ¬',
+    icon: '🎬',
     href: '/tools/video-generator',
     color: '#ff4d4d',
     tier: 'premium',
-    badge: 'â­ Premium',
+    badge: '⭐ Premium',
     badgeColor: '#ffd700',
   },
   {
     id: 'humanizer',
     title: 'AI Humanizer & Plagiarism Checker',
     description:
-      'Detect AI-generated text, check plagiarism risk, and rewrite content to sound 100% human â€” undetectable by any AI detector.',
-    icon: 'ðŸ›¡ï¸',
+      'Detect AI-generated text, check plagiarism risk, and rewrite content to sound 100% human — undetectable by any AI detector.',
+    icon: '🛡️',
     href: '/tools/humanizer',
     color: '#ff6b6b',
     tier: 'premium',
-    badge: 'â­ Premium',
+    badge: '⭐ Premium',
     badgeColor: '#ffd700',
   },
   {
@@ -90,11 +90,11 @@ const tools = [
     title: 'AI Project Estimator',
     description:
       'AI-powered project cost and timeline estimation. Get a detailed proposal-ready breakdown based on your requirements in seconds.',
-    icon: 'ðŸ“Š',
+    icon: '📊',
     href: '/tools/estimator',
     color: '#ffd700',
     tier: 'premium',
-    badge: 'â­ Premium',
+    badge: '⭐ Premium',
     badgeColor: '#ffd700',
   },
   {
@@ -102,11 +102,11 @@ const tools = [
     title: 'AI Code Reviewer',
     description:
       'Automated code review, bug detection, security analysis, and optimization suggestions powered by advanced AI models.',
-    icon: 'ðŸ”',
+    icon: '🔍',
     href: '/tools/code-reviewer',
     color: '#00d2d3',
     tier: 'premium',
-    badge: 'â­ Premium',
+    badge: '⭐ Premium',
     badgeColor: '#ffd700',
   },
 ];
@@ -126,7 +126,7 @@ export default function ToolsPage() {
               AI-Powered <span className="gradient-text">Tools</span>
             </h1>
             <p className="section-subtitle">
-              Built by <strong>Sardar Awais</strong> â€” practical tools that save
+              Built by <strong>Sardar Awais</strong> — practical tools that save
               hours of work every day. Free tools available instantly. Premium tools unlock
               advanced AI features.
             </p>
@@ -138,7 +138,7 @@ export default function ToolsPage() {
               { n: '7+', label: 'AI Tools' },
               { n: '3', label: 'Free Forever' },
               { n: '4', label: 'Premium Features' },
-              { n: '500+', label: 'Happy Users' },
+              { n: '50+', label: 'Happy Users' },
             ].map((s) => (
               <div key={s.label} className={styles.stat}>
                 <span className={styles.statN}>{s.n}</span>
@@ -147,13 +147,13 @@ export default function ToolsPage() {
             ))}
           </div>
 
-          {/* â”€â”€ Free Tools â”€â”€ */}
+          {/* ── Free Tools ── */}
           <div className={styles.tierSection}>
             <div className={styles.tierHeader}>
               <span className={styles.tierBadge} style={{ background: 'rgba(0,245,212,0.12)', color: '#00f5d4', borderColor: 'rgba(0,245,212,0.3)' }}>
-                ðŸ†“ Free Tools
+                🆓 Free Tools
               </span>
-              <h2 className={styles.tierTitle}>Start for Free â€” No Credit Card Required</h2>
+              <h2 className={styles.tierTitle}>Start for Free — No Credit Card Required</h2>
               <p className={styles.tierDesc}>
                 These tools are completely free to use. No sign-up, no limits. Built to help
                 freelancers and agencies win more clients.
@@ -180,20 +180,20 @@ export default function ToolsPage() {
                   <h3 className={styles.toolTitle}>{tool.title}</h3>
                   <p className={styles.toolDesc}>{tool.description}</p>
                   <span className={styles.toolCta} style={{ color: tool.color }}>
-                    Use Free Tool <span>â†’</span>
+                    Use Free Tool <span>→</span>
                   </span>
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* â”€â”€ Premium Tools â”€â”€ */}
+          {/* ── Premium Tools ── */}
           <div className={styles.tierSection}>
             <div className={styles.tierHeader}>
               <span className={styles.tierBadge} style={{ background: 'rgba(255,215,0,0.1)', color: '#ffd700', borderColor: 'rgba(255,215,0,0.3)' }}>
-                â­ Premium Tools
+                ⭐ Premium Tools
               </span>
-              <h2 className={styles.tierTitle}>Premium â€” Advanced AI, Unlimited Access</h2>
+              <h2 className={styles.tierTitle}>Premium — Advanced AI, Unlimited Access</h2>
               <p className={styles.tierDesc}>
                 Premium tools give you access to advanced AI models, video generation, plagiarism
                 detection, and more. <strong>Contact Awais</strong> to get access.
@@ -209,7 +209,7 @@ export default function ToolsPage() {
                 >
                   <div className={styles.cardGlow} style={{ background: `radial-gradient(circle at 50% 0%, ${tool.color}10, transparent 70%)` }} />
                   <div className={styles.premiumLock}>
-                    <span className={styles.lockIcon}>ðŸ”’</span>
+                    <span className={styles.lockIcon}>🔒</span>
                     <span>Premium Access Required</span>
                   </div>
                   <div className={styles.toolHeader}>
@@ -223,7 +223,7 @@ export default function ToolsPage() {
                   <h3 className={styles.toolTitle}>{tool.title}</h3>
                   <p className={styles.toolDesc}>{tool.description}</p>
                   <Link href="#get-quote" className={styles.premiumCta}>
-                    Get Access <span>â†’</span>
+                    Get Access <span>→</span>
                   </Link>
                 </div>
               ))}
@@ -242,7 +242,7 @@ export default function ToolsPage() {
               </p>
               <div className={styles.ctaActions}>
                 <Link href="/contact" className="btn btn-primary">
-                  ðŸš€ Request Custom Tool
+                  🚀 Request Custom Tool
                 </Link>
                 <Link href="#get-quote" className="btn btn-outline">
                   Get Free Quote

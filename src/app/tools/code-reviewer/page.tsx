@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -60,7 +60,7 @@ export default function CodeReviewerPage() {
       <section className={`section ${styles.proposalSection}`}>
         <div className="container">
           <div className={styles.breadcrumb}>
-            <Link href="/tools">â† Back to Tools</Link>
+            <Link href="/tools">← Back to Tools</Link>
           </div>
 
           <div className="section-header">
@@ -69,7 +69,7 @@ export default function CodeReviewerPage() {
               Code <span className="gradient-text">Reviewer</span>
             </h1>
             <p className="section-subtitle">
-              Paste your code â†’ Get automated review, bug fixes, and optimization tips
+              Paste your code → Get automated review, bug fixes, and optimization tips
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function CodeReviewerPage() {
             {/* Input */}
             <div className={styles.inputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>ðŸ’»</span>
+                <span className={styles.panelIcon}>💻</span>
                 <h3>Your Code</h3>
               </div>
               <textarea
@@ -100,7 +100,7 @@ export default function CodeReviewerPage() {
                       Reviewing...
                     </>
                   ) : (
-                    <>ðŸ” Review Code</>
+                    <>🔍 Review Code</>
                   )}
                 </button>
                 <button onClick={handleClear} className="btn btn-outline">
@@ -113,11 +113,11 @@ export default function CodeReviewerPage() {
             {/* Output */}
             <div className={styles.outputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>âœ¨</span>
+                <span className={styles.panelIcon}>✨</span>
                 <h3>Review & Feedback</h3>
                 {review && (
                   <button onClick={handleCopy} className={styles.copyBtn}>
-                    {copied ? 'âœ… Copied!' : 'ðŸ“‹ Copy'}
+                    {copied ? '✅ Copied!' : '📋 Copy'}
                   </button>
                 )}
               </div>
@@ -146,7 +146,7 @@ export default function CodeReviewerPage() {
                   </div>
                 ) : (
                   <div className={styles.emptyState}>
-                    <span className={styles.emptyIcon}>ðŸ”¬</span>
+                    <span className={styles.emptyIcon}>🔬</span>
                     <p>Your code review will appear here</p>
                     <span className={styles.emptyHint}>
                       Paste code and click "Review Code"
@@ -159,22 +159,22 @@ export default function CodeReviewerPage() {
 
           {/* Tips */}
           <div className={styles.tipsCard}>
-            <h4>ðŸ’¡ Pro Tips for Better Reviews</h4>
+            <h4>💡 Pro Tips for Better Reviews</h4>
             <div className={styles.tipsGrid}>
               <div className={styles.tip}>
-                <span>ðŸ“Œ</span>
+                <span>📌</span>
                 <p>Include the surrounding context or dependencies if the code relies on them.</p>
               </div>
               <div className={styles.tip}>
-                <span>ðŸŽ¯</span>
+                <span>🎯</span>
                 <p>Specify any specific concerns (e.g., "Is this SQL query safe?").</p>
               </div>
               <div className={styles.tip}>
-                <span>âœï¸</span>
+                <span>✏️</span>
                 <p>The AI will suggest a refactored, optimized version of your code.</p>
               </div>
               <div className={styles.tip}>
-                <span>ðŸ“ž</span>
+                <span>📞</span>
                 <p>Use this to catch subtle bugs before committing to production.</p>
               </div>
             </div>

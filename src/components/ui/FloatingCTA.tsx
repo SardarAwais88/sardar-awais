@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useState, useEffect } from 'react';
 import styles from './FloatingCTA.module.css';
 
@@ -23,7 +23,7 @@ export default function FloatingCTA() {
           className={`${styles.actionBtn} ${styles.whatsapp}`}
           aria-label="Chat on WhatsApp"
         >
-          <span className={styles.actionIcon}>ðŸ’¬</span>
+          <span className={styles.actionIcon}>💬</span>
           <span className={styles.actionLabel}>WhatsApp</span>
         </a>
 
@@ -32,7 +32,7 @@ export default function FloatingCTA() {
           className={`${styles.actionBtn} ${styles.call}`}
           aria-label="Book a free call"
         >
-          <span className={styles.actionIcon}>ðŸ“…</span>
+          <span className={styles.actionIcon}>📅</span>
           <span className={styles.actionLabel}>Book a Call</span>
         </a>
 
@@ -42,7 +42,7 @@ export default function FloatingCTA() {
           aria-label="Get a free quote"
           onClick={() => setExpanded(false)}
         >
-          <span className={styles.actionIcon}>ðŸš€</span>
+          <span className={styles.actionIcon}>🚀</span>
           <span className={styles.actionLabel}>Free Quote</span>
         </a>
       </div>
@@ -53,7 +53,7 @@ export default function FloatingCTA() {
         onClick={() => setExpanded((e) => !e)}
         aria-label="Contact options"
       >
-        <span className={styles.mainIcon}>{expanded ? 'âœ•' : 'ðŸ’¼'}</span>
+        <span className={styles.mainIcon}>{expanded ? '✕' : '💼'}</span>
         {!expanded && <span className={styles.pulse} />}
       </button>
     </div>

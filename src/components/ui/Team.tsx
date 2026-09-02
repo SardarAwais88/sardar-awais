@@ -1,19 +1,19 @@
-﻿import styles from './Team.module.css';
+import styles from './Team.module.css';
 import TiltCard from './TiltCard';
 
 const members = [
   {
     name: 'Sardar Awais',
     role: 'Founder & AI Engineer',
-    emoji: 'ðŸ§ ',
+    emoji: '🧠',
     color: '#00f5d4',
-    bio: 'Leading AI research, fullâ€‘stack development and automation for clients worldwide. 6+ years, 500+ projects.',
+    bio: 'Leading AI research, full‑stack development and automation for clients worldwide. 6+ years, 500+ projects.',
     skills: ['AI Agents', 'Next.js', 'Python', 'DevOps'],
   },
   {
     name: 'Ayesha Awais',
     role: 'CEO & Co-Founder',
-    emoji: 'ðŸ‘‘',
+    emoji: '👑',
     color: '#ff6b9d',
     bio: 'The inspiration behind AyeshaLabs. Visionary leader driving the agency\'s mission to build world-class digital products.',
     skills: ['Strategy', 'Leadership', 'Branding', 'Vision'],
@@ -21,7 +21,7 @@ const members = [
   {
     name: 'Zain Ahmad',
     role: 'Backend & DevOps Engineer',
-    emoji: 'âš™ï¸',
+    emoji: '⚙️',
     color: '#7b61ff',
     bio: 'Architecting scalable cloud infrastructure, APIs and CI/CD pipelines that handle millions of requests.',
     skills: ['AWS', 'Docker', 'Node.js', 'PostgreSQL'],

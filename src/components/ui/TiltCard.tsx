@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useRef, ReactNode, MouseEvent } from 'react';
 import styles from './TiltCard.module.css';
 

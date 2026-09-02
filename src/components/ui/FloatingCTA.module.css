@@ -1,4 +1,4 @@
-﻿/* â”€â”€ Floating CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Floating CTA ──────────────────────────────────────── */
 .wrapper {
   position: fixed;
   bottom: 2rem;
@@ -20,7 +20,7 @@
   pointer-events: all;
 }
 
-/* â”€â”€ Action buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Action buttons ───────── */
 .actions {
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@
   color: #000;
 }
 
-/* â”€â”€ Main button â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Main button ───────── */
 .mainBtn {
   position: relative;
   width: 58px;

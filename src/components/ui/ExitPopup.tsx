@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import styles from './ExitPopup.module.css';
 
@@ -67,20 +67,20 @@ export default function ExitPopup() {
     <div className={styles.overlay} onClick={(e) => e.target === e.currentTarget && dismiss()}>
       <div className={styles.modal}>
         {/* Close */}
-        <button className={styles.close} onClick={dismiss} aria-label="Close">âœ•</button>
+        <button className={styles.close} onClick={dismiss} aria-label="Close">✕</button>
 
         {/* Left */}
         <div className={styles.left}>
-          <div className={styles.emoji}>ðŸŽ</div>
+          <div className={styles.emoji}>🎁</div>
           <h2 className={styles.title}>Wait! Before You Go...</h2>
           <p className={styles.desc}>
-            Get a <strong>FREE 30-minute strategy call</strong> + a custom project roadmap â€” no strings attached.
+            Get a <strong>FREE 30-minute strategy call</strong> + a custom project roadmap — no strings attached.
           </p>
           <ul className={styles.perks}>
-            <li>âœ… Free project audit</li>
-            <li>âœ… Tech stack recommendations</li>
-            <li>âœ… Cost & timeline estimate</li>
-            <li>âœ… No sales pressure</li>
+            <li>✅ Free project audit</li>
+            <li>✅ Tech stack recommendations</li>
+            <li>✅ Cost & timeline estimate</li>
+            <li>✅ No sales pressure</li>
           </ul>
         </div>
 
@@ -88,13 +88,13 @@ export default function ExitPopup() {
         <div className={styles.right}>
           {sent ? (
             <div className={styles.success}>
-              <div className={styles.successIcon}>ðŸŽ‰</div>
+              <div className={styles.successIcon}>🎉</div>
               <h3>You&apos;re In!</h3>
               <p>We&apos;ll reach out within 24 hours to schedule your free call.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className={styles.form}>
-              <p className={styles.formLabel}>Drop your email â€” we&apos;ll do the rest:</p>
+              <p className={styles.formLabel}>Drop your email — we&apos;ll do the rest:</p>
               <input
                 type="email"
                 className={styles.input}
@@ -105,7 +105,7 @@ export default function ExitPopup() {
                 autoFocus
               />
               <button type="submit" className={styles.btn}>
-                ðŸš€ Claim My Free Call
+                🚀 Claim My Free Call
               </button>
               <button type="button" className={styles.skip} onClick={dismiss}>
                 No thanks, I don&apos;t need help

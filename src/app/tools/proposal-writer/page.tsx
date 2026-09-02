@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -60,7 +60,7 @@ export default function ProposalWriterPage() {
       <section className={`section ${styles.proposalSection}`}>
         <div className="container">
           <div className={styles.breadcrumb}>
-            <Link href="/tools">â† Back to Tools</Link>
+            <Link href="/tools">← Back to Tools</Link>
           </div>
 
           <div className="section-header">
@@ -69,7 +69,7 @@ export default function ProposalWriterPage() {
               AI <span className="gradient-text">Proposal Writer</span>
             </h1>
             <p className="section-subtitle">
-              Paste a job description â†’ Get a winning, client-focused proposal instantly
+              Paste a job description → Get a winning, client-focused proposal instantly
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function ProposalWriterPage() {
             {/* Input */}
             <div className={styles.inputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>ðŸ“‹</span>
+                <span className={styles.panelIcon}>📋</span>
                 <h3>Job Description</h3>
               </div>
               <textarea
@@ -99,7 +99,7 @@ export default function ProposalWriterPage() {
                       Generating...
                     </>
                   ) : (
-                    <>âœï¸ Generate Proposal</>
+                    <>✍️ Generate Proposal</>
                   )}
                 </button>
                 <button onClick={handleClear} className="btn btn-outline">
@@ -112,11 +112,11 @@ export default function ProposalWriterPage() {
             {/* Output */}
             <div className={styles.outputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>ðŸŽ¯</span>
+                <span className={styles.panelIcon}>🎯</span>
                 <h3>Your Proposal</h3>
                 {proposal && (
                   <button onClick={handleCopy} className={styles.copyBtn}>
-                    {copied ? 'âœ… Copied!' : 'ðŸ“‹ Copy'}
+                    {copied ? '✅ Copied!' : '📋 Copy'}
                   </button>
                 )}
               </div>
@@ -138,7 +138,7 @@ export default function ProposalWriterPage() {
                   </div>
                 ) : (
                   <div className={styles.emptyState}>
-                    <span className={styles.emptyIcon}>âœï¸</span>
+                    <span className={styles.emptyIcon}>✍️</span>
                     <p>Your AI-generated proposal will appear here</p>
                     <span className={styles.emptyHint}>
                       Paste a job description and click &quot;Generate Proposal&quot;
@@ -151,22 +151,22 @@ export default function ProposalWriterPage() {
 
           {/* Tips */}
           <div className={styles.tipsCard}>
-            <h4>ðŸ’¡ Pro Tips for Better Proposals</h4>
+            <h4>💡 Pro Tips for Better Proposals</h4>
             <div className={styles.tipsGrid}>
               <div className={styles.tip}>
-                <span>ðŸ“Œ</span>
+                <span>📌</span>
                 <p>Include the full job description with required skills for the best results</p>
               </div>
               <div className={styles.tip}>
-                <span>ðŸŽ¯</span>
+                <span>🎯</span>
                 <p>The AI targets specific client needs and avoids generic filler language</p>
               </div>
               <div className={styles.tip}>
-                <span>âœï¸</span>
+                <span>✏️</span>
                 <p>Review and personalize the generated proposal before sending</p>
               </div>
               <div className={styles.tip}>
-                <span>ðŸ“ž</span>
+                <span>📞</span>
                 <p>Every proposal ends with a Zoom call invitation to build rapport</p>
               </div>
             </div>

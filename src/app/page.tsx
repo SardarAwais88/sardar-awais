@@ -1,4 +1,4 @@
-﻿import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import TypeWriter from '@/components/ui/TypeWriter';
 import Counter from '@/components/ui/Counter';
@@ -9,36 +9,36 @@ import Team from '@/components/ui/Team';
 import LeadForm from '@/components/ui/LeadForm';
 
 const techStack = [
-  { name: 'React', icon: 'âš›ï¸' },
-  { name: 'Next.js', icon: 'â–²' },
-  { name: 'TypeScript', icon: 'ðŸ“˜' },
-  { name: 'JavaScript', icon: 'ðŸ’›' },
-  { name: 'Python', icon: 'ðŸ' },
-  { name: 'Node.js', icon: 'ðŸŸ¢' },
-  { name: 'FastAPI', icon: 'âš¡' },
-  { name: 'Django', icon: 'ðŸŽ¸' },
-  { name: 'PHP', icon: 'ðŸ˜' },
-  { name: 'Laravel', icon: 'ðŸ”´' },
-  { name: 'Vue.js', icon: 'ðŸ’š' },
-  { name: 'Three.js', icon: 'ðŸŽ®' },
-  { name: 'GraphQL', icon: 'â—ˆ' },
-  { name: 'OpenAI', icon: 'ðŸ§ ' },
-  { name: 'LangChain', icon: 'ðŸ”—' },
-  { name: 'CrewAI', icon: 'ðŸ¤–' },
-  { name: 'VAPI', icon: 'ðŸŽ™ï¸' },
-  { name: 'TensorFlow', icon: 'ðŸ”¶' },
-  { name: 'Docker', icon: 'ðŸ³' },
-  { name: 'Kubernetes', icon: 'â˜¸ï¸' },
-  { name: 'AWS', icon: 'â˜ï¸' },
-  { name: 'GitHub Actions', icon: 'ðŸ”„' },
-  { name: 'Terraform', icon: 'ðŸ—ï¸' },
-  { name: 'Shopify', icon: 'ðŸ›ï¸' },
-  { name: 'WordPress', icon: 'ðŸ“' },
-  { name: 'MongoDB', icon: 'ðŸƒ' },
-  { name: 'PostgreSQL', icon: 'ðŸ˜' },
-  { name: 'Redis', icon: 'ðŸ”´' },
-  { name: 'Firebase', icon: 'ðŸ”¥' },
-  { name: 'Git', icon: 'ðŸ“' },
+  { name: 'React', icon: '⚛️' },
+  { name: 'Next.js', icon: '▲' },
+  { name: 'TypeScript', icon: '📘' },
+  { name: 'JavaScript', icon: '💛' },
+  { name: 'Python', icon: '🐍' },
+  { name: 'Node.js', icon: '🟢' },
+  { name: 'FastAPI', icon: '⚡' },
+  { name: 'Django', icon: '🎸' },
+  { name: 'PHP', icon: '🐘' },
+  { name: 'Laravel', icon: '🔴' },
+  { name: 'Vue.js', icon: '💚' },
+  { name: 'Three.js', icon: '🎮' },
+  { name: 'GraphQL', icon: '◈' },
+  { name: 'OpenAI', icon: '🧠' },
+  { name: 'LangChain', icon: '🔗' },
+  { name: 'CrewAI', icon: '🤖' },
+  { name: 'VAPI', icon: '🎙️' },
+  { name: 'TensorFlow', icon: '🔶' },
+  { name: 'Docker', icon: '🐳' },
+  { name: 'Kubernetes', icon: '☸️' },
+  { name: 'AWS', icon: '☁️' },
+  { name: 'GitHub Actions', icon: '🔄' },
+  { name: 'Terraform', icon: '🏗️' },
+  { name: 'Shopify', icon: '🛍️' },
+  { name: 'WordPress', icon: '📝' },
+  { name: 'MongoDB', icon: '🍃' },
+  { name: 'PostgreSQL', icon: '🐘' },
+  { name: 'Redis', icon: '🔴' },
+  { name: 'Firebase', icon: '🔥' },
+  { name: 'Git', icon: '📁' },
 ];
 
 const featuredProjects = projects.filter((p) =>
@@ -49,7 +49,7 @@ export default function HomePage() {
   return (
     <>
       <div className="page-content">
-        {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── HERO ──────────────────────────────────────── */}
         <section className={styles.hero}>
           <div className={styles.heroContent}>
             <div className={styles.heroBadge}>
@@ -81,30 +81,30 @@ export default function HomePage() {
             </div>
 
             <p className={styles.heroDescription}>
-              I am <strong>Sardar Awais</strong> â€” an AI Engineer & Full-Stack Developer. I build urgent custom websites, AI agents, voice bots, and enterprise software solutions for clients worldwide. Let's build something amazing together.
+              I am <strong>Sardar Awais</strong> — an AI Engineer & Full-Stack Developer. I build urgent custom websites, AI agents, voice bots, and enterprise software solutions for clients worldwide. Let's build something amazing together.
             </p>
 
             <div className={styles.heroCTA}>
               <Link href="/projects" className="btn btn-primary">
                 View My Work
-                <span>â†’</span>
+                <span>→</span>
               </Link>
               <Link href="/contact" className="btn btn-outline">
                 Let&apos;s Talk
-                <span>ðŸ’¬</span>
+                <span>💬</span>
               </Link>
               <Link href="/resume" className="btn btn-outline">
                 Download CV
-                <span>ðŸ“„</span>
+                <span>📄</span>
               </Link>
             </div>
 
             <div className={styles.heroPlatforms}>
               <span className={styles.platformLabel}>Trusted on:</span>
               <div className={styles.platformBadges}>
-                <span className={styles.platformBadge}>ðŸŸ¢ Fiverr</span>
-                <span className={styles.platformBadge}>ðŸŸ¢ Upwork</span>
-                <span className={styles.platformBadge}>ðŸŸ¢ Truelancer</span>
+                <span className={styles.platformBadge}>🟢 Fiverr</span>
+                <span className={styles.platformBadge}>🟢 Upwork</span>
+                <span className={styles.platformBadge}>🟢 Truelancer</span>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* â”€â”€ STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── STATS ─────────────────────────────────────── */}
         <section className={styles.stats}>
           <div className={styles.statsGrid}>
             {stats.map((stat, i) => (
@@ -159,7 +159,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* â”€â”€ FEATURED PROJECTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── FEATURED PROJECTS ─────────────────────────── */}
         <section className={`section ${styles.featured}`}>
           <div className="container">
             <div className="section-header">
@@ -215,13 +215,13 @@ export default function HomePage() {
 
             <div className={styles.viewAll}>
               <Link href="/projects" className="btn btn-outline">
-                View All 48 Projects â†’
+                View All 48 Projects →
               </Link>
             </div>
           </div>
         </section>
 
-        {/* â”€â”€ TECH STACK â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── TECH STACK ────────────────────────────────── */}
         <section className={`section ${styles.techSection}`}>
           <div className="container">
             <div className="section-header">
@@ -246,7 +246,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── TESTIMONIALS ──────────────────────────────── */}
         <section className={`section ${styles.testimonials}`}>
           <div className="container">
             <div className="section-header">
@@ -263,11 +263,11 @@ export default function HomePage() {
                     <div className={styles.testimonialAvatar}>{testimonial.avatar}</div>
                     <div>
                       <h4 className={styles.testimonialName}>{testimonial.name}</h4>
-                      <p className={styles.testimonialRole}>{testimonial.role} Â· {testimonial.platform}</p>
+                      <p className={styles.testimonialRole}>{testimonial.role} · {testimonial.platform}</p>
                     </div>
                   </div>
                   <div className={styles.testimonialRating}>
-                    {"â­".repeat(testimonial.rating)}
+                    {"⭐".repeat(testimonial.rating)}
                   </div>
                   <p className={styles.testimonialText}>"{testimonial.text}"</p>
                   <p className={styles.testimonialProject}>Project: {testimonial.project}</p>
@@ -277,7 +277,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── CTA ───────────────────────────────────────── */}
         <section className={styles.cta}>
           <div className="container">
             <div className={styles.ctaCard}>
@@ -294,11 +294,11 @@ export default function HomePage() {
               <div className={styles.ctaButtons}>
                 <Link href="/contact" className="btn btn-primary">
                   Start a Project
-                  <span>ðŸš€</span>
+                  <span>🚀</span>
                 </Link>
                 <Link href="/services" className="btn btn-outline">
                   View Services
-                  <span>ðŸ’¡</span>
+                  <span>💡</span>
                 </Link>
               </div>
             </div>

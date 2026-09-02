@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -36,7 +36,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>ðŸ‘¨â€ðŸ’»</span>
+          <span className={styles.logoIcon}>👨‍💻</span>
           <span className={styles.logoText}>
             Sardar<span className={styles.logoAccent}>Awais</span>
           </span>
@@ -54,7 +54,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="#get-quote" className={styles.cta}>
-            Hire Us ðŸš€
+            Hire Us 🚀
           </Link>
         </div>
 

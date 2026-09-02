@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { callAIWithFallback, MODELS_QUALITY } from '@/lib/ai';
 import fs from 'fs';
 import path from 'path';
@@ -54,9 +54,9 @@ IMPORTANT RULES:
 - Include 4-6 detailed sections with real technical content
 - Write a conclusion with actionable takeaways
 - Use transition words: Furthermore, Additionally, Moreover, In conclusion
-- Be detailed and educational â€” explain concepts thoroughly
-- Do NOT output JSON â€” just write the blog in plain markdown
-- Do NOT wrap in code blocks â€” just write markdown directly
+- Be detailed and educational — explain concepts thoroughly
+- Do NOT output JSON — just write the blog in plain markdown
+- Do NOT wrap in code blocks — just write markdown directly
 - Start immediately with the introduction paragraph, do NOT repeat the title`;
 
 function ensureWriteDir() {
@@ -125,14 +125,14 @@ async function getTrendingTopic(): Promise<string> {
     }
     
     // Fallback if all trending topics are used or parsing fails
-    return TRENDING_TOPICS[Math.floor(Math.random() * TRENDING_TOPICS.length)] + ' â€” 2026 Updated Guide';
+    return TRENDING_TOPICS[Math.floor(Math.random() * TRENDING_TOPICS.length)] + ' — 2026 Updated Guide';
   } catch (error) {
     console.error('Error fetching Google Trends:', error);
     // Fallback to static list
     const usedTopics = new Set(getExistingTopics());
     const available = TRENDING_TOPICS.filter((t) => !usedTopics.has(t));
     if (available.length === 0) {
-      return TRENDING_TOPICS[Math.floor(Math.random() * TRENDING_TOPICS.length)] + ' â€” 2026 Updated Guide';
+      return TRENDING_TOPICS[Math.floor(Math.random() * TRENDING_TOPICS.length)] + ' — 2026 Updated Guide';
     }
     return available[Math.floor(Math.random() * available.length)];
   }
@@ -167,7 +167,7 @@ function generateDescription(topic: string, content: string): string {
 }
 
 function generateTags(topic: string): string[] {
-  const words = topic.toLowerCase().split(/[\s:,\-â€”]+/).filter((w) => w.length > 2);
+  const words = topic.toLowerCase().split(/[\s:,\-—]+/).filter((w) => w.length > 2);
   const techKeywords = [
     'react', 'nextjs', 'python', 'nodejs', 'ai', 'devops', 'docker', 'kubernetes',
     'typescript', 'javascript', 'shopify', 'api', 'automation', 'machine-learning',
@@ -184,7 +184,7 @@ async function generateBlogPost(topic?: string) {
 
   const rawContent = await callAIWithFallback(
     SYSTEM_PROMPT,
-    `Write a COMPLETE, detailed, SEO-optimized blog post about: "${selectedTopic}".\n\nWrite at least 800 words. Include code examples. Use ## headings. Start with an engaging introduction paragraph. End with a conclusion. Write in markdown format. Do NOT return JSON â€” just write the full article.`,
+    `Write a COMPLETE, detailed, SEO-optimized blog post about: "${selectedTopic}".\n\nWrite at least 800 words. Include code examples. Use ## headings. Start with an engaging introduction paragraph. End with a conclusion. Write in markdown format. Do NOT return JSON — just write the full article.`,
     MODELS_QUALITY,
     { maxTokens: 4000, temperature: 0.75, title: 'Blog Generator' }
   );
@@ -217,7 +217,7 @@ async function generateBlogPost(topic?: string) {
   return blogPost;
 }
 
-// POST â€” generate a new blog
+// POST — generate a new blog
 export async function POST() {
   try {
     const blog = await generateBlogPost();
@@ -229,7 +229,7 @@ export async function POST() {
   }
 }
 
-// GET â€” list all blogs (merges static + dynamic)
+// GET — list all blogs (merges static + dynamic)
 export async function GET() {
   try {
     const allFiles = getAllBlogFiles()

@@ -1,4 +1,4 @@
-﻿.blogSection {
+.blogSection {
   padding-top: 140px;
 }
 
@@ -18,7 +18,7 @@
   cursor: not-allowed;
 }
 
-/* â”€â”€ Blog Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Blog Grid ─────────────────────────────────────────── */
 .blogGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -109,7 +109,7 @@
   margin-top: auto;
 }
 
-/* â”€â”€ Loading / Empty States â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Loading / Empty States ────────────────────────────── */
 .loadingState {
   display: flex;
   flex-direction: column;
@@ -168,7 +168,7 @@
   color: var(--text-muted);
 }
 
-/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .blogGrid {
     grid-template-columns: repeat(2, 1fr);
