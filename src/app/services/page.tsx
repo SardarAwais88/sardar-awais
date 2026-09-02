@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { services, processSteps } from '@/data/services';
@@ -56,7 +56,7 @@ export default function ServicesPage() {
                         className={styles.featureCheck}
                         style={{ color: service.color }}
                       >
-                        ✓
+                        âœ“
                       </span>
                       {f}
                     </li>
@@ -74,7 +74,7 @@ export default function ServicesPage() {
                     </span>
                   </div>
                   <Link href="/contact" className={styles.serviceBtn}>
-                    Get Started →
+                    Get Started â†’
                   </Link>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function ServicesPage() {
               solution for your business.
             </p>
             <Link href="/contact" className="btn btn-primary">
-              Contact Me Now 🚀
+              Contact Me Now ðŸš€
             </Link>
           </div>
         </div>

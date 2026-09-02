@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useRef } from 'react';
 import styles from './page.module.css';
@@ -7,7 +7,7 @@ export default function ResumePage() {
   const resumeRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = () => {
-    // Open print dialog for the resume section — user can save as PDF
+    // Open print dialog for the resume section â€” user can save as PDF
     const printWindow = window.open('', '_blank');
     if (!printWindow) return;
 
@@ -16,7 +16,7 @@ export default function ResumePage() {
       <!DOCTYPE html>
       <html>
       <head>
-        <title>Awais Mehboob - Resume</title>
+        <title>Sardar Awais - Resume</title>
         <style>
           * { margin: 0; padding: 0; box-sizing: border-box; }
           @page { margin: 0.4in 0.5in; }
@@ -71,13 +71,13 @@ export default function ResumePage() {
               My <span className="gradient-text">Resume</span>
             </h1>
             <p className="section-subtitle">
-              ATS-optimized professional resume — download or print as PDF
+              ATS-optimized professional resume â€” download or print as PDF
             </p>
           </div>
 
           <div className={styles.downloadBar}>
             <button onClick={handleDownload} className={`btn btn-primary ${styles.downloadBtn}`}>
-              📄 Download Resume as PDF
+              ðŸ“„ Download Resume as PDF
             </button>
             <a
               href="https://www.linkedin.com/in/awais-mahboob-25202a13b/"
@@ -85,7 +85,7 @@ export default function ResumePage() {
               rel="noopener noreferrer"
               className="btn btn-outline"
             >
-              🔗 View LinkedIn Profile
+              ðŸ”— View LinkedIn Profile
             </a>
           </div>
 
@@ -94,21 +94,21 @@ export default function ResumePage() {
             <div className={styles.resumeCard} ref={resumeRef}>
 
               {/* Header */}
-              <h1>AWAIS MEHBOOB</h1>
+              <h1>Sardar Awais</h1>
               <div className="subtitle">Full-Stack Developer | AI Engineer | DevOps Specialist | Agentic AI Expert</div>
               <div className="header-contact">
-                <span>📧 khanowais8888@gmail.com</span>
-                <span>📱 +92 347 2725754</span>
-                <span>📍 Pakistan (Remote Worldwide)</span>
-                <span>🔗 <a href="https://www.linkedin.com/in/awais-mahboob-25202a13b/">LinkedIn</a></span>
-                <span>🟢 <a href="https://www.fiverr.com/sellers/mahboobhussa500">Fiverr</a></span>
-                <span>🟢 <a href="https://www.upwork.com/freelancers/sardara32">Upwork</a></span>
+                <span>ðŸ“§ info@sardarawais.com</span>
+                <span>ðŸ“± +92 347 2725754</span>
+                <span>ðŸ“ Pakistan (Remote Worldwide)</span>
+                <span>ðŸ”— <a href="https://www.linkedin.com/in/awais-mahboob-25202a13b/">LinkedIn</a></span>
+                <span>ðŸŸ¢ <a href="https://www.fiverr.com/sellers/mahboobhussa500">Fiverr</a></span>
+                <span>ðŸŸ¢ <a href="https://www.upwork.com/freelancers/sardara32">Upwork</a></span>
               </div>
 
               {/* Professional Summary */}
               <h2>Professional Summary</h2>
               <p className="summary">
-                Results-driven Full-Stack Developer and AI Engineer with 6+ years of professional experience delivering 50+ production-grade projects across web development, AI agent systems, e-commerce platforms, and DevOps infrastructure. Expert in building custom AI agents using CrewAI, LangChain, and VAPI; scalable web applications with React, Next.js, and Node.js; and enterprise e-commerce solutions on Shopify and WooCommerce. Proven track record of automating complex business workflows, reducing operational costs by up to 60%, and delivering projects on Fiverr, Upwork, and Truelancer with consistent 5-star reviews. Passionate about leveraging cutting-edge agentic AI and RAG architectures to solve real-world business problems.
+                Results-driven Full-Stack Developer and AI Engineer with 6+ years of professional experience delivering 500+ production-grade projects across web development, AI agent systems, e-commerce platforms, and DevOps infrastructure. Expert in building custom AI agents using CrewAI, LangChain, and VAPI; scalable web applications with React, Next.js, and Node.js; and enterprise e-commerce solutions on Shopify and WooCommerce. Proven track record of automating complex business workflows, reducing operational costs by up to 60%, and delivering projects on Fiverr, Upwork, and Truelancer with consistent 5-star reviews. Passionate about leveraging cutting-edge agentic AI and RAG architectures to solve real-world business problems.
               </p>
 
               {/* Technical Skills */}
@@ -154,12 +154,12 @@ export default function ResumePage() {
               <div style={{ marginBottom: '14px' }}>
                 <div className="exp-header">
                   <h3>Senior Freelance Full-Stack Developer & AI Engineer</h3>
-                  <span className="exp-date">2020 – Present</span>
+                  <span className="exp-date">2020 â€“ Present</span>
                 </div>
                 <div className="exp-company">Fiverr, Upwork & Truelancer | Remote</div>
                 <ul>
-                  <li>Delivered <strong>50+ projects</strong> across AI agents, web applications, e-commerce, automation, and DevOps with consistent 5-star ratings</li>
-                  <li>Built <strong>custom AI voice agents using VAPI</strong> for dental clinics, real estate, and customer support — handling 500+ calls/day</li>
+                  <li>Delivered <strong>500+ projects</strong> across AI agents, web applications, e-commerce, automation, and DevOps with consistent 5-star ratings</li>
+                  <li>Built <strong>custom AI voice agents using VAPI</strong> for dental clinics, real estate, and customer support â€” handling 500+ calls/day</li>
                   <li>Developed <strong>multi-agent AI systems using CrewAI</strong> with RAG pipelines, reducing client operational costs by 40-60%</li>
                   <li>Created <strong>full-stack SaaS platforms</strong> using React/Next.js + Node.js/Python serving 10,000+ active users</li>
                   <li>Built <strong>automated trading bots</strong> for cryptocurrency markets with real-time Telegram alerts and portfolio management</li>
@@ -172,7 +172,7 @@ export default function ResumePage() {
               <div style={{ marginBottom: '14px' }}>
                 <div className="exp-header">
                   <h3>Full-Stack Developer</h3>
-                  <span className="exp-date">2019 – 2020</span>
+                  <span className="exp-date">2019 â€“ 2020</span>
                 </div>
                 <div className="exp-company">Kinitsol | On-site</div>
                 <ul>
@@ -206,7 +206,7 @@ export default function ResumePage() {
               </div>
 
               <div className="project-item">
-                <h3>AutoExec Mind — AI Workflow Automation Platform</h3>
+                <h3>AutoExec Mind â€” AI Workflow Automation Platform</h3>
                 <p>AI automation platform that plans and executes complex workflows autonomously using multi-agent architecture. Handles data processing, API orchestration, and decision making.</p>
                 <div className="project-tech">Tech: Python, React, FastAPI, Multi-Agent Systems</div>
               </div>
@@ -227,22 +227,22 @@ export default function ResumePage() {
               <h2>Education</h2>
               <div className="exp-header">
                 <h3>Bachelor of Science in Computer Science</h3>
-                <span className="exp-date">2015 – 2019</span>
+                <span className="exp-date">2015 â€“ 2019</span>
               </div>
 
               {/* Certifications */}
               <h2>Certifications & Continuous Learning</h2>
               <ul>
-                <li>AWS Cloud Practitioner — Amazon Web Services</li>
-                <li>Google AI/ML Professional Certificate — Google</li>
-                <li>Full-Stack Web Development — freeCodeCamp</li>
-                <li>DevOps Engineering — LinkedIn Learning</li>
-                <li>LangChain & LLM Application Development — DeepLearning.AI</li>
+                <li>AWS Cloud Practitioner â€” Amazon Web Services</li>
+                <li>Google AI/ML Professional Certificate â€” Google</li>
+                <li>Full-Stack Web Development â€” freeCodeCamp</li>
+                <li>DevOps Engineering â€” LinkedIn Learning</li>
+                <li>LangChain & LLM Application Development â€” DeepLearning.AI</li>
               </ul>
 
               {/* Languages */}
               <h2>Languages</h2>
-              <p>English (Fluent) • Urdu (Native) • Punjabi (Native)</p>
+              <p>English (Fluent) â€¢ Urdu (Native) â€¢ Punjabi (Native)</p>
 
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+﻿import { NextRequest, NextResponse } from 'next/server';
 import { callAIWithFallback, MODELS_QUALITY } from '@/lib/ai';
 import { projects } from '@/data/projects';
 import { skillCategories } from '@/data/skills';
@@ -8,10 +8,10 @@ import { timeline } from '@/data/timeline';
 const skills = skillCategories.flatMap(c => c.skills);
 
 const contextData = `
-NAME: Awais Mehboob
+NAME: Sardar Awais
 ROLE: Full-Stack Developer, AI Engineer, & DevOps Expert
 LOCATION: Pakistan (Available globally)
-CONTACT: Email: khanowais8888@gmail.com, Phone/WhatsApp: +923472725754
+CONTACT: Email: info@sardarawais.com, Phone/WhatsApp: +923472725754
 
 --- SKILLS ---
 ${skillCategories.map(c => c.name).join(', ')}
@@ -27,7 +27,7 @@ ${projects.slice(0, 10).map(p => `- ${p.title} (${p.category}): ${p.description}
 ${timeline.map(t => `- ${t.year}: ${t.title} ${t.company ? 'at ' + t.company : ''} - ${t.description}`).join('\n')}
 `;
 
-const SYSTEM_PROMPT = `You are the personal AI Assistant representing Awais Mehboob on his professional portfolio website. 
+const SYSTEM_PROMPT = `You are the personal AI Assistant representing Sardar Awais on his professional portfolio website. 
 
 YOUR GOAL: 
 You are speaking DIRECTLY to potential clients. Answer their questions about Awais's skills, projects, pricing, and experience using the context provided below. Your ultimate goal is to build trust, sound highly professional yet human and friendly, and gently guide the user to contact Awais for a project.
@@ -43,7 +43,7 @@ YOUR PERSONA:
 CALL TO ACTION & LINKS:
 Whenever appropriate, encourage them to contact Awais directly. YOU MUST USE THESE EXACT MARKDOWN LINKS so the user can click them:
 - WhatsApp: [Chat on WhatsApp](https://wa.me/923472725754)
-- Email: [Email Awais](mailto:khanowais8888@gmail.com)
+- Email: [Email Awais](mailto:info@sardarawais.com)
 
 CONTEXT DATA:
 ${contextData}

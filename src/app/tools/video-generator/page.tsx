@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
@@ -128,12 +128,12 @@ export default function VideoGenerator() {
   return (
     <>
       <Head>
-        <title>AI Video Generator - Awais Mehboob</title>
+        <title>AI Video Generator - Sardar Awais</title>
       </Head>
       <section className={styles.videoSection}>
         <div className="container">
           <div className={styles.breadcrumb}>
-            <Link href="/tools">← Back to Tools</Link>
+            <Link href="/tools">â† Back to Tools</Link>
           </div>
           
           <div className="section-header">
@@ -148,13 +148,13 @@ export default function VideoGenerator() {
               className={`${styles.modeBtn} ${mode === 'text2video' ? styles.modeBtnActive : ''}`}
               onClick={() => { setMode('text2video'); setError(null); }}
             >
-              📝 Text to Video
+              ðŸ“ Text to Video
             </button>
             <button 
               className={`${styles.modeBtn} ${mode === 'image2video' ? styles.modeBtnActive : ''}`}
               onClick={() => { setMode('image2video'); setError(null); }}
             >
-              🖼️ Image to Video
+              ðŸ–¼ï¸ Image to Video
             </button>
           </div>
 
@@ -163,7 +163,7 @@ export default function VideoGenerator() {
             {/* INPUT PANEL */}
             <div className={styles.inputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>🎬</span>
+                <span className={styles.panelIcon}>ðŸŽ¬</span>
                 <h3>Scene Configuration</h3>
               </div>
               
@@ -195,7 +195,7 @@ export default function VideoGenerator() {
                     <img src={image} alt="Preview" className={styles.previewImage} />
                   ) : (
                     <>
-                      <div className={styles.uploadIcon}>📸</div>
+                      <div className={styles.uploadIcon}>ðŸ“¸</div>
                       <p className={styles.uploadText}>Click to upload reference image (Max 5MB)</p>
                     </>
                   )}
@@ -210,7 +210,7 @@ export default function VideoGenerator() {
                 rows={mode === 'text2video' ? 6 : 3}
               />
 
-              {error && <div className={styles.error}>⚠️ {error}</div>}
+              {error && <div className={styles.error}>âš ï¸ {error}</div>}
 
               <div className={styles.inputActions}>
                 <button 
@@ -218,7 +218,7 @@ export default function VideoGenerator() {
                   onClick={handleGenerate}
                   disabled={isGenerating}
                 >
-                  {isGenerating ? 'Generating Video...' : '✨ Generate Video'}
+                  {isGenerating ? 'Generating Video...' : 'âœ¨ Generate Video'}
                 </button>
               </div>
               
@@ -230,7 +230,7 @@ export default function VideoGenerator() {
             {/* OUTPUT PANEL */}
             <div className={styles.outputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>📺</span>
+                <span className={styles.panelIcon}>ðŸ“º</span>
                 <h3>Generated Video</h3>
               </div>
 
@@ -244,7 +244,7 @@ export default function VideoGenerator() {
                 ) : videoUrl ? (
                   <>
                     <a href={videoUrl} download="generated-video.mp4" target="_blank" className={styles.downloadBtn}>
-                      ⬇ Download
+                      â¬‡ Download
                     </a>
                     <video 
                       src={videoUrl} 
@@ -257,7 +257,7 @@ export default function VideoGenerator() {
                   </>
                 ) : (
                   <div className={styles.emptyState}>
-                    <div className={styles.emptyIcon}>🎥</div>
+                    <div className={styles.emptyIcon}>ðŸŽ¥</div>
                     <p>Your generated video will appear here</p>
                   </div>
                 )}

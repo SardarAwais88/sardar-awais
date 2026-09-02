@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -87,7 +87,7 @@ export default function HumanizerPage() {
       <section className={`section ${styles.humanizerSection}`}>
         <div className="container">
           <div className={styles.breadcrumb}>
-            <Link href="/tools">← Back to Tools</Link>
+            <Link href="/tools">â† Back to Tools</Link>
           </div>
 
           <div className="section-header">
@@ -96,7 +96,7 @@ export default function HumanizerPage() {
               AI <span className="gradient-text">Humanizer</span> &amp; Plagiarism Checker
             </h1>
             <p className="section-subtitle">
-              Detect AI-generated content, check for plagiarism, and rewrite text to sound 100% human — undetectable by any tool.
+              Detect AI-generated content, check for plagiarism, and rewrite text to sound 100% human â€” undetectable by any tool.
             </p>
           </div>
 
@@ -106,13 +106,13 @@ export default function HumanizerPage() {
               className={`${styles.modeBtn} ${mode === 'humanize' ? styles.modeBtnActive : ''}`}
               onClick={() => { setMode('humanize'); setDetection(null); setOutputText(''); }}
             >
-              ✨ Humanize &amp; Remove Plagiarism
+              âœ¨ Humanize &amp; Remove Plagiarism
             </button>
             <button
               className={`${styles.modeBtn} ${mode === 'detect' ? styles.modeBtnActive : ''}`}
               onClick={() => { setMode('detect'); setDetection(null); setOutputText(''); }}
             >
-              🔍 Detect AI &amp; Plagiarism
+              ðŸ” Detect AI &amp; Plagiarism
             </button>
           </div>
 
@@ -120,7 +120,7 @@ export default function HumanizerPage() {
             {/* Input Panel */}
             <div className={styles.inputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>📝</span>
+                <span className={styles.panelIcon}>ðŸ“</span>
                 <h3>Input Text</h3>
                 <span className={styles.wordCount}>
                   {inputText.split(/\s+/).filter(Boolean).length} words
@@ -144,9 +144,9 @@ export default function HumanizerPage() {
                   {loading ? (
                     <><span className={styles.spinner} /> Processing...</>
                   ) : mode === 'humanize' ? (
-                    <>✨ Humanize Text</>
+                    <>âœ¨ Humanize Text</>
                   ) : (
-                    <>🔍 Analyze Text</>
+                    <>ðŸ” Analyze Text</>
                   )}
                 </button>
                 <button
@@ -162,11 +162,11 @@ export default function HumanizerPage() {
             {/* Output Panel */}
             <div className={styles.outputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>{mode === 'humanize' ? '🎯' : '📊'}</span>
+                <span className={styles.panelIcon}>{mode === 'humanize' ? 'ðŸŽ¯' : 'ðŸ“Š'}</span>
                 <h3>{mode === 'humanize' ? 'Humanized Output' : 'Analysis Results'}</h3>
                 {outputText && (
                   <button onClick={handleCopy} className={styles.copyBtn}>
-                    {copied ? '✅ Copied!' : '📋 Copy'}
+                    {copied ? 'âœ… Copied!' : 'ðŸ“‹ Copy'}
                   </button>
                 )}
               </div>
@@ -207,7 +207,7 @@ export default function HumanizerPage() {
 
                     {/* Indicators */}
                     <div className={styles.indicatorsSection}>
-                      <h4>⚠️ Key Indicators Found</h4>
+                      <h4>âš ï¸ Key Indicators Found</h4>
                       <ul className={styles.indicatorsList}>
                         {detection.indicators.map((ind, i) => (
                           <li key={i}>{ind}</li>
@@ -225,14 +225,14 @@ export default function HumanizerPage() {
                       className={`btn btn-primary ${styles.humanizeCtaBtn}`}
                       onClick={() => { setMode('humanize'); setDetection(null); setOutputText(''); }}
                     >
-                      ✨ Humanize This Text Now
+                      âœ¨ Humanize This Text Now
                     </button>
                   </div>
                 ) : outputText ? (
                   <div className={styles.humanizedOutput}>
                     <div className={styles.outputMeta}>
-                      <span>✅ AI Undetectable</span>
-                      <span>✅ Plagiarism Free</span>
+                      <span>âœ… AI Undetectable</span>
+                      <span>âœ… Plagiarism Free</span>
                       <span>{outputText.split(/\s+/).length} words</span>
                     </div>
                     <div className={styles.outputText}>
@@ -243,7 +243,7 @@ export default function HumanizerPage() {
                   </div>
                 ) : (
                   <div className={styles.emptyState}>
-                    <span className={styles.emptyIcon}>{mode === 'humanize' ? '✨' : '🔍'}</span>
+                    <span className={styles.emptyIcon}>{mode === 'humanize' ? 'âœ¨' : 'ðŸ”'}</span>
                     <p>{mode === 'humanize' ? 'Your humanized text will appear here' : 'Analysis results will appear here'}</p>
                     <span className={styles.emptyHint}>
                       Paste your text and click &quot;{mode === 'humanize' ? 'Humanize Text' : 'Analyze Text'}&quot;

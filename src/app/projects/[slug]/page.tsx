@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} | Project by Awais Mehboob`,
+    title: `${project.title} | Project by Sardar Awais`,
     description: project.description,
     alternates: {
       canonical: `https://sardar-awais.vercel.app/projects/${project.slug}`,
@@ -38,7 +38,7 @@ export default async function ProjectDetailPage({ params }: Props) {
     applicationCategory: project.category,
     author: {
       '@type': 'Person',
-      name: 'Awais Mehboob',
+      name: 'Sardar Awais',
       url: 'https://sardar-awais.vercel.app',
     },
     programmingLanguage: project.tech,

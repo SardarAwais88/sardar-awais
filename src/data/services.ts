@@ -1,4 +1,4 @@
-export interface Service {
+﻿export interface Service {
   id: number;
   title: string;
   description: string;
@@ -15,7 +15,7 @@ export const services: Service[] = [
     title: 'Full-Stack Web Development',
     description:
       'End-to-end web application development from concept to deployment. Modern, scalable, and performant solutions.',
-    icon: '🌐',
+    icon: 'ðŸŒ',
     features: [
       'React / Next.js Frontend',
       'Node.js / Python Backend',
@@ -32,7 +32,7 @@ export const services: Service[] = [
     title: 'AI Agent & Voice Bot Development',
     description:
       'Custom AI agents and voice bots for customer service, sales automation, and intelligent process management.',
-    icon: '🤖',
+    icon: 'ðŸ¤–',
     features: [
       'VAPI Voice Agent Setup',
       'Multi-Agent Systems (CrewAI)',
@@ -50,7 +50,7 @@ export const services: Service[] = [
     title: 'E-Commerce Solutions',
     description:
       'Complete e-commerce setups on Shopify, WooCommerce, or custom platforms with payment, inventory, and analytics.',
-    icon: '🛒',
+    icon: 'ðŸ›’',
     features: [
       'Shopify Theme Development',
       'WooCommerce Customization',
@@ -67,7 +67,7 @@ export const services: Service[] = [
     title: 'Automation & Bot Development',
     description:
       'Smart automation solutions that eliminate manual tasks. WhatsApp bots, trading bots, web scrapers, and workflow automation.',
-    icon: '⚡',
+    icon: 'âš¡',
     features: [
       'WhatsApp / Telegram Bots',
       'Trading & Crypto Bots',
@@ -84,7 +84,7 @@ export const services: Service[] = [
     title: 'Chrome Extension Development',
     description:
       'Custom Chrome extensions for lead generation, productivity, content management, and browser automation.',
-    icon: '🔌',
+    icon: 'ðŸ”Œ',
     features: [
       'Chrome Manifest V3',
       'Content Scripts & Popups',
@@ -101,7 +101,7 @@ export const services: Service[] = [
     title: 'WordPress & CMS Development',
     description:
       'Custom WordPress themes, plugins, and Figma-to-WordPress conversions with pixel-perfect implementation.',
-    icon: '📝',
+    icon: 'ðŸ“',
     features: [
       'Custom Theme Development',
       'Figma to WordPress',
@@ -118,7 +118,7 @@ export const services: Service[] = [
     title: 'DevOps & Cloud Infrastructure',
     description:
       'Enterprise-grade DevOps solutions with Docker, Kubernetes, AWS, and CI/CD pipelines for scalable, reliable deployments.',
-    icon: '☁️',
+    icon: 'â˜ï¸',
     features: [
       'Docker & Kubernetes Setup',
       'AWS / GCP Cloud Architecture',
@@ -137,36 +137,36 @@ export const processSteps = [
     step: 1,
     title: 'Discovery',
     description: 'Understanding your business goals, target audience, and project requirements through detailed consultation.',
-    icon: '🔍',
+    icon: 'ðŸ”',
   },
   {
     step: 2,
     title: 'Planning',
     description: 'Creating detailed technical specifications, architecture diagrams, and project roadmap with milestones.',
-    icon: '📋',
+    icon: 'ðŸ“‹',
   },
   {
     step: 3,
     title: 'Development',
     description: 'Building your solution with clean code, regular updates, and milestone-based delivery.',
-    icon: '💻',
+    icon: 'ðŸ’»',
   },
   {
     step: 4,
     title: 'Testing',
     description: 'Rigorous quality assurance, performance testing, and security audits before launch.',
-    icon: '🧪',
+    icon: 'ðŸ§ª',
   },
   {
     step: 5,
     title: 'Deployment',
     description: 'Smooth production deployment with documentation, training, and handover support.',
-    icon: '🚀',
+    icon: 'ðŸš€',
   },
   {
     step: 6,
     title: 'Support',
     description: 'Ongoing maintenance, updates, and priority support to keep your system running flawlessly.',
-    icon: '🛡️',
+    icon: 'ðŸ›¡ï¸',
   },
 ];

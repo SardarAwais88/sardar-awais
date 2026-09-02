@@ -1,4 +1,4 @@
-export interface Project {
+﻿export interface Project {
   id: number;
   slug: string;
   title: string;
@@ -34,7 +34,7 @@ export const categories = [
 ];
 
 export const projects: Project[] = [
-  // ── Full-Stack Web Applications ────────────────────────
+  // â”€â”€ Full-Stack Web Applications â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 1,
     slug: 'watches-luxury',
@@ -44,12 +44,12 @@ export const projects: Project[] = [
     problem: 'Client needed a full-featured luxury watch marketplace with affiliate tracking and inventory control.',
     solution: 'Built a PHP MVC application with MySQL, user auth, affiliate commission tracking, and a complete admin panel.',
     result: 'Delivered on time. Client reported a 40% increase in affiliate sign-ups within the first month.',
-    role: 'Lead Developer — Full-stack (backend MVC, frontend, database design).',
+    role: 'Lead Developer â€” Full-stack (backend MVC, frontend, database design).',
     category: 'Full-Stack',
     tech: ['PHP', 'MySQL', 'JavaScript', 'CSS', 'MVC'],
     client: 'Robert',
     platform: 'Fiverr',
-    image: '🕐',
+    image: 'ðŸ•',
     color: '#ffd700',
     featured: true,
   },
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     tech: ['HTML', 'CSS', 'JavaScript'],
     client: 'Robert',
     platform: 'Fiverr',
-    image: '📦',
+    image: 'ðŸ“¦',
     color: '#00f5d4',
   },
   {
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Express', 'MongoDB', 'React'],
     client: 'Robert',
     platform: 'Fiverr',
-    image: '🍽️',
+    image: 'ðŸ½ï¸',
     color: '#ff6b6b',
   },
   {
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Express', 'MongoDB', 'React'],
     client: 'VlnateBlack',
     platform: 'Fiverr',
-    image: '📧',
+    image: 'ðŸ“§',
     color: '#7b61ff',
   },
   {
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     tech: ['React', 'Node.js', 'PostgreSQL', 'TypeScript'],
     client: 'edu_nova',
     platform: 'Fiverr',
-    image: '🎓',
+    image: 'ðŸŽ“',
     color: '#00f5d4',
   },
   {
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Node.js', 'CSS'],
     platform: 'Personal',
     link: 'https://microrate.site',
-    image: '⭐',
+    image: 'â­',
     color: '#ffd700',
   },
   {
@@ -128,7 +128,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Vite', 'Tailwind'],
     client: 'John10',
     platform: 'Fiverr',
-    image: '💬',
+    image: 'ðŸ’¬',
     color: '#ff6b6b',
   },
   {
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'OpenAI', 'Node.js'],
     client: 'Mehhthew',
     platform: 'Fiverr',
-    image: '✈️',
+    image: 'âœˆï¸',
     color: '#00f5d4',
   },
   {
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     category: 'Full-Stack',
     tech: ['React', 'TypeScript', 'Node.js', 'Maps API'],
     platform: 'Upwork',
-    image: '🥗',
+    image: 'ðŸ¥—',
     color: '#7b61ff',
   },
   {
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     category: 'Full-Stack',
     tech: ['React', 'TypeScript', 'Canvas API', 'Node.js'],
     platform: 'Upwork',
-    image: '🎨',
+    image: 'ðŸŽ¨',
     color: '#ff6b6b',
   },
   {
@@ -177,7 +177,7 @@ export const projects: Project[] = [
     category: 'Full-Stack',
     tech: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind', 'SQLite'],
     platform: 'Personal',
-    image: '🏘️',
+    image: 'ðŸ˜ï¸',
     color: '#00f5d4',
   },
   {
@@ -189,15 +189,15 @@ export const projects: Project[] = [
     problem: 'Schools needed an affordable, self-hosted management system with role-based access.',
     solution: 'Built a React + FastAPI SaaS with SQLite, JWT, student/teacher dashboards, and timetable.',
     result: 'Fully functional platform ready for deployment with 10+ admin features.',
-    role: 'Solo developer — full-stack architecture, UI, API, and database design.',
+    role: 'Solo developer â€” full-stack architecture, UI, API, and database design.',
     category: 'Full-Stack',
     tech: ['React', 'Vite', 'TypeScript', 'FastAPI', 'SQLite', 'SQLAlchemy'],
     platform: 'Personal',
-    image: '📐',
+    image: 'ðŸ“',
     color: '#7b61ff',
   },
 
-  // ── AI & Machine Learning ─────────────────────────────
+  // â”€â”€ AI & Machine Learning â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 11,
     slug: 'ai-quran-guidance-engine',
@@ -210,7 +210,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'FastAPI', 'ChromaDB', 'Google Gemini', 'Sentence-Transformers', 'Vanilla JS'],
     platform: 'Personal',
-    image: '🕌',
+    image: 'ðŸ•Œ',
     color: '#00f5d4',
     featured: true,
   },
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'FastAPI', 'Gemini API', 'MoviePy', 'FFmpeg', 'Pexels API', 'Next.js'],
     platform: 'Personal',
-    image: '🎬',
+    image: 'ðŸŽ¬',
     color: '#7b61ff',
   },
   {
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'ElevenLabs API', 'FastAPI', 'React', 'Node.js'],
     platform: 'Personal',
-    image: '🎙️',
+    image: 'ðŸŽ™ï¸',
     color: '#ffd700',
   },
   {
@@ -247,7 +247,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'FastAPI', 'LangChain', 'React'],
     platform: 'Personal',
-    image: '📄',
+    image: 'ðŸ“„',
     color: '#ff6b6b',
   },
   {
@@ -255,14 +255,14 @@ export const projects: Project[] = [
     slug: 'claude-content-creation-agent',
     title: 'Claude Content Creation Agent',
     description:
-      'Autonomous content creation pipeline powered by Claude AI: generates a complete presentation, converts it to PPTX, creates ElevenLabs voiceover, and produces a HeyGen avatar video — fully automated.',
+      'Autonomous content creation pipeline powered by Claude AI: generates a complete presentation, converts it to PPTX, creates ElevenLabs voiceover, and produces a HeyGen avatar video â€” fully automated.',
     problem: 'Content teams needed an end-to-end automated pipeline from idea to published video without manual steps.',
-    solution: 'Chained Claude (script) → python-pptx (slides) → ElevenLabs (voice) → HeyGen (avatar video) in one Python script.',
+    solution: 'Chained Claude (script) â†’ python-pptx (slides) â†’ ElevenLabs (voice) â†’ HeyGen (avatar video) in one Python script.',
     result: 'Full automation of 4-hour manual process down to under 10 minutes.',
     category: 'AI / ML',
     tech: ['Python', 'Anthropic Claude', 'python-pptx', 'ElevenLabs', 'HeyGen'],
     platform: 'Personal',
-    image: '✍️',
+    image: 'âœï¸',
     color: '#00f5d4',
   },
   {
@@ -274,7 +274,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'Ollama', 'DeepSeek-R1', 'FastAPI', 'Gradio', 'Streamlit'],
     platform: 'Personal',
-    image: '🧠',
+    image: 'ðŸ§ ',
     color: '#7b61ff',
   },
   {
@@ -287,7 +287,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Python', 'OpenAI'],
     client: 'Dolphinspirit88',
     platform: 'Fiverr',
-    image: '📚',
+    image: 'ðŸ“š',
     color: '#00f5d4',
   },
   {
@@ -299,7 +299,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'FastAPI', 'Multi-LLM', 'React', 'TypeScript', 'Tailwind'],
     platform: 'Personal',
-    image: '⚡',
+    image: 'âš¡',
     color: '#ffd700',
   },
   {
@@ -311,7 +311,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Node.js', 'Express', 'MongoDB', 'Redis', 'Stripe', 'OpenAI', 'React', 'Tailwind'],
     platform: 'Personal',
-    image: '🤖',
+    image: 'ðŸ¤–',
     color: '#ff6b6b',
   },
   {
@@ -326,7 +326,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'CrewAI', 'Claude', 'OpenAI', 'Airtable', 'APScheduler', 'Docker'],
     platform: 'Upwork',
-    image: '🏠',
+    image: 'ðŸ ',
     color: '#7b61ff',
   },
   {
@@ -338,13 +338,13 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'CrewAI', 'RAG', 'ChromaDB', 'OpenAI'],
     platform: 'Personal',
-    image: '📐',
+    image: 'ðŸ“',
     color: '#ff6b6b',
   },
   {
     id: 60,
     slug: 'autocomply-ai',
-    title: 'AutoComply — AI Compliance Automation',
+    title: 'AutoComply â€” AI Compliance Automation',
     description:
       'AI Agent Olympics Hackathon project. Autonomous compliance automation agent using xAI Grok API. FastAPI backend with JWT auth, SQLite, document processing, and Next.js frontend.',
     problem: 'Businesses struggle with manual compliance document review and regulation tracking.',
@@ -353,7 +353,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'FastAPI', 'xAI Grok', 'SQLAlchemy', 'Next.js', 'TypeScript', 'Docker'],
     platform: 'Personal',
-    image: '⚖️',
+    image: 'âš–ï¸',
     color: '#00f5d4',
   },
   {
@@ -365,7 +365,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'FastAPI', 'Ollama', 'Llama3', 'Streamlit', 'Docker'],
     platform: 'Personal',
-    image: '📊',
+    image: 'ðŸ“Š',
     color: '#7b61ff',
   },
   {
@@ -377,7 +377,7 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['Python', 'FastAPI', 'Whisper', 'Coqui TTS', 'MoviePy', 'Transformers'],
     platform: 'Personal',
-    image: '🌍',
+    image: 'ðŸŒ',
     color: '#ffd700',
   },
   {
@@ -392,11 +392,11 @@ export const projects: Project[] = [
     category: 'AI / ML',
     tech: ['React', 'Node.js', 'Express', 'Ollama', 'ChromaDB', 'Docker', 'Kubernetes', 'TypeScript'],
     platform: 'Personal',
-    image: '🏗️',
+    image: 'ðŸ—ï¸',
     color: '#ff6b6b',
   },
 
-  // ── AI Voice Agents ────────────────────────────────────
+  // â”€â”€ AI Voice Agents â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 21,
     slug: 'vapi-dental-clinic-system',
@@ -406,11 +406,11 @@ export const projects: Project[] = [
     problem: 'A dental clinic needed 24/7 phone coverage without hiring additional receptionists.',
     solution: 'Deployed 3 VAPI voice agents with CrewAI orchestration: triage for symptoms, emergency routing, and appointment booking with calendar integration.',
     result: 'Clinic reduced missed calls by 90% and automated 80% of appointment scheduling.',
-    role: 'AI Voice Systems Architect — VAPI config, agent design, Node.js backend.',
+    role: 'AI Voice Systems Architect â€” VAPI config, agent design, Node.js backend.',
     category: 'AI Voice Agents',
     tech: ['Python', 'VAPI', 'Node.js', 'CrewAI', 'JSON Agent Config'],
     platform: 'Upwork',
-    image: '🦷',
+    image: 'ðŸ¦·',
     color: '#00f5d4',
     featured: true,
   },
@@ -423,7 +423,7 @@ export const projects: Project[] = [
     category: 'AI Voice Agents',
     tech: ['Python', 'VAPI', 'Twilio', 'OpenAI'],
     platform: 'Personal',
-    image: '📞',
+    image: 'ðŸ“ž',
     color: '#7b61ff',
   },
   {
@@ -439,7 +439,7 @@ export const projects: Project[] = [
     tech: ['Python', 'VAPI', 'Node.js', 'Multi-LLM'],
     client: 'Nigeria Enterprise Client',
     platform: 'Upwork',
-    image: '🎧',
+    image: 'ðŸŽ§',
     color: '#ffd700',
   },
   {
@@ -450,12 +450,12 @@ export const projects: Project[] = [
       'Custom AI chatbot with celebrity voice cloning for entertainment and fan engagement, with natural conversation flow. Earned the first 5-star Upwork review.',
     problem: 'Client wanted fans to have natural conversations with an AI persona of a public figure.',
     solution: 'Combined voice cloning TTS with a custom persona-trained LLM to create a realistic fan-engagement chatbot.',
-    result: '"The final draft is brilliant." — Joshua C. (5-star Upwork review). Led to a long-term collaboration.',
+    result: '"The final draft is brilliant." â€” Joshua C. (5-star Upwork review). Led to a long-term collaboration.',
     category: 'AI Voice Agents',
     tech: ['Python', 'TTS', 'OpenAI', 'Node.js', 'Voice Cloning'],
     client: 'Joshua C.',
     platform: 'Upwork',
-    image: '🌟',
+    image: 'ðŸŒŸ',
     color: '#ff6b6b',
     featured: true,
   },
@@ -471,7 +471,7 @@ export const projects: Project[] = [
     category: 'AI Voice Agents',
     tech: ['Next.js 15', 'TypeScript', 'Whisper', 'GPT-4o', 'ElevenLabs', 'Framer Motion'],
     platform: 'Upwork',
-    image: '🎤',
+    image: 'ðŸŽ¤',
     color: '#00f5d4',
   },
   {
@@ -479,18 +479,18 @@ export const projects: Project[] = [
     slug: 'private-ai-voice-assistant',
     title: 'Private Local AI Voice Assistant',
     description:
-      'Fully local, private voice assistant pipeline using Whisper STT + Ollama/Llama3 + Piper TTS — runs 100% on-device with optional Twilio phone number integration for phone-based access.',
+      'Fully local, private voice assistant pipeline using Whisper STT + Ollama/Llama3 + Piper TTS â€” runs 100% on-device with optional Twilio phone number integration for phone-based access.',
     problem: 'Client needed a private voice assistant that never sends data to third-party servers.',
     solution: 'Assembled a local pipeline: Whisper for speech recognition, Ollama with Llama3 for reasoning, Piper TTS for voice, and FastAPI as the coordination layer.',
     result: 'Fully offline voice assistant with Twilio integration for phone access.',
     category: 'AI Voice Agents',
     tech: ['Python', 'Ollama', 'Llama3', 'Whisper', 'Piper TTS', 'FastAPI', 'Twilio'],
     platform: 'Upwork',
-    image: '🔒',
+    image: 'ðŸ”’',
     color: '#7b61ff',
   },
 
-  // ── E-Commerce Solutions ───────────────────────────────
+  // â”€â”€ E-Commerce Solutions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 25,
     slug: 'composable-commerce-engine',
@@ -504,7 +504,7 @@ export const projects: Project[] = [
     tech: ['Shopify', 'Liquid', 'Node.js', 'GraphQL', 'REST API'],
     client: 'GreenSystemsInc',
     platform: 'Fiverr',
-    image: '🏪',
+    image: 'ðŸª',
     color: '#00f5d4',
     featured: true,
   },
@@ -517,7 +517,7 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     tech: ['Shopify', 'ERPNext', 'Python', 'REST API', 'Webhooks'],
     platform: 'Personal',
-    image: '🔗',
+    image: 'ðŸ”—',
     color: '#7b61ff',
   },
   {
@@ -529,7 +529,7 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     tech: ['WordPress', 'WooCommerce', 'PHP', 'CSS', 'JavaScript'],
     platform: 'Personal',
-    image: '💎',
+    image: 'ðŸ’Ž',
     color: '#ffd700',
   },
   {
@@ -541,7 +541,7 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     tech: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
     platform: 'Personal',
-    image: '🛍️',
+    image: 'ðŸ›ï¸',
     color: '#ff6b6b',
   },
   {
@@ -553,7 +553,7 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     tech: ['PHP', 'WordPress', 'WooCommerce', 'REST API', 'MySQL'],
     platform: 'Personal',
-    image: '💳',
+    image: 'ðŸ’³',
     color: '#00f5d4',
   },
   {
@@ -565,7 +565,7 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     tech: ['PrestaShop', 'PHP', 'MySQL', 'Smarty'],
     platform: 'Personal',
-    image: '🏬',
+    image: 'ðŸ¬',
     color: '#7b61ff',
   },
   {
@@ -577,7 +577,7 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     tech: ['Shopify', 'Liquid', 'CSS', 'JavaScript'],
     platform: 'Personal',
-    image: '💄',
+    image: 'ðŸ’„',
     color: '#ff6b6b',
   },
   {
@@ -592,11 +592,11 @@ export const projects: Project[] = [
     category: 'SaaS',
     tech: ['Next.js 14', 'Supabase', 'Stripe', 'Anthropic Claude', 'TypeScript', 'Tailwind'],
     platform: 'Personal',
-    image: '🔎',
+    image: 'ðŸ”Ž',
     color: '#ffd700',
   },
 
-  // ── Automation & Bots ──────────────────────────────────
+  // â”€â”€ Automation & Bots â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 31,
     slug: 'ableconnect-ghana',
@@ -607,7 +607,7 @@ export const projects: Project[] = [
     tech: ['Node.js', 'WhatsApp Business API', 'Google Sheets', 'Webhooks'],
     client: 'AbleConnect',
     platform: 'Fiverr',
-    image: '💬',
+    image: 'ðŸ’¬',
     color: '#00f5d4',
   },
   {
@@ -623,7 +623,7 @@ export const projects: Project[] = [
     tech: ['Python', 'Polymarket API', 'Telegram API', 'Web3', 'GPT-4'],
     client: 'GoldenKeyCali',
     platform: 'Fiverr',
-    image: '📈',
+    image: 'ðŸ“ˆ',
     color: '#ffd700',
     featured: true,
   },
@@ -637,7 +637,7 @@ export const projects: Project[] = [
     tech: ['Python', 'Selenium', 'Node.js', 'REST API'],
     client: 'Mubdes',
     platform: 'Fiverr',
-    image: '🤖',
+    image: 'ðŸ¤–',
     color: '#ff6b6b',
   },
   {
@@ -654,7 +654,7 @@ export const projects: Project[] = [
     client: 'Matthew',
     platform: 'Fiverr',
     link: 'https://xsignaltracker.tech',
-    image: '📡',
+    image: 'ðŸ“¡',
     color: '#7b61ff',
     featured: true,
   },
@@ -668,7 +668,7 @@ export const projects: Project[] = [
     tech: ['Python', 'React', 'OpenAI', 'Social Media APIs'],
     client: 'Sheeeek',
     platform: 'Fiverr',
-    image: '🚀',
+    image: 'ðŸš€',
     color: '#00f5d4',
   },
   {
@@ -680,7 +680,7 @@ export const projects: Project[] = [
     category: 'Automation',
     tech: ['Node.js', 'WhatsApp Business API', 'MongoDB', 'React'],
     platform: 'Fiverr',
-    image: '📱',
+    image: 'ðŸ“±',
     color: '#ffd700',
   },
   {
@@ -692,11 +692,11 @@ export const projects: Project[] = [
     category: 'Automation',
     tech: ['Python', 'DeepSeek', 'Twitter/X API', 'FastAPI'],
     platform: 'Fiverr',
-    image: '🐦',
+    image: 'ðŸ¦',
     color: '#ff6b6b',
   },
 
-  // ── Chrome Extensions ──────────────────────────────────
+  // â”€â”€ Chrome Extensions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 38,
     slug: 'leadconnectpro',
@@ -706,7 +706,7 @@ export const projects: Project[] = [
     category: 'Chrome Extensions',
     tech: ['JavaScript', 'Chrome Extension API (MV3)', 'React', 'Node.js'],
     platform: 'Personal',
-    image: '🔌',
+    image: 'ðŸ”Œ',
     color: '#00f5d4',
   },
   {
@@ -718,7 +718,7 @@ export const projects: Project[] = [
     category: 'Chrome Extensions',
     tech: ['JavaScript', 'Chrome Extension API', 'Python', 'FastAPI', 'Whisper', 'Coqui TTS'],
     platform: 'Personal',
-    image: '🌍',
+    image: 'ðŸŒ',
     color: '#7b61ff',
   },
   {
@@ -731,11 +731,11 @@ export const projects: Project[] = [
     tech: ['JavaScript', 'Chrome Extension API', 'OpenAI', 'Markdown'],
     client: 'Studio',
     platform: 'Fiverr',
-    image: '📝',
+    image: 'ðŸ“',
     color: '#ffd700',
   },
 
-  // ── WordPress & CMS ────────────────────────────────────
+  // â”€â”€ WordPress & CMS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 41,
     slug: 'twinvision-wordpress-theme',
@@ -745,7 +745,7 @@ export const projects: Project[] = [
     category: 'WordPress',
     tech: ['WordPress', 'PHP', 'WPBakery', 'CSS', 'JavaScript'],
     platform: 'Client',
-    image: '🎨',
+    image: 'ðŸŽ¨',
     color: '#ff6b6b',
   },
   {
@@ -757,7 +757,7 @@ export const projects: Project[] = [
     category: 'WordPress',
     tech: ['WordPress', 'PHP', 'JavaScript', 'CSS'],
     platform: 'Client',
-    image: '🏗️',
+    image: 'ðŸ—ï¸',
     color: '#00f5d4',
   },
   {
@@ -765,15 +765,15 @@ export const projects: Project[] = [
     slug: 'custom-wordpress-theme',
     title: 'Custom WordPress Theme (Handcrafted)',
     description:
-      'Handcrafted WordPress theme built from scratch with custom PHP templates, header, footer, and index — no page builder dependency.',
+      'Handcrafted WordPress theme built from scratch with custom PHP templates, header, footer, and index â€” no page builder dependency.',
     category: 'WordPress',
     tech: ['WordPress', 'PHP', 'JavaScript', 'CSS'],
     platform: 'Personal',
-    image: '🖌️',
+    image: 'ðŸ–Œï¸',
     color: '#7b61ff',
   },
 
-  // ── SaaS Products ──────────────────────────────────────
+  // â”€â”€ SaaS Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 43,
     slug: 'autoexec-mind',
@@ -783,7 +783,7 @@ export const projects: Project[] = [
     category: 'SaaS',
     tech: ['React', 'Vite', 'TypeScript', 'Tailwind', 'shadcn/ui', '@dnd-kit'],
     platform: 'Personal',
-    image: '🧩',
+    image: 'ðŸ§©',
     color: '#7b61ff',
     featured: true,
   },
@@ -796,7 +796,7 @@ export const projects: Project[] = [
     category: 'SaaS',
     tech: ['React', 'Vite', 'TypeScript', 'Tailwind', 'shadcn/ui'],
     platform: 'Personal',
-    image: '📱',
+    image: 'ðŸ“±',
     color: '#ffd700',
   },
   {
@@ -808,7 +808,7 @@ export const projects: Project[] = [
     category: 'SaaS',
     tech: ['React', 'Python', 'FastAPI', 'Google APIs'],
     platform: 'Personal',
-    image: '🎯',
+    image: 'ðŸŽ¯',
     color: '#ff6b6b',
   },
   {
@@ -823,24 +823,24 @@ export const projects: Project[] = [
     category: 'SaaS',
     tech: ['Next.js', 'TypeScript', 'Vercel AI SDK', 'pgvector', 'PostgreSQL', 'Drizzle ORM'],
     platform: 'Upwork',
-    image: '📈',
+    image: 'ðŸ“ˆ',
     color: '#00f5d4',
     featured: true,
   },
   {
     id: 70,
     slug: 'prospectai',
-    title: 'ProspectAI — B2B Lead Generation SaaS',
+    title: 'ProspectAI â€” B2B Lead Generation SaaS',
     description:
       'B2B prospecting SaaS platform: build targeted lead lists, identify decision makers, personalize outreach at scale with OpenAI, and manage campaigns from a single dashboard.',
     category: 'SaaS',
     tech: ['PHP 8', 'MySQL', 'Apache', 'OpenAI', 'LAMP'],
     platform: 'Personal',
-    image: '🎯',
+    image: 'ðŸŽ¯',
     color: '#7b61ff',
   },
 
-  // ── DevOps & Security ──────────────────────────────────
+  // â”€â”€ DevOps & Security â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 47,
     slug: 'wazuh-siem-deployment',
@@ -853,7 +853,7 @@ export const projects: Project[] = [
     category: 'DevOps',
     tech: ['Docker', 'Docker Compose', 'Wazuh', 'Linux', 'Python', 'Streamlit'],
     platform: 'Personal',
-    image: '🛡️',
+    image: 'ðŸ›¡ï¸',
     color: '#00f5d4',
   },
   {
@@ -861,19 +861,19 @@ export const projects: Project[] = [
     slug: 'eliza-ai-framework',
     title: 'ElizaOS Framework Contribution',
     description:
-      'Open-source contribution to ElizaOS — a multi-agent AI framework with Discord, Twitter, and Telegram connectors, and pluggable LLM backends (Llama, OpenAI, Groq, Anthropic).',
+      'Open-source contribution to ElizaOS â€” a multi-agent AI framework with Discord, Twitter, and Telegram connectors, and pluggable LLM backends (Llama, OpenAI, Groq, Anthropic).',
     category: 'DevOps',
     tech: ['TypeScript', 'Node.js', 'pnpm', 'Turbo', 'Docker', 'Lerna'],
     platform: 'Open Source',
-    image: '🌐',
+    image: 'ðŸŒ',
     color: '#7b61ff',
   },
 
-  // ── Android ────────────────────────────────────────────
+  // â”€â”€ Android â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 71,
     slug: 'aideal-finder-android',
-    title: 'AIDeal Finder — Android App',
+    title: 'AIDeal Finder â€” Android App',
     description:
       'Android app that scans receipts with ML Kit, generates AI-powered negotiation emails with OpenRouter, suggests cashback opportunities, and monetizes via AdMob.',
     problem: 'Shoppers wanted an app to find better deals and automatically generate negotiation emails after purchases.',
@@ -882,28 +882,28 @@ export const projects: Project[] = [
     category: 'Android',
     tech: ['Kotlin', 'Jetpack Compose', 'Firebase', 'ML Kit', 'OpenRouter', 'AdMob'],
     platform: 'Personal',
-    image: '📱',
+    image: 'ðŸ“±',
     color: '#ff6b6b',
   },
 
-  // ── Content Automation ─────────────────────────────────
+  // â”€â”€ Content Automation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 72,
     slug: 'free-ai-video-generator',
     title: 'Free AI Long-Form Video Generator',
     description:
-      'Generate complete 1-hour YouTube videos from a single text prompt — Gemini writes the script, Pexels provides footage, edge-TTS narrates, and MoviePy composes the final 1080p MP4.',
+      'Generate complete 1-hour YouTube videos from a single text prompt â€” Gemini writes the script, Pexels provides footage, edge-TTS narrates, and MoviePy composes the final 1080p MP4.',
     problem: 'Content creators needed a completely free tool to generate long-form YouTube videos automatically.',
-    solution: 'Chained Gemini (script) → Pexels API (B-roll footage) → edge-TTS (narration) → MoviePy (composition) → FFmpeg (final render).',
+    solution: 'Chained Gemini (script) â†’ Pexels API (B-roll footage) â†’ edge-TTS (narration) â†’ MoviePy (composition) â†’ FFmpeg (final render).',
     result: 'Generates a complete 1-hour YouTube-ready video from a single prompt with zero cost.',
     category: 'Content Automation',
     tech: ['Python', 'Flask', 'Gemini API', 'Pexels API', 'MoviePy', 'FFmpeg', 'edge-TTS', 'Pillow'],
     platform: 'Personal',
-    image: '🎥',
+    image: 'ðŸŽ¥',
     color: '#7b61ff',
   },
-  {"id": 60, "slug": "tbc", "title": "Tbc", "category": "AI & Automation", "image": "🚀", "color": "#00f5d4", "description": "Developed TBC for a client on Twine.", "fullDescription": "A custom solution built for Twine client, focusing on scalability and performance.", "tech": ["AI Agents", "Python"], "platform": "Twine"},
-  {"id": 61, "slug": "deepseek-twitter-agent", "title": "Deepseek Twitter Agent", "category": "AI & Automation", "image": "🚀", "color": "#00f5d4", "description": "Developed deepseek-twitter-agent for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
+  {"id": 60, "slug": "tbc", "title": "Tbc", "category": "AI & Automation", "image": "ðŸš€", "color": "#00f5d4", "description": "Developed TBC for a client on Twine.", "fullDescription": "A custom solution built for Twine client, focusing on scalability and performance.", "tech": ["AI Agents", "Python"], "platform": "Twine"},
+  {"id": 61, "slug": "deepseek-twitter-agent", "title": "Deepseek Twitter Agent", "category": "AI & Automation", "image": "ðŸš€", "color": "#00f5d4", "description": "Developed deepseek-twitter-agent for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
   {"id": 62, "slug": "project", "title": "Project", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed project for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
   {"id": 63, "slug": "8-ai-voice-agents", "title": "8 Ai Voice Agents", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed 8 ai voice agents for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},
   {"id": 64, "slug": "researchmap-ai-lite", "title": "Researchmap Ai Lite", "category": "AI & Automation", "image": "\ud83d\ude80", "color": "#00f5d4", "description": "Developed researchmap_ai_lite for a client on Fiverr.", "fullDescription": "A custom solution built for Fiverr client, focusing on scalability and performance.", "tech": ["Python", "AI Agents"], "platform": "Fiverr"},

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -60,7 +60,7 @@ export default function EmailWriterPage() {
       <section className={`section ${styles.proposalSection}`}>
         <div className="container">
           <div className={styles.breadcrumb}>
-            <Link href="/tools">← Back to Tools</Link>
+            <Link href="/tools">â† Back to Tools</Link>
           </div>
 
           <div className="section-header">
@@ -69,7 +69,7 @@ export default function EmailWriterPage() {
               AI <span className="gradient-text">Email Writer</span>
             </h1>
             <p className="section-subtitle">
-              Provide context → Get a professional, ready-to-send email instantly
+              Provide context â†’ Get a professional, ready-to-send email instantly
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function EmailWriterPage() {
             {/* Input */}
             <div className={styles.inputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>📋</span>
+                <span className={styles.panelIcon}>ðŸ“‹</span>
                 <h3>Email Context / Draft</h3>
               </div>
               <textarea
@@ -99,7 +99,7 @@ export default function EmailWriterPage() {
                       Generating...
                     </>
                   ) : (
-                    <>📧 Generate Email</>
+                    <>ðŸ“§ Generate Email</>
                   )}
                 </button>
                 <button onClick={handleClear} className="btn btn-outline">
@@ -112,11 +112,11 @@ export default function EmailWriterPage() {
             {/* Output */}
             <div className={styles.outputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>📩</span>
+                <span className={styles.panelIcon}>ðŸ“©</span>
                 <h3>Your Email</h3>
                 {email && (
                   <button onClick={handleCopy} className={styles.copyBtn}>
-                    {copied ? '✅ Copied!' : '📋 Copy'}
+                    {copied ? 'âœ… Copied!' : 'ðŸ“‹ Copy'}
                   </button>
                 )}
               </div>
@@ -138,7 +138,7 @@ export default function EmailWriterPage() {
                   </div>
                 ) : (
                   <div className={styles.emptyState}>
-                    <span className={styles.emptyIcon}>📧</span>
+                    <span className={styles.emptyIcon}>ðŸ“§</span>
                     <p>Your AI-generated email will appear here</p>
                     <span className={styles.emptyHint}>
                       Enter context and click "Generate Email"
@@ -151,22 +151,22 @@ export default function EmailWriterPage() {
 
           {/* Tips */}
           <div className={styles.tipsCard}>
-            <h4>💡 Pro Tips for Better Emails</h4>
+            <h4>ðŸ’¡ Pro Tips for Better Emails</h4>
             <div className={styles.tipsGrid}>
               <div className={styles.tip}>
-                <span>📌</span>
+                <span>ðŸ“Œ</span>
                 <p>Provide specific details like dates, names, or key discussion points.</p>
               </div>
               <div className={styles.tip}>
-                <span>🎯</span>
+                <span>ðŸŽ¯</span>
                 <p>Mention the desired tone if needed (e.g., "Make it very formal" or "Keep it casual").</p>
               </div>
               <div className={styles.tip}>
-                <span>✏️</span>
+                <span>âœï¸</span>
                 <p>Always review the generated email to ensure it aligns perfectly with your voice.</p>
               </div>
               <div className={styles.tip}>
-                <span>📞</span>
+                <span>ðŸ“ž</span>
                 <p>Clearly state your Call to Action (what do you want the recipient to do next?).</p>
               </div>
             </div>

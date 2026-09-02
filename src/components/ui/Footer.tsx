@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -12,13 +12,13 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              <span className={styles.logoIcon}>👨‍💻</span>
+              <span className={styles.logoIcon}>ðŸ‘¨â€ðŸ’»</span>
               <span className={styles.logoText}>
                 Sardar<span className={styles.logoAccent}>Awais</span>
               </span>
             </Link>
             <p className={styles.tagline}>
-              AI-first digital agency led by <strong>Awais Mehboob</strong>. We build
+              AI-first digital agency led by <strong>Sardar Awais</strong>. We build
               intelligent software, voice agents &amp; immersive apps that scale globally.
             </p>
             <div className={styles.socials}>
@@ -62,25 +62,25 @@ export default function Footer() {
           {/* Contact */}
           <div className={styles.column}>
             <h4 className={styles.columnTitle}>Get in Touch</h4>
-            <span className={styles.footerLink}>📧 khanowais8888@gmail.com</span>
-            <span className={styles.footerLink}>📱 +92 347 2725754</span>
-            <span className={styles.footerLink}>📍 Pakistan (Remote Worldwide)</span>
+            <span className={styles.footerLink}>ðŸ“§ info@sardarawais.com</span>
+            <span className={styles.footerLink}>ðŸ“± +92 347 2725754</span>
+            <span className={styles.footerLink}>ðŸ“ Pakistan (Remote Worldwide)</span>
             <a href="https://wa.me/923472725754?text=Hi%20Awais!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" className={styles.footerLink} style={{ color: '#25d366', cursor: 'pointer' }}>
-              💬 WhatsApp Me
+              ðŸ’¬ WhatsApp Me
             </a>
             <a href="https://t.me/+923472725754" target="_blank" rel="noopener noreferrer" className={styles.footerLink} style={{ color: '#0088cc', cursor: 'pointer' }}>
-              ✈️ Telegram Me
+              âœˆï¸ Telegram Me
             </a>
             <Link href="/contact" className={styles.ctaSmall}>
-              Start a Project →
+              Start a Project â†’
             </Link>
           </div>
         </div>
 
         <div className={styles.bottom}>
-          <p>© {currentYear} <span style={{color:'var(--accent-primary)'}}>Sardar Awais</span> — All rights reserved.</p>
+          <p>Â© {currentYear} <span style={{color:'var(--accent-primary)'}}>Sardar Awais</span> â€” All rights reserved.</p>
           <p className={styles.builtWith}>
-            Built with <span className={styles.heart}>♥</span> using Next.js & Three.js
+            Built with <span className={styles.heart}>â™¥</span> using Next.js & Three.js
           </p>
         </div>
       </div>

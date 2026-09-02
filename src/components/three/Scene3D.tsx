@@ -1,11 +1,11 @@
-'use client';
+﻿'use client';
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useMemo, useRef, useState, useEffect } from 'react';
 import { Float, MeshDistortMaterial, Sphere, Stars, Trail, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
-/* ── Mouse-tracked camera ─────────────────────────────── */
+/* â”€â”€ Mouse-tracked camera â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function CameraRig() {
   const { camera } = useThree();
   const mouse = useRef({ x: 0, y: 0 });
@@ -28,7 +28,7 @@ function CameraRig() {
   return null;
 }
 
-/* ── Glowing energy sphere ─────────────────────────── */
+/* â”€â”€ Glowing energy sphere â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function EnergySphere() {
   const mesh = useRef<THREE.Mesh>(null);
 
@@ -61,7 +61,7 @@ function EnergySphere() {
   );
 }
 
-/* ── DNA double helix ─────────────────────────────── */
+/* â”€â”€ DNA double helix â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function DNAHelix() {
   const group = useRef<THREE.Group>(null);
   const strand1Points: [number, number, number][] = [];
@@ -112,7 +112,7 @@ function DNAHelix() {
   );
 }
 
-/* ── Morphing torus knot ─────────────────────────────── */
+/* â”€â”€ Morphing torus knot â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function TorusKnot() {
   const mesh = useRef<THREE.Mesh>(null);
 
@@ -143,7 +143,7 @@ function TorusKnot() {
   );
 }
 
-/* ── Orbiting ring system ─────────────────────────────── */
+/* â”€â”€ Orbiting ring system â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function OrbitalRings() {
   const group = useRef<THREE.Group>(null);
 
@@ -176,7 +176,7 @@ function OrbitalRings() {
   );
 }
 
-/* ── Trailing particles ─────────────────────────────── */
+/* â”€â”€ Trailing particles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function TrailingOrb({ color, radius, speed, yOffset }: { color: string; radius: number; speed: number; yOffset: number }) {
   const mesh = useRef<THREE.Mesh>(null);
 
@@ -198,7 +198,7 @@ function TrailingOrb({ color, radius, speed, yOffset }: { color: string; radius:
   );
 }
 
-/* ── Large particle field ─────────────────────────────── */
+/* â”€â”€ Large particle field â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function ParticleField({ count = 300 }: { count?: number }) {
   const mesh = useRef<THREE.Points>(null);
 
@@ -249,7 +249,7 @@ function ParticleField({ count = 300 }: { count?: number }) {
   );
 }
 
-/* ── Grid floor ─────────────────────────────── */
+/* â”€â”€ Grid floor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function GridFloor() {
   return (
     <gridHelper
@@ -260,7 +260,7 @@ function GridFloor() {
   );
 }
 
-/* ── Main Scene ─────────────────────────────── */
+/* â”€â”€ Main Scene â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export default function Scene3D() {
   const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);

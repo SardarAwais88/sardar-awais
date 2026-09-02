@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+﻿import { NextRequest, NextResponse } from 'next/server';
 import { callAIWithFallback, MODELS_FAST } from '@/lib/ai';
 
-const SYSTEM_PROMPT = `You are an expert Upwork/Fiverr negotiator and communication assistant for Awais Mehboob (Full-Stack Developer & AI Automation Expert).
+const SYSTEM_PROMPT = `You are an expert Upwork/Fiverr negotiator and communication assistant for Sardar Awais (Full-Stack Developer & AI Automation Expert).
 
 YOUR RULES:
 1. Goal: Reply to a client's message effectively to close the deal, especially when they ask for a price reduction or scope change.

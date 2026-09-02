@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
@@ -106,7 +106,7 @@ const jsonLd = {
   ],
   contactPoint: [{
     '@type': 'ContactPoint',
-    email: 'khanowais8888@gmail.com',
+    email: 'info@sardarawais.com',
     telephone: '+923472725754',
     contactType: 'Customer Service',
     availableLanguage: ['English', 'Urdu'],
@@ -114,7 +114,7 @@ const jsonLd = {
   }],
   founder: {
     '@type': 'Person',
-    name: 'Awais Mehboob',
+    name: 'Sardar Awais',
     jobTitle: 'CEO & Founder',
     url: 'https://nexusai.dev',
     sameAs: [

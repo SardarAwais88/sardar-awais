@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -60,7 +60,7 @@ export default function EstimatorPage() {
       <section className={`section ${styles.proposalSection}`}>
         <div className="container">
           <div className={styles.breadcrumb}>
-            <Link href="/tools">← Back to Tools</Link>
+            <Link href="/tools">â† Back to Tools</Link>
           </div>
 
           <div className="section-header">
@@ -69,7 +69,7 @@ export default function EstimatorPage() {
               Project <span className="gradient-text">Estimator</span>
             </h1>
             <p className="section-subtitle">
-              Paste requirements → Get a realistic cost and timeline breakdown
+              Paste requirements â†’ Get a realistic cost and timeline breakdown
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function EstimatorPage() {
             {/* Input */}
             <div className={styles.inputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>📋</span>
+                <span className={styles.panelIcon}>ðŸ“‹</span>
                 <h3>Project Requirements</h3>
               </div>
               <textarea
@@ -99,7 +99,7 @@ export default function EstimatorPage() {
                       Analyzing...
                     </>
                   ) : (
-                    <>📊 Generate Estimate</>
+                    <>ðŸ“Š Generate Estimate</>
                   )}
                 </button>
                 <button onClick={handleClear} className="btn btn-outline">
@@ -112,11 +112,11 @@ export default function EstimatorPage() {
             {/* Output */}
             <div className={styles.outputPanel}>
               <div className={styles.panelHeader}>
-                <span className={styles.panelIcon}>⏳</span>
+                <span className={styles.panelIcon}>â³</span>
                 <h3>Estimated Timeline & Cost</h3>
                 {estimate && (
                   <button onClick={handleCopy} className={styles.copyBtn}>
-                    {copied ? '✅ Copied!' : '📋 Copy'}
+                    {copied ? 'âœ… Copied!' : 'ðŸ“‹ Copy'}
                   </button>
                 )}
               </div>
@@ -144,7 +144,7 @@ export default function EstimatorPage() {
                   </div>
                 ) : (
                   <div className={styles.emptyState}>
-                    <span className={styles.emptyIcon}>📈</span>
+                    <span className={styles.emptyIcon}>ðŸ“ˆ</span>
                     <p>Your AI-generated estimate will appear here</p>
                     <span className={styles.emptyHint}>
                       Enter project requirements and click "Generate Estimate"
@@ -157,22 +157,22 @@ export default function EstimatorPage() {
 
           {/* Tips */}
           <div className={styles.tipsCard}>
-            <h4>💡 Pro Tips for Accurate Estimates</h4>
+            <h4>ðŸ’¡ Pro Tips for Accurate Estimates</h4>
             <div className={styles.tipsGrid}>
               <div className={styles.tip}>
-                <span>📌</span>
+                <span>ðŸ“Œ</span>
                 <p>Provide specific features and functionalities (e.g., "Google Auth", "Stripe Checkout").</p>
               </div>
               <div className={styles.tip}>
-                <span>🎯</span>
+                <span>ðŸŽ¯</span>
                 <p>Mention the preferred tech stack if you have one.</p>
               </div>
               <div className={styles.tip}>
-                <span>✏️</span>
+                <span>âœï¸</span>
                 <p>Include any design or API integration requirements.</p>
               </div>
               <div className={styles.tip}>
-                <span>📞</span>
+                <span>ðŸ“ž</span>
                 <p>Use the estimate as a starting point for client negotiations.</p>
               </div>
             </div>
