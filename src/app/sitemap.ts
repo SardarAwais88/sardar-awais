@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://awaisaisolutions.com';
+  const baseUrl = 'https://sardarawais.com';
   const now = new Date();
 
   // Static pages

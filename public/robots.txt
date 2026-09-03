@@ -29,5 +29,4 @@ Allow: /
 
 User-agent: Bytespider
 Allow: /
-
-Sitemap: https://sardar-awais.vercel.app/sitemap.xml
+Sitemap: https://sardarawais.com/sitemap.xml

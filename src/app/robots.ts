@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://awaisaisolutions.com/sitemap.xml',
+    sitemap: 'https://sardarawais.com/sitemap.xml',
   };
 }
