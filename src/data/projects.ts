@@ -34,6 +34,25 @@ export const categories = [
 ];
 
 export const projects: Project[] = [
+  // ── AI Voice Agents ────────────────────────
+  {
+    id: 999,
+    slug: 'vapi-dental-crew',
+    title: 'VAPI Dental Clinic Multi-Agent System',
+    description:
+      'A fully autonomous inbound bilingual (English/Spanish) voice assistant for a high-volume dental clinic in Madrid, handling emergency triage and complex appointment scheduling.',
+    problem: 'Dental clinic needed a system to triage calls, handle emergency intakes, and manage scheduling autonomously 24/7.',
+    solution: 'Engineered a 3-Agent Crew Architecture using VAPI for ultra-low latency voice, integrating 12 custom REST API endpoints for CRM operations and SMS/WhatsApp notifications.',
+    result: 'Reduced reception load by autonomously resolving FAQs, scheduling, and emergencies, providing zero-downtime customer support.',
+    role: 'Cloud & AI Automation Engineer (Architecture, VAPI integration, API development, Handoff logic).',
+    category: 'AI Voice Agents',
+    tech: ['VAPI', 'FastAPI', 'Node.js', 'CrewAI', 'LangChain', 'REST APIs', 'AWS', 'Docker'],
+    client: 'Dental Clinic, Madrid',
+    platform: 'Upwork',
+    image: '🦷',
+    color: '#00d2ff',
+    featured: true,
+  },
   // ── Full-Stack Web Applications ────────────────────────
   {
     id: 1,

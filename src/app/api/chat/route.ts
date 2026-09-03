@@ -9,7 +9,7 @@ const skills = skillCategories.flatMap(c => c.skills);
 
 const contextData = `
 NAME: Sardar Awais
-ROLE: Full-Stack Developer, AI Engineer, & DevOps Expert
+ROLE: Cloud & AI Automation Engineer, AI Engineer, & DevOps Expert
 LOCATION: Pakistan (Available globally)
 CONTACT: Email: info@sardarawais.com, Phone/WhatsApp: +923472725754
 

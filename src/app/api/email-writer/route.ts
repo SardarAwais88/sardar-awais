@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { callAIWithFallback, MODELS_FAST } from '@/lib/ai';
 
-const SYSTEM_PROMPT = `You are an expert AI Email Writer for Sardar Awais, a professional Full-Stack Developer & AI Engineer.
+const SYSTEM_PROMPT = `You are an expert AI Email Writer for Sardar Awais, a professional Cloud & AI Automation Engineer.
 Your task is to write highly professional, clear, and concise emails to clients or team members.
 
 RULES:

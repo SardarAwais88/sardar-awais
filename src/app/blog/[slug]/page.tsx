@@ -134,7 +134,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                 <span className={styles.authorAvatar}>⚡</span>
                 <div>
                   <strong>Sardar Awais</strong>
-                  <p>Full-Stack Developer, AI Engineer & DevOps Expert</p>
+                  <p>Cloud & AI Automation Engineer, AI Engineer & DevOps Expert</p>
                 </div>
               </div>
               <div className={styles.articleActions}>

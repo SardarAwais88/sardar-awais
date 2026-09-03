@@ -65,7 +65,7 @@ export default function HomePage() {
               <span className={styles.heroRolePrefix}>I&apos;m a </span>
               <TypeWriter
                 words={[
-                  'Full-Stack Developer',
+                  'Cloud & AI Automation Engineer',
                   'AI Engineer',
                   'DevOps Engineer',
                   'Agentic AI Expert',
@@ -81,7 +81,7 @@ export default function HomePage() {
             </div>
 
             <p className={styles.heroDescription}>
-              I am <strong>Sardar Awais</strong> — an AI Engineer & Full-Stack Developer. I build urgent custom websites, AI agents, voice bots, and enterprise software solutions for clients worldwide. Let's build something amazing together.
+              I am <strong>Sardar Awais</strong> — an AI Engineer & Cloud & AI Automation Engineer. I build urgent custom websites, AI agents, voice bots, and enterprise software solutions for clients worldwide. Let's build something amazing together.
             </p>
 
             <div className={styles.heroCTA}>
@@ -122,7 +122,7 @@ export default function HomePage() {
 {`const developer = {
   name: "Sardar Awais",
   roles: [
-    "Full-Stack Developer",
+    "Cloud & AI Automation Engineer",
     "AI Engineer",
     "DevOps Specialist"
   ],

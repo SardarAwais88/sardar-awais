@@ -31,7 +31,7 @@ export default function AboutPage() {
                 I&apos;m <span className="gradient-text">Sardar Awais</span>
               </h1>
               <h2 className={styles.heroSubtitle}>
-                Full-Stack Developer & AI Engineer
+                Cloud & AI Automation Engineer
               </h2>
               <p className={styles.heroBio}>
                 I&apos;m a passionate developer with 6+ years of experience building

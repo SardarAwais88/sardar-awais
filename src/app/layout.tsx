@@ -101,7 +101,7 @@ const jsonLd = [
     name: 'Sardar Awais',
     url: 'https://sardarawais.com',
     logo: 'https://sardarawais.com/logo.png',
-    jobTitle: 'Full-Stack Developer & AI Engineer',
+    jobTitle: 'Cloud & AI Automation Engineer',
     description: 'Expert in urgent website development, AI agents, chatbots, and full-stack solutions.',
     sameAs: [
       'https://www.linkedin.com/company/nexusai-dev',

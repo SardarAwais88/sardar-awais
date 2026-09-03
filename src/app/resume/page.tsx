@@ -95,7 +95,7 @@ export default function ResumePage() {
 
               {/* Header */}
               <h1>AWAIS MEHBOOB</h1>
-              <div className="subtitle">Full-Stack Developer | AI Engineer | DevOps Specialist | Agentic AI Expert</div>
+              <div className="subtitle">Cloud & AI Automation Engineer | AI Engineer | DevOps Specialist | Agentic AI Expert</div>
               <div className="header-contact">
                 <span>📧 info@sardarawais.com</span>
                 <span>📱 +92 347 2725754</span>
@@ -108,7 +108,7 @@ export default function ResumePage() {
               {/* Professional Summary */}
               <h2>Professional Summary</h2>
               <p className="summary">
-                Results-driven Full-Stack Developer and AI Engineer with 6+ years of professional experience delivering 50+ production-grade projects across web development, AI agent systems, e-commerce platforms, and DevOps infrastructure. Expert in building custom AI agents using CrewAI, LangChain, and VAPI; scalable web applications with React, Next.js, and Node.js; and enterprise e-commerce solutions on Shopify and WooCommerce. Proven track record of automating complex business workflows, reducing operational costs by up to 60%, and delivering projects on Fiverr, Upwork, and Truelancer with consistent 5-star reviews. Passionate about leveraging cutting-edge agentic AI and RAG architectures to solve real-world business problems.
+                Results-driven Cloud & AI Automation Engineer and AI Engineer with 6+ years of professional experience delivering 50+ production-grade projects across web development, AI agent systems, e-commerce platforms, and DevOps infrastructure. Expert in building custom AI agents using CrewAI, LangChain, and VAPI; scalable web applications with React, Next.js, and Node.js; and enterprise e-commerce solutions on Shopify and WooCommerce. Proven track record of automating complex business workflows, reducing operational costs by up to 60%, and delivering projects on Fiverr, Upwork, and Truelancer with consistent 5-star reviews. Passionate about leveraging cutting-edge agentic AI and RAG architectures to solve real-world business problems.
               </p>
 
               {/* Technical Skills */}
@@ -153,7 +153,7 @@ export default function ResumePage() {
 
               <div style={{ marginBottom: '14px' }}>
                 <div className="exp-header">
-                  <h3>Senior Freelance Full-Stack Developer & AI Engineer</h3>
+                  <h3>Senior Freelance Cloud & AI Automation Engineer</h3>
                   <span className="exp-date">2020 – Present</span>
                 </div>
                 <div className="exp-company">Fiverr, Upwork & Truelancer | Remote</div>
@@ -171,7 +171,7 @@ export default function ResumePage() {
 
               <div style={{ marginBottom: '14px' }}>
                 <div className="exp-header">
-                  <h3>Full-Stack Developer</h3>
+                  <h3>Cloud & AI Automation Engineer</h3>
                   <span className="exp-date">2019 – 2020</span>
                 </div>
                 <div className="exp-company">Kinitsol | On-site</div>
