@@ -240,8 +240,11 @@ export async function GET() {
         const data = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8'));
         // Skip blogs with empty content
         if (!data.content || data.content.length < 50) return null;
+        // If the JSON doesn't have a slug, infer it from the filename (e.g. 2026-09-06-my-slug.json)
+        const slugFromFile = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.json$/, '');
+        
         return {
-          slug: data.slug,
+          slug: data.slug || slugFromFile,
           title: data.title,
           description: data.description,
           tags: data.tags,

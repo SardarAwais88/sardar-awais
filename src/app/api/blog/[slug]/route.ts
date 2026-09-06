@@ -17,7 +17,10 @@ function findBlogBySlug(slug: string) {
     for (const file of files) {
       try {
         const data = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8'));
-        if (data.slug === slug) return data;
+        const slugFromFile = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.json$/, '');
+        if ((data.slug || slugFromFile) === slug) {
+          return { ...data, slug: data.slug || slugFromFile };
+        }
       } catch {
         continue;
       }
