@@ -11,15 +11,43 @@ export default function ContactPage() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Build WhatsApp message with form data
+    setSending(true);
+
+    try {
+      // 1. Email submission via FormSubmit (direct client conversion point)
+      await fetch('https://formsubmit.co/ajax/info@sardarawais.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          budget: formData.budget,
+          message: formData.message,
+          _subject: `New Project Inquiry from ${formData.name} — sardarawais.com`,
+        }),
+      }).catch(() => {}); // Silent fail — don't block WhatsApp
+
+      // 2. Store lead in database
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      }).catch(() => {}); // Silent fail
+    } catch {
+      // Continue to WhatsApp regardless
+    }
+
+    // 3. Open WhatsApp as secondary channel (existing behavior)
     const whatsappMsg = encodeURIComponent(
       `Hi Awais! I'm ${formData.name} (${formData.email}).\nBudget: ${formData.budget}\n\n${formData.message}`
     );
     window.open(`https://wa.me/923472725754?text=${whatsappMsg}`, '_blank');
     setSubmitted(true);
+    setSending(false);
     setTimeout(() => setSubmitted(false), 5000);
   };
 
@@ -235,11 +263,11 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                    Send via WhatsApp 🚀
+                  <button type="submit" disabled={sending} className={`btn btn-primary ${styles.submitBtn}`}>
+                    {sending ? '⏳ Sending...' : 'Send Message 🚀'}
                   </button>
                   <p className={styles.formNote}>
-                    Your message will open WhatsApp for instant communication
+                    Your inquiry will be emailed directly &amp; opens WhatsApp for instant chat
                   </p>
                 </form>
               )}

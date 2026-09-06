@@ -19,6 +19,31 @@ export default function ServicesPage() {
             </p>
           </div>
 
+          {/* Featured High-Demand Services */}
+          <div className={styles.featuredServices}>
+            <h2 className={styles.featuredTitle}>🔥 High-Demand Specializations</h2>
+            <div className={styles.featuredGrid}>
+              <Link href="/services/mcp-server-development" className={styles.featuredCard} style={{ borderColor: '#00f5d4' }}>
+                <span className={styles.featuredIcon}>🔗</span>
+                <h3>MCP Server Development</h3>
+                <p>Connect your APIs &amp; databases to Claude and other LLM agents with production-grade MCP servers.</p>
+                <span className={styles.featuredCta}>Learn More →</span>
+              </Link>
+              <Link href="/services/ai-voice-agent-development" className={styles.featuredCard} style={{ borderColor: '#7b61ff' }}>
+                <span className={styles.featuredIcon}>📞</span>
+                <h3>AI Voice Agent Development</h3>
+                <p>VAPI &amp; Retell voice agents that answer calls 24/7, book appointments, and integrate with your CRM.</p>
+                <span className={styles.featuredCta}>Learn More →</span>
+              </Link>
+              <Link href="/services/rag-chatbot-development" className={styles.featuredCard} style={{ borderColor: '#ff6b6b' }}>
+                <span className={styles.featuredIcon}>🧠</span>
+                <h3>RAG Chatbot Development</h3>
+                <p>AI chatbots trained on your own documents with citations, not just a prompt pasted into ChatGPT.</p>
+                <span className={styles.featuredCta}>Learn More →</span>
+              </Link>
+            </div>
+          </div>
+
           {/* Services Grid */}
           <div className={styles.servicesGrid}>
             {services.map((service, i) => (

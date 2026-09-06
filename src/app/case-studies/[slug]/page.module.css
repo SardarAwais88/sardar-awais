@@ -1,0 +1,158 @@
+.caseStudyDetail {
+  padding-top: 140px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted, #71717a);
+  margin-bottom: 40px;
+  font-family: var(--font-mono, monospace);
+}
+
+.breadcrumb a {
+  color: var(--text-secondary, #a1a1aa);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-primary, #00f5d4);
+}
+
+.hero {
+  margin-bottom: 60px;
+  padding: 60px 40px;
+  background: radial-gradient(circle at top left, rgba(0, 245, 212, 0.1), transparent 50%),
+              rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-xl, 24px);
+  backdrop-filter: blur(10px);
+}
+
+.categoryBadge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(0, 245, 212, 0.1);
+  color: var(--accent-primary, #00f5d4);
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  border-radius: var(--radius-xl, 24px);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-mono, monospace);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary, #ffffff);
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.section {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg, 16px);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary, #ffffff);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #a1a1aa);
+}
+
+.resultHighlight {
+  background: rgba(0, 245, 212, 0.05);
+  border-color: rgba(0, 245, 212, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 245, 212, 0.05);
+}
+
+.resultHighlight h2 {
+  color: var(--accent-primary, #00f5d4);
+}
+
+.resultText {
+  font-size: 1.3rem !important;
+  font-weight: 500;
+  color: var(--text-primary, #ffffff) !important;
+}
+
+.techSection {
+  margin-bottom: 60px;
+}
+
+.techSection h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.techBadge {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl, 24px);
+  font-size: 0.9rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-secondary, #a1a1aa);
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.1) 0%, rgba(123, 97, 255, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl, 24px);
+}
+
+.ctaSection h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .hero, .section, .ctaSection {
+    padding: 30px 20px;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+  }
+}

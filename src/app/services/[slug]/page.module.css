@@ -1,0 +1,211 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, var(--accent-color) 0%, transparent 70%);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heroActions {
+  margin-top: 2rem;
+}
+
+.twoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .twoColumn {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  
+  .columnLeft {
+    flex: 1;
+  }
+  
+  .columnRight {
+    flex: 2;
+  }
+}
+
+.descriptionText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary, #9ca3af);
+}
+
+.includedSection {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--bg-card, #111118);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(20px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary, #ffffff);
+}
+
+.cardDesc {
+  color: var(--text-secondary, #9ca3af);
+  line-height: 1.6;
+}
+
+.caseStudyContainer {
+  background: linear-gradient(180deg, var(--bg-card, #111118) 0%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.5rem;
+  padding: 3rem;
+}
+
+.caseStudyHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.caseStudyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .caseStudyGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.caseStudyBox {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+}
+
+.caseStudyBox h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.caseStudyBox p {
+  color: var(--text-secondary, #9ca3af);
+  line-height: 1.6;
+}
+
+.highlightText {
+  color: var(--text-primary, #ffffff) !important;
+  font-weight: 500;
+}
+
+.techStack {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #9ca3af);
+}
+
+.ctaSection {
+  padding-bottom: 6rem;
+}
+
+.ctaBox {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-card, #111118);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top-width: 4px;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ctaBox h2 {
+  font-size: 2rem;
+  color: var(--text-primary, #ffffff);
+}
+
+.ctaBox p {
+  color: var(--text-secondary, #9ca3af);
+  font-size: 1.125rem;
+}
