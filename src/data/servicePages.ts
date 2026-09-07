@@ -98,5 +98,57 @@ export const servicePages: ServicePage[] = [
       techStack: ["Next.js", "LangChain", "Pinecone", "OpenAI Embeddings", "AWS S3"]
     },
     relatedBlogSlugs: []
+  },
+  {
+    slug: "ai-agent-development",
+    title: "AI Agent Development",
+    metaTitle: "AI Agent Development | Autonomous AI Agents & Multi-Agent Systems",
+    metaDescription: "Custom AI agent development services. We build autonomous multi-agent systems using CrewAI, LangChain, and OpenAI to automate complex business workflows.",
+    heroHeadline: "Autonomous AI Agents for Business",
+    heroSubtext: "Deploy multi-agent systems that don't just answer questions, but autonomously execute complex workflows and take actions across your tool stack.",
+    targetKeyword: "AI agent development",
+    icon: "cpu",
+    color: "#f59e0b",
+    whatItIs: "An AI agent goes beyond a traditional chatbot by having agency—the ability to plan, use tools, and execute multi-step tasks autonomously. We build advanced multi-agent systems using frameworks like CrewAI and LangChain. Whether you need a research agent, a customer support agent with CRM write-access, or a team of specialized agents working together, we engineer systems that reliably execute your workflows.",
+    whatsIncluded: [
+      { title: "Multi-Agent Orchestration", description: "Design systems where specialized agents collaborate to solve complex problems." },
+      { title: "Tool & API Integration", description: "Equip your agents with custom tools to interact with your databases, CRM, and SaaS platforms." },
+      { title: "Agentic Planning & Reasoning", description: "Implement advanced prompting strategies (ReAct, Chain of Thought) for reliable decision making." },
+      { title: "Guardrails & Safety", description: "Strict boundaries and human-in-the-loop approvals for critical actions." }
+    ],
+    caseStudy: {
+      clientType: "Financial Services",
+      problem: "Analysts spent 15 hours a week manually gathering market data, reading earnings reports, and summarizing competitor news.",
+      solution: "Deployed a CrewAI multi-agent system consisting of a Research Agent (web scraping, API calls) and an Analyst Agent (data synthesis and report generation).",
+      result: "Automated the entire research workflow, delivering comprehensive daily reports and saving the team 60 hours per month.",
+      techStack: ["Python", "CrewAI", "LangChain", "OpenAI", "Tavily API"]
+    },
+    relatedBlogSlugs: []
+  },
+  {
+    slug: "business-workflow-automation",
+    title: "Business Workflow Automation",
+    metaTitle: "Business Workflow Automation | Zapier, Make & Custom Scripts",
+    metaDescription: "Streamline your operations with robust business workflow automation. We integrate your software stack using Make, Zapier, and custom Node.js/Python scripts.",
+    heroHeadline: "Automate Your Operations",
+    heroSubtext: "Connect your disjointed software tools, eliminate manual data entry, and streamline operations with robust business workflow automation.",
+    targetKeyword: "Business workflow automation",
+    icon: "git-merge",
+    color: "#ec4899",
+    whatItIs: "Manual data entry and disjointed software systems drain your team's time and introduce costly errors. We build robust, scalable business workflow automations that connect your CRM, accounting software, marketing platforms, and internal databases. Whether through enterprise platforms like Make and Zapier, or fully custom Node.js/Python microservices, we build reliable pipelines that handle the busywork so your team can focus on growth.",
+    whatsIncluded: [
+      { title: "End-to-End Workflow Design", description: "Map out and optimize your existing manual processes for automation." },
+      { title: "Custom API Integrations", description: "Connect systems that don't have native integrations via custom webhooks and REST APIs." },
+      { title: "No-Code & Pro-Code Solutions", description: "Leverage Make/Zapier for speed, and custom scripts for complex logic or large data volumes." },
+      { title: "Error Handling & Alerting", description: "Robust monitoring so you know immediately if an external service goes down." }
+    ],
+    caseStudy: {
+      clientType: "Real Estate Agency",
+      problem: "Leads generated from Facebook ads were manually exported to CSV and emailed to agents, resulting in delayed follow-ups and lost sales.",
+      solution: "Engineered an end-to-end automation pipeline. Facebook leads are instantly caught via webhooks, enriched with property data, inserted into the CRM, and routed to the correct agent via an automated SMS.",
+      result: "Reduced lead response time from 4 hours to under 2 minutes, increasing the conversion rate by 25%.",
+      techStack: ["Make (Integromat)", "Node.js Webhooks", "Twilio API", "HubSpot CRM"]
+    },
+    relatedBlogSlugs: []
   }
 ];

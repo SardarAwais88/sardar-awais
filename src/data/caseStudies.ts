@@ -9,6 +9,7 @@ export interface CaseStudy {
   result: string;
   techStack: string[];
   serviceLink: string;
+  featured?: boolean;
 }
 
 export const caseStudies: CaseStudy[] = [

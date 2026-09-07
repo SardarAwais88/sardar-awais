@@ -12,7 +12,7 @@ export default function CaseStudiesPage() {
 
   const filtered =
     activeCategory === 'All'
-      ? caseStudies
+      ? caseStudies.slice(0, 12)
       : caseStudies.filter((c) => c.category === activeCategory);
 
   return (
