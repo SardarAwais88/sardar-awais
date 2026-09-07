@@ -37,10 +37,19 @@ You need to write technical articles and publish them on high-domain-authority p
 **What to write about (The Strategy):**
 - **Topic 1:** *"How to Build an MCP Server to Connect Stripe to Claude"*
   - **Where to Link:** Link the words "custom MCP server development" directly to `https://sardarawais.com/services/mcp-server-development`.
+  - **Your Blog Cover Image:** `public/images/seo/mcp-server-development-connect-stripe-to-claude.jpg`
+  - *(Image Preview)*:
+    ![MCP Server Development](/public/images/seo/mcp-server-development-connect-stripe-to-claude.jpg)
 - **Topic 2:** *"Vapi vs Retell: Which Voice AI Framework is Best for Dental Clinics?"*
   - **Where to Link:** Link "AI voice agent development" to `https://sardarawais.com/services/ai-voice-agent-development`.
+  - **Your Blog Cover Image:** `public/images/seo/vapi-vs-retell-ai-voice-agent-development-dental-clinic.jpg`
+  - *(Image Preview)*:
+    ![Voice AI Agent Development](/public/images/seo/vapi-vs-retell-ai-voice-agent-development-dental-clinic.jpg)
 - **Topic 3:** *"Why Your RAG Chatbot is Hallucinating (And How to Fix It)"*
   - **Where to Link:** Link "RAG chatbot development" to `https://sardarawais.com/services/rag-chatbot-development`.
+  - **Your Blog Cover Image:** `public/images/seo/rag-chatbot-development-fix-ai-hallucinations.jpg`
+  - *(Image Preview)*:
+    ![RAG Chatbot Development](/public/images/seo/rag-chatbot-development-fix-ai-hallucinations.jpg)
 
 ### Tier 2: Community & Forum Backlinks (Do this Daily)
 Answer questions on platforms where founders and developers hang out. Don't spam—provide a high-quality answer and leave your link at the bottom.
