@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import TypeWriter from '@/components/ui/TypeWriter';
 import Counter from '@/components/ui/Counter';
 import { projects } from '@/data/projects';
 import { stats, testimonials } from '@/data/timeline';
@@ -58,44 +57,29 @@ export default function HomePage() {
             </div>
 
             <h1 className={styles.heroTitle}>
-              Hi, I'm <span className="gradient-text">Sardar Awais</span>
+              Automate and scale with <br/><span className="gradient-text">Practical AI Systems</span>
             </h1>
 
-            <div className={styles.heroRole}>
-              <span className={styles.heroRolePrefix}>I&apos;m a </span>
-              <TypeWriter
-                words={[
-                  'Cloud & AI Automation Engineer',
-                  'AI Engineer',
-                  'DevOps Engineer',
-                  'Agentic AI Expert',
-                  'Automation Architect',
-                  'E-Commerce Specialist',
-                  'Voice Agent Builder',
-                  'Software Engineer',
-                ]}
-                speed={80}
-                deleteSpeed={40}
-                pauseTime={2500}
-              />
-            </div>
+            <h2 className={styles.heroRole} style={{ fontSize: '1.5rem', fontWeight: 500, margin: '1rem 0' }}>
+              AI agent, voice automation, and business software development
+            </h2>
 
             <p className={styles.heroDescription}>
-              I am <strong>Sardar Awais</strong> — an AI Engineer & Cloud & AI Automation Engineer. I build urgent custom websites, AI agents, voice bots, and enterprise software solutions for clients worldwide. Let's build something amazing together.
+              I build robust technical solutions for companies that need reliable systems connected to their existing workflows. Get enterprise-grade engineering without the agency overhead.
             </p>
 
             <div className={styles.heroCTA}>
-              <Link href="/projects" className="btn btn-primary">
-                View My Work
-                <span>→</span>
+              <Link href="/contact" className="btn btn-primary">
+                Start a Project
+                <span>🚀</span>
               </Link>
-              <Link href="/contact" className="btn btn-outline">
-                Let&apos;s Talk
-                <span>💬</span>
+              <Link href="/services" className="btn btn-outline">
+                View Services
+                <span>💡</span>
               </Link>
-              <Link href="/resume" className="btn btn-outline">
-                Download CV
-                <span>📄</span>
+              <Link href="/projects" className="btn btn-outline">
+                Case Studies
+                <span>📊</span>
               </Link>
             </div>
 

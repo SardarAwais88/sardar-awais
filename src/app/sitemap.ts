@@ -21,8 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resume`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
   ];
 
-  // Individual project pages
-  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+  // Individual project pages (only index featured, high-quality projects)
+  const featuredProjects = projects.filter(p => p.featured);
+  const projectPages: MetadataRoute.Sitemap = featuredProjects.map((project) => ({
     url: `${baseUrl}/projects/${project.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,

@@ -9,7 +9,8 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  const featuredProjects = projects.filter(p => p.featured);
+  return featuredProjects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -28,7 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
+  
   if (!project) notFound();
+  
+  // SEO Cleanup: Redirect thin, non-featured legacy projects to the main portfolio page
+  if (!project.featured) {
+    const { redirect } = await import('next/navigation');
+    redirect('/projects');
+  }
 
   const jsonLd = {
     '@context': 'https://schema.org',
