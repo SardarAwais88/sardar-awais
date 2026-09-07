@@ -45,7 +45,11 @@ export const servicePages: ServicePage[] = [
       result: "Reduced average resolution time by 60% and allowed the AI to autonomously resolve 40% of tier 1 tickets.",
       techStack: ["TypeScript", "Express", "MCP SDK", "PostgreSQL", "Stripe API"]
     },
-    relatedBlogSlugs: []
+    relatedBlogSlugs: [
+      "what-is-an-mcp-server",
+      "connect-internal-tools-to-claude-using-mcp",
+      "mcp-server-security-auth-rate-limiting"
+    ]
   },
   {
     slug: "ai-voice-agent-development",
@@ -71,7 +75,11 @@ export const servicePages: ServicePage[] = [
       result: "Recovered $15,000/month in previously lost revenue and reduced front-desk call volume by 45%.",
       techStack: ["Vapi", "OpenAI", "Node.js", "Make.com", "Practice Management API"]
     },
-    relatedBlogSlugs: []
+    relatedBlogSlugs: [
+      "ai-voice-agents-vs-traditional-ivr",
+      "ai-receptionist-for-small-business",
+      "case-study-multi-agent-voice-ai-dental-clinic"
+    ]
   },
   {
     slug: "rag-chatbot-development",
@@ -97,7 +105,11 @@ export const servicePages: ServicePage[] = [
       result: "Reduced document discovery time from hours to minutes, increasing lawyer billable efficiency by 20%.",
       techStack: ["Next.js", "LangChain", "Pinecone", "OpenAI Embeddings", "AWS S3"]
     },
-    relatedBlogSlugs: []
+    relatedBlogSlugs: [
+      "rag-chatbot-vs-chatgpt-prompt",
+      "why-chatbots-hallucinate-how-rag-fixes-it",
+      "chunking-embeddings-vector-stores-explained"
+    ]
   },
   {
     slug: "ai-agent-development",
@@ -123,7 +135,12 @@ export const servicePages: ServicePage[] = [
       result: "Automated the entire research workflow, delivering comprehensive daily reports and saving the team 60 hours per month.",
       techStack: ["Python", "CrewAI", "LangChain", "OpenAI", "Tavily API"]
     },
-    relatedBlogSlugs: []
+    relatedBlogSlugs: [
+      "crewai-vs-langchain-which-framework-to-choose-for-ai-agent-development",
+      "5-signs-your-business-needs-an-ai-agent",
+      "how-much-does-it-cost-to-build-ai-agent-2026",
+      "fastapi-langchain-production-ai-agents"
+    ]
   },
   {
     slug: "business-workflow-automation",
@@ -149,6 +166,9 @@ export const servicePages: ServicePage[] = [
       result: "Reduced lead response time from 4 hours to under 2 minutes, increasing the conversion rate by 25%.",
       techStack: ["Make (Integromat)", "Node.js Webhooks", "Twilio API", "HubSpot CRM"]
     },
-    relatedBlogSlugs: []
+    relatedBlogSlugs: [
+      "microservices-architecture-breaking-monoliths-into-scalable-services",
+      "terraform-infrastructure-as-code-managing-cloud-resources-like-a-pro"
+    ]
   }
 ];
