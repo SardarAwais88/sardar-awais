@@ -61,7 +61,7 @@ export default function HomePage() {
             </h1>
 
             <h2 className={styles.heroRole} style={{ fontSize: '1.5rem', fontWeight: 500, margin: '1rem 0' }}>
-              AI agent, voice automation, and business software development
+              AI voice agent agency, conversational AI voice agents, and business software development
             </h2>
 
             <p className={styles.heroDescription}>

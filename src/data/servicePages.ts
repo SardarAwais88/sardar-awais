@@ -61,7 +61,7 @@ export const servicePages: ServicePage[] = [
     targetKeyword: "AI voice agent development",
     icon: "mic",
     color: "#8b5cf6",
-    whatItIs: "We build advanced, conversational AI voice agents using platforms like Vapi and Retell AI. These aren't your traditional robotic phone trees—they are dynamic, context-aware agents capable of understanding nuances, handling interruptions, and performing complex actions like checking calendar availability, booking appointments, and logging notes directly into your CRM. They work 24/7, sound incredibly human, and significantly reduce operational costs.",
+    whatItIs: "As a premier AI voice agent agency, we build advanced, conversational AI voice agents using platforms like Vapi and Retell AI. From enterprise solutions inspired by Lowe's AI voice agents to cutting-edge tech seen at the Y Combinator voice agents hackathon, we deliver robust voice infrastructure. Whether you need an AI voice agent cold calling B2B Austria GDPR legal compliant system or a high-volume VAPI voice agent restaurant Australia booking system, our dynamic, context-aware agents work 24/7. They handle interruptions, perform complex CRM actions, and significantly reduce operational costs.",
     whatsIncluded: [
       { title: "Custom Agent Persona", description: "Design the voice, tone, and personality of your agent to match your brand." },
       { title: "CRM & Calendar Integration", description: "Automated booking and syncing with tools like Calendly, HubSpot, and GoHighLevel." },
