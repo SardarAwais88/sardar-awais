@@ -77,7 +77,7 @@ export default function HomePage() {
                 View Services
                 <span>💡</span>
               </Link>
-              <Link href="/projects" className="btn btn-outline">
+              <Link href="/case-studies" className="btn btn-outline">
                 Case Studies
                 <span>📊</span>
               </Link>

@@ -12,8 +12,8 @@ export default function CaseStudiesPage() {
 
   const filtered =
     activeCategory === 'All'
-      ? caseStudies.slice(0, 12)
-      : caseStudies.filter((c) => c.category === activeCategory);
+      ? [...caseStudies].reverse()
+      : caseStudies.filter((c) => c.category === activeCategory).reverse();
 
   return (
     <div className="page-content">
