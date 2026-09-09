@@ -321,5 +321,92 @@ export const caseStudies: CaseStudy[] = [
     result: 'Reduced research time by 70%, allowing the firm to evaluate 5x more properties per month.',
     techStack: ['Python', 'CrewAI', 'Anthropic Claude', 'Airtable', 'APScheduler'],
     serviceLink: '/services/automation'
+  },
+
+  // ── New Fiverr Client Case Studies ──────────────────────
+  {
+    slug: 'wazuh-mcp-server',
+    title: 'Wazuh SIEM MCP Server',
+    metaTitle: 'Wazuh SIEM Integration via MCP Server | Case Study',
+    metaDescription: 'Integrating Wazuh Security Information and Event Management (SIEM) with LLMs using a custom MCP Server.',
+    category: 'MCP Server',
+    problem: 'The client needed to interact with their Wazuh SIEM security logs and alerts using natural language, but no out-of-the-box AI integration existed.',
+    solution: 'Developed a robust Model Context Protocol (MCP) server that securely connected to the Wazuh API. It exposed tools for searching logs, checking system health, and analyzing threats.',
+    result: 'Enabled security analysts to query complex security events instantly via Claude, drastically reducing incident response times.',
+    techStack: ['Python', 'MCP SDK', 'Wazuh API', 'Cybersecurity', 'FastAPI'],
+    serviceLink: '/services/mcp-server-development',
+    featured: true
+  },
+  {
+    slug: 'hermes-ai-creator-growth',
+    title: 'FanVue Growth Engine (Hermes AI)',
+    metaTitle: 'AI-Assisted Creator Growth Engine | Case Study',
+    metaDescription: 'Building Hermes AI, a two-way media publishing and creator growth engine for FanVue.',
+    category: 'Full-Stack',
+    problem: 'Content creators needed a unified platform to manage growth, analyze media performance, and automate publishing across networks.',
+    solution: 'Built the FanVue Growth Platform v2.0 featuring Hermes AI, an intelligent media analysis and automated publishing backend.',
+    result: 'Streamlined creator workflows and provided deep AI-driven analytics on media engagement and audience growth.',
+    techStack: ['Node.js', 'React', 'AI Analytics', 'Media Processing APIs'],
+    serviceLink: '/services/full-stack-development'
+  },
+  {
+    slug: 'slimcat-lead-intelligence',
+    title: 'Slimcat Lead Intelligence',
+    metaTitle: 'Slimcat Lead Discovery and Review Engine | Case Study',
+    metaDescription: 'A quality-first lead discovery and human review engine built with Prisma.',
+    category: 'Full-Stack',
+    problem: 'The sales team struggled with unverified, low-quality leads taking up valuable outreach time.',
+    solution: 'Developed the Slimcat Lead Engine, a full-stack intelligence platform that discovers leads and routes them through a robust human-review pipeline before CRM injection.',
+    result: 'Increased lead quality scores by 60% and optimized the outbound sales pipeline.',
+    techStack: ['TypeScript', 'Prisma', 'Next.js', 'PostgreSQL'],
+    serviceLink: '/services/full-stack-development'
+  },
+  {
+    slug: 'abo-salem-fractal-models',
+    title: 'Abo Salem Fractal Models',
+    metaTitle: 'Chrome Extension & Backend for Trading Models | Case Study',
+    metaDescription: 'A custom Chrome extension and backend planning system for fractal market models.',
+    category: 'Chrome Extension',
+    problem: 'Traders needed real-time access to complex fractal model calculations directly within their browser while analyzing charts.',
+    solution: 'Engineered a seamless Chrome extension linked to a secure PostgreSQL-backed Node.js server to deliver real-time trading insights.',
+    result: 'Provided traders with an intuitive overlay, increasing their technical analysis speed by 3x.',
+    techStack: ['JavaScript', 'Chrome Extension API', 'Node.js', 'PostgreSQL', 'Docker'],
+    serviceLink: '/services/full-stack-development'
+  },
+  {
+    slug: 'crewai-flight-bot',
+    title: 'CrewAI Flight Booking Agent',
+    metaTitle: 'Multi-Agent Flight Booking Automation | Case Study',
+    metaDescription: 'An autonomous multi-agent system for flight lookup and booking using CrewAI.',
+    category: 'Automation',
+    problem: 'Travel agents needed an automated way to search, compare, and book complex flight itineraries without manual scraping.',
+    solution: 'Built a specialized CrewAI system utilizing BeautifulSoup and REST APIs. Agents collaboratively handled flight lookups, price comparisons, and itinerary generation.',
+    result: 'Fully automated flight data aggregation, delivering parsed itineraries 10x faster than manual searches.',
+    techStack: ['Python', 'CrewAI', 'FastAPI', 'BeautifulSoup', 'LLMs'],
+    serviceLink: '/services/ai-agent-development'
+  },
+  {
+    slug: 'snapchat-ad-automation',
+    title: 'Snapchat Ad Automation System',
+    metaTitle: 'Automated Snapchat Ad Management | Case Study',
+    metaDescription: 'Complete solution for automatic Snapchat ad management with intelligent budget tracking.',
+    category: 'Automation',
+    problem: 'Media buyers were losing money due to delayed manual budget adjustments on underperforming Snapchat ad campaigns.',
+    solution: 'Engineered an automated tracking system utilizing the Snapchat Marketing API to programmatically pause, scale, and adjust bids in real-time.',
+    result: 'Prevented thousands of dollars in ad spend waste and improved overall campaign ROAS by 18%.',
+    techStack: ['Python', 'Snapchat API', 'OAuth2', 'Cron Jobs'],
+    serviceLink: '/services/business-workflow-automation'
+  },
+  {
+    slug: 'trendspark-autopilot',
+    title: 'TrendSpark Content Autopilot',
+    metaTitle: 'Automated Content Generation & Publishing | Case Study',
+    metaDescription: 'A fully automated content generation and publishing system built with FastAPI.',
+    category: 'Full-Stack',
+    problem: 'A media company needed to scale their content production across multiple affiliate niches without hiring a massive writing team.',
+    solution: 'Developed the TrendSpark Autopilot Backend, integrating AI for content creation, SEO optimization, and automated publishing directly to their CMS.',
+    result: 'Scaled content output from 5 articles a week to over 50 automated, high-quality posts, drastically increasing organic traffic.',
+    techStack: ['Python', 'FastAPI', 'Uvicorn', 'OpenAI', 'SQLAlchemy'],
+    serviceLink: '/services/business-workflow-automation'
   }
 ];
