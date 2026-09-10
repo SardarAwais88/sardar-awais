@@ -92,9 +92,6 @@ export const metadata: Metadata = {
     description: 'Looking for urgent website development or AI chatbot solutions? Hire Sardar Awais for full-stack apps and AI agents.',
     creator: '@sardarawais',
   },
-  alternates: {
-    canonical: 'https://sardarawais.com',
-  },
   other: {
     'geo.region': 'PK-PB',
     'geo.placename': 'Punjab, Pakistan',
@@ -220,7 +217,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": jsonLd }) }}
         />
       </head>
       <body>

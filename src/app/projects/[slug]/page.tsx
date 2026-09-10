@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${project.title} | Project by Sardar Awais`,
     description: project.description,
     alternates: {
-      canonical: `https://sardar-awais.vercel.app/projects/${project.slug}`,
+      canonical: `https://sardarawais.com/projects/${project.slug}`,
     },
   };
 }
@@ -47,10 +47,16 @@ export default async function ProjectDetailPage({ params }: Props) {
     author: {
       '@type': 'Person',
       name: 'Sardar Awais',
-      url: 'https://sardar-awais.vercel.app',
+      url: 'https://sardarawais.com',
     },
     programmingLanguage: project.tech,
-    url: project.link || `https://sardar-awais.vercel.app/projects/${project.slug}`,
+    operatingSystem: 'Web, Windows, macOS, Linux',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    url: project.link || `https://sardarawais.com/projects/${project.slug}`,
   };
 
   return (

@@ -94,7 +94,7 @@ export default function ResumePage() {
             <div className={styles.resumeCard} ref={resumeRef}>
 
               {/* Header */}
-              <h1>AWAIS MEHBOOB</h1>
+              <h2>AWAIS MEHBOOB</h2>
               <div className="subtitle">Cloud & AI Automation Engineer | AI Engineer | DevOps Specialist | Agentic AI Expert</div>
               <div className="header-contact">
                 <span>📧 info@sardarawais.com</span>
