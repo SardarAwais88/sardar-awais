@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} | Project by Sardar Awais`,
+    title: `${project.title} | Project`,
     description: project.description,
     alternates: {
       canonical: `https://sardarawais.com/projects/${project.slug}`,
@@ -34,8 +34,8 @@ export default async function ProjectDetailPage({ params }: Props) {
   
   // SEO Cleanup: Redirect thin, non-featured legacy projects to the main portfolio page
   if (!project.featured) {
-    const { redirect } = await import('next/navigation');
-    redirect('/projects');
+    const { permanentRedirect } = await import('next/navigation');
+    permanentRedirect('/projects');
   }
 
   const jsonLd = {

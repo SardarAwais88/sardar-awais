@@ -8,18 +8,18 @@ export default function SkillsPage() {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <div className="page-content">
+    <main className="page-content">
       <section className={`section ${styles.skillsSection}`}>
         <div className="container">
-          <div className="section-header">
+          <header className="section-header">
             <span className="section-label">// Skills & Expertise</span>
             <h1 className="section-title">
               My <span className="gradient-text">Tech Arsenal</span>
             </h1>
             <p className="section-subtitle">
-              Mastering modern technologies to deliver exceptional results
+              Mastering modern technologies to deliver exceptional results in Web Development, AI Agents, and DevOps. My technical stack encompasses a wide range of industry-leading programming languages, frameworks, and deployment architectures designed to build scalable and secure applications. From crafting highly interactive user interfaces with React and Next.js to engineering robust backend microservices, intelligent AI chatbots, and automated CI/CD pipelines, I continuously refine my expertise to stay at the forefront of software innovation.
             </p>
-          </div>
+          </header>
 
           {/* Category Tabs */}
           <div className={styles.tabs}>
@@ -181,6 +181,6 @@ export default function SkillsPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

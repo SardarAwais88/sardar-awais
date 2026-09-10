@@ -14,10 +14,10 @@ export default function ProjectsPage() {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="page-content">
+    <main className="page-content">
       <section className={`section ${styles.projectsSection}`}>
         <div className="container">
-          <div className="section-header">
+          <header className="section-header">
             <span className="section-label">// My Work</span>
             <h1 className="section-title">
               All <span className="gradient-text">Projects</span>
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
               48+ projects delivered across web development, AI, e-commerce,
               and automation
             </p>
-          </div>
+          </header>
 
           {/* Filters */}
           <div className={styles.filters}>
@@ -121,6 +121,6 @@ export default function ProjectsPage() {
           )}
         </div>
       </section>
-    </div>
+    </main>
   );
 }

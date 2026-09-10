@@ -52,10 +52,10 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="page-content">
+    <main className="page-content">
       <section className={`section ${styles.contactSection}`}>
         <div className="container">
-          <div className="section-header">
+          <header className="section-header">
             <span className="section-label">// Get in Touch</span>
             <h1 className="section-title">
               Let&apos;s <span className="gradient-text">Talk</span>
@@ -63,7 +63,7 @@ export default function ContactPage() {
             <p className="section-subtitle">
               Have a project in mind? I&apos;d love to hear about it.
             </p>
-          </div>
+          </header>
 
           <div className={styles.contactGrid}>
             {/* Contact Info */}
@@ -71,9 +71,7 @@ export default function ContactPage() {
               <div className={styles.infoCard}>
                 <h3 className={styles.infoTitle}>Let&apos;s Build Together</h3>
                 <p className={styles.infoDesc}>
-                  Whether you need a full-stack web application, an AI agent,
-                  an e-commerce solution, DevOps setup, or automation tools — I&apos;m here
-                  to help turn your vision into reality.
+                  Welcome to my professional contact hub. I am Sardar Awais, a specialized software engineer dedicated to delivering high-performance Web Development, custom AI Voice Agents, Model Context Protocol (MCP) integrations, and Enterprise Chatbot solutions. Whether you represent an enterprise seeking to automate operations with AI, or a startup looking to build a robust SaaS platform from the ground up, I provide end-to-end development services tailored to your exact specifications. My expertise spans across full-stack React and Next.js applications, complex e-commerce architectures, secure DevOps deployments, and intelligent workflow automations. Please use the form to detail your project requirements, or reach out directly via email or WhatsApp. I prioritize rapid response times, clean code, and transparent communication to ensure your technical vision is successfully transformed into reality.
                 </p>
 
                 <div className={styles.infoItems}>
@@ -275,6 +273,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
