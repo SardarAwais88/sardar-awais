@@ -31,7 +31,7 @@ export const servicePages: ServicePage[] = [
     targetKeyword: "MCP server development",
     icon: "server",
     color: "#3b82f6",
-    whatItIs: "Model Context Protocol (MCP) servers act as a bridge between powerful LLMs like Claude and your internal systems. We build robust, custom MCP servers that allow your AI agents to read from and write to your APIs, databases, and enterprise software securely. Our implementations include robust authentication, strict error handling, and rate limiting to ensure enterprise-grade reliability.",
+    whatItIs: "A model context protocol server acts as a bridge between powerful LLMs like Claude and your internal systems. When you need to connect Claude to internal tools MCP seamlessly, we build robust, custom MCP servers for business that allow your AI agents to read from and write to your APIs and databases securely. Our custom MCP server development implementations include robust authentication, strict error handling, and rate limiting to ensure enterprise-grade reliability.",
     whatsIncluded: [
       { title: "Custom Tool Development", description: "Design and implement specific tools tailored to your business logic." },
       { title: "Secure Authentication", description: "Implement OAuth, API keys, and custom auth flows for safe data access." },
@@ -91,7 +91,7 @@ export const servicePages: ServicePage[] = [
     targetKeyword: "RAG chatbot development",
     icon: "message-square",
     color: "#10b981",
-    whatItIs: "We develop intelligent chatbots powered by Retrieval-Augmented Generation (RAG) that answer questions specifically from your own data corpus—be it PDFs, internal wikis, or technical documentation. We implement state-of-the-art chunking strategies, semantic search via embeddings, and robust vector databases to ensure high retrieval accuracy. The resulting chatbots provide precise answers backed by exact citations, drastically reducing AI hallucinations.",
+    whatItIs: "We design robust enterprise RAG architecture to power intelligent, secure RAG chatbots on premise and in the cloud. By building a custom AI chatbot with citations, we ensure it answers questions specifically from your own data corpus—be it PDFs, internal wikis, or technical documentation. If you need a reliable AI chatbot for internal documents, we implement state-of-the-art chunking strategies and robust vector databases to guarantee precise answers and eliminate hallucinations.",
     whatsIncluded: [
       { title: "Data Processing Pipeline", description: "Extract, clean, and chunk text from PDFs, Notion, Confluence, and websites." },
       { title: "Vector Database Setup", description: "Implement scalable semantic search using Pinecone, Qdrant, or pgvector." },
@@ -121,7 +121,7 @@ export const servicePages: ServicePage[] = [
     targetKeyword: "AI agent development",
     icon: "cpu",
     color: "#f59e0b",
-    whatItIs: "An AI agent goes beyond a traditional chatbot by having agency—the ability to plan, use tools, and execute multi-step tasks autonomously. We build advanced multi-agent systems using frameworks like CrewAI and LangChain. Whether you need a research agent, a customer support agent with CRM write-access, or a team of specialized agents working together, we engineer systems that reliably execute your workflows.",
+    whatItIs: "An AI agent goes beyond a traditional chatbot by having agency—the ability to plan, use tools, and execute multi-step tasks autonomously. Through specialized custom AI agent development, our expert CrewAI development agency builds advanced multi-agent systems tailored to your needs. Whether you require an autonomous AI agent for research, a customer support bot with CRM write-access, or a team of specialized agents, we engineer systems that reliably execute complex business workflows.",
     whatsIncluded: [
       { title: "Multi-Agent Orchestration", description: "Design systems where specialized agents collaborate to solve complex problems." },
       { title: "Tool & API Integration", description: "Equip your agents with custom tools to interact with your databases, CRM, and SaaS platforms." },
@@ -152,7 +152,7 @@ export const servicePages: ServicePage[] = [
     targetKeyword: "Business workflow automation",
     icon: "git-merge",
     color: "#ec4899",
-    whatItIs: "Manual data entry and disjointed software systems drain your team's time and introduce costly errors. We build robust, scalable business workflow automations that connect your CRM, accounting software, marketing platforms, and internal databases. Whether through enterprise platforms like Make and Zapier, or fully custom Node.js/Python microservices, we build reliable pipelines that handle the busywork so your team can focus on growth.",
+    whatItIs: "Manual data entry and disjointed software systems drain your team's time and introduce costly errors. As a dedicated B2B workflow automation consultant, we build scalable automations connecting your CRM, accounting, and internal databases. Whether you need comprehensive HubSpot automation services, a top-tier Make.com automation agency, or a custom Zapier integration expert, we build reliable Node.js/Python pipelines that handle the busywork so your team can focus on growth.",
     whatsIncluded: [
       { title: "End-to-End Workflow Design", description: "Map out and optimize your existing manual processes for automation." },
       { title: "Custom API Integrations", description: "Connect systems that don't have native integrations via custom webhooks and REST APIs." },
