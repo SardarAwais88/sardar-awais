@@ -65,7 +65,7 @@ export default function Footer() {
             <span className={styles.footerLink}>📧 info@sardarawais.com</span>
             <span className={styles.footerLink}>📱 +92 347 2725754</span>
             <span className={styles.footerLink}>📍 Pakistan (Remote Worldwide)</span>
-            <a href="https://wa.me/923472725754?text=Hi%20Awais!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" className={styles.footerLink} style={{ color: '#25d366', cursor: 'pointer' }}>
+            <a href="https://wa.me/923472725754?text=Hi%20Awais!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer nofollow" className={styles.footerLink} style={{ color: '#25d366', cursor: 'pointer' }}>
               💬 WhatsApp Me
             </a>
             <a href="https://t.me/+923472725754" target="_blank" rel="noopener noreferrer" className={styles.footerLink} style={{ color: '#0088cc', cursor: 'pointer' }}>
