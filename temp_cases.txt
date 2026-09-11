@@ -1,0 +1,12 @@
+  {
+    slug: 'edunova-data-enrichment',
+    title: 'EduNova AI Data Enrichment',
+    metaTitle: 'AI Data Enrichment Agent for Schools | Case Study',
+    metaDescription: 'An automated AI agent built to retrieve and enrich school data from raw CSV exports.',
+    category: 'Automation',
+    problem: 'The client had raw, unenriched CSV data of schools and needed a system to automatically crawl and extract missing contact info.',
+    solution: 'Engineered an AI agent that takes a seed list and autonomously navigates the web to retrieve precise institutional information.',
+    result: 'Enriched over 10,000 records with 95% accuracy, saving hundreds of hours of manual research.',
+    techStack: ['Python', 'Selenium', 'LLMs', 'Data Scraping'],
+    serviceLink: '/services/automation'
+  }

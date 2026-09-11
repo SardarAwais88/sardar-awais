@@ -9,8 +9,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const featuredProjects = projects.filter(p => p.featured);
-  return featuredProjects.map((p) => ({ slug: p.slug }));
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -32,11 +31,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   
   if (!project) notFound();
   
-  // SEO Cleanup: Redirect thin, non-featured legacy projects to the main portfolio page
-  if (!project.featured) {
-    const { permanentRedirect } = await import('next/navigation');
-    permanentRedirect('/projects');
-  }
+  // Removed redirect block so all projects have detail pages
 
   const jsonLd = {
     '@context': 'https://schema.org',
