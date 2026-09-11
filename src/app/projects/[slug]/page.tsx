@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="page-content">
+      <main className="page-content">
         <article className={`section ${styles.projectDetail}`}>
           <div className="container">
             {/* Breadcrumb */}
@@ -178,7 +178,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
           </div>
         </article>
-      </div>
+      </main>
     </>
   );
 }

@@ -47,7 +47,7 @@ const featuredProjects = projects.filter((p) =>
 export default function HomePage() {
   return (
     <>
-      <div className="page-content">
+      <main className="page-content">
         {/* ── HERO ──────────────────────────────────────── */}
         <section className={styles.hero}>
           <div className={styles.heroContent}>
@@ -290,7 +290,7 @@ export default function HomePage() {
         </section>
         <LeadForm />
         <Team />
-      </div>
+      </main>
     </>
   );
 }
