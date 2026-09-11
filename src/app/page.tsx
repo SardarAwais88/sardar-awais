@@ -159,7 +159,7 @@ export default function HomePage() {
             <div className={styles.projectsGrid}>
               {featuredProjects.map((project, i) => (
                 <Link
-                  href={`/projects/${project.slug}`}
+                  href={`/projects/${project.slug}?v=2`}
                   key={project.id}
                   className={styles.projectCard}
                   style={{
