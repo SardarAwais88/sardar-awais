@@ -38,13 +38,13 @@ export default async function ProjectDetailPage({ params }: Props) {
     '@type': 'SoftwareApplication',
     name: project.title,
     description: project.description,
-    applicationCategory: project.category,
+    applicationCategory: 'BusinessApplication',
     author: {
       '@type': 'Person',
       name: 'Sardar Awais',
       url: 'https://sardarawais.com',
     },
-    programmingLanguage: project.tech,
+    programmingLanguage: project.tech.join(', '),
     operatingSystem: 'Web, Windows, macOS, Linux',
     offers: {
       '@type': 'Offer',

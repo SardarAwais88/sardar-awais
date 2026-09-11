@@ -52,7 +52,7 @@ export default function ProjectsPage() {
           <div className={styles.grid}>
             {filtered.map((project, i) => (
               <Link
-                href={`/projects/${project.slug}?v=2`}
+                href={`/projects/${project.slug}`}
                 key={project.id}
                 className={styles.card}
                 style={{

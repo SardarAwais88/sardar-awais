@@ -32,15 +32,25 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
+    '@type': 'Article',
+    headline: study.title,
     name: study.title,
     description: study.metaDescription,
+    image: 'https://sardarawais.com/og-image.jpg',
     author: {
       '@type': 'Person',
       name: 'Sardar Awais',
-      url: 'https://sardar-awais.vercel.app',
+      url: 'https://sardarawais.com',
     },
-    url: `https://sardar-awais.vercel.app/case-studies/${study.slug}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Sardar Awais',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://sardarawais.com/logo.png'
+      }
+    },
+    url: `https://sardarawais.com/case-studies/${study.slug}`,
   };
 
   return (
