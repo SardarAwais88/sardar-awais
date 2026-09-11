@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: study.metaTitle,
     description: study.metaDescription,
     alternates: {
-      canonical: `https://sardar-awais.vercel.app/case-studies/${study.slug}`,
+      canonical: `https://sardarawais.com/case-studies/${study.slug}`,
     },
   };
 }
