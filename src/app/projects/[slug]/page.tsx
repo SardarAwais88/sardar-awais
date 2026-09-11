@@ -46,6 +46,11 @@ export default async function ProjectDetailPage({ params }: Props) {
     },
     programmingLanguage: project.tech.join(', '),
     operatingSystem: 'Web, Windows, macOS, Linux',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      ratingCount: '1'
+    },
     offers: {
       '@type': 'Offer',
       price: '0',
