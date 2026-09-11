@@ -148,7 +148,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Developed a Retrieval-Augmented Generation (RAG) chatbot using ChromaDB and Claude 3 to ingest PDFs and provide cited answers.',
     result: 'Cut contract review time by 80% and improved clause detection accuracy significantly.',
     techStack: ['Python', 'ChromaDB', 'Claude 3', 'FastAPI', 'React'],
-    serviceLink: '/services/rag-chatbots'
+    serviceLink: '/services/rag-chatbot-development'
   },
   {
     slug: 'medical-knowledge-base',
@@ -160,7 +160,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Engineered a highly precise RAG system with chunking strategies optimized for medical terminology and integrated with Google Gemini.',
     result: 'Enabled sub-second retrieval of clinical protocols, citing exact page numbers for verification.',
     techStack: ['Python', 'Pinecone', 'Google Gemini', 'LangChain', 'Next.js'],
-    serviceLink: '/services/rag-chatbots'
+    serviceLink: '/services/rag-chatbot-development'
   },
   {
     slug: 'saas-help-desk-chatbot',
@@ -172,7 +172,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Deployed a RAG widget trained on their Zendesk knowledge base and GitHub READMEs to instantly resolve user queries.',
     result: 'Deflected 45% of incoming L1 support tickets, reducing support costs by $10k/month.',
     techStack: ['TypeScript', 'OpenAI', 'Supabase Vector', 'Zendesk API', 'Tailwind'],
-    serviceLink: '/services/rag-chatbots'
+    serviceLink: '/services/rag-chatbot-development'
   },
   {
     slug: 'ecommerce-product-finder',
@@ -184,7 +184,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Built a conversational product finder that indexed product manuals, specs, and reviews using a vector database for semantic search.',
     result: 'Increased conversion rates by 22% for users interacting with the AI shopping assistant.',
     techStack: ['Python', 'Weaviate', 'FastAPI', 'React', 'Shopify API'],
-    serviceLink: '/services/rag-chatbots'
+    serviceLink: '/services/rag-chatbot-development'
   },
   {
     slug: 'hr-policy-chatbot',
@@ -196,7 +196,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Integrated a Slack bot powered by RAG that searched the company’s internal Notion workspace to answer employee questions instantly.',
     result: 'Saved HR reps 10 hours a week and provided employees with instant 24/7 answers.',
     techStack: ['Node.js', 'Notion API', 'Slack API', 'Qdrant', 'OpenAI'],
-    serviceLink: '/services/rag-chatbots'
+    serviceLink: '/services/rag-chatbot-development'
   },
 
   // ── Full-Stack Case Studies (5) ────────────────────────

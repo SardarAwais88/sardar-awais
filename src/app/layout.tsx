@@ -20,6 +20,9 @@ const ScrollReveal3D = dynamic(() => import('@/components/ui/ScrollReveal3D'));
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sardarawais.com'),
+  alternates: {
+    canonical: 'https://sardarawais.com/',
+  },
   title: {
     default: 'Sardar Awais | Urgent Website Development, AI Agents & Chatbots',
     template: '%s | Sardar Awais',

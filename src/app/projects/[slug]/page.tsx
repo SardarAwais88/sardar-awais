@@ -39,21 +39,22 @@ export default async function ProjectDetailPage({ params }: Props) {
     name: project.title,
     description: project.description,
     applicationCategory: 'BusinessApplication',
+    image: 'https://sardarawais.com/og-image.jpg',
     author: {
       '@type': 'Person',
       name: 'Sardar Awais',
       url: 'https://sardarawais.com',
     },
     programmingLanguage: project.tech.join(', '),
-    operatingSystem: 'Web, Windows, macOS, Linux',
+    operatingSystem: 'Windows, macOS, Linux',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      ratingCount: '1'
+      ratingValue: 5.0,
+      ratingCount: 1
     },
     offers: {
       '@type': 'Offer',
-      price: '0',
+      price: 0,
       priceCurrency: 'USD',
     },
     url: project.link || `https://sardarawais.com/projects/${project.slug}`,
