@@ -35,27 +35,23 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'Article',
+    headline: project.title,
     name: project.title,
     description: project.description,
-    applicationCategory: 'BusinessApplication',
     image: 'https://sardarawais.com/og-image.jpg',
     author: {
       '@type': 'Person',
       name: 'Sardar Awais',
       url: 'https://sardarawais.com',
     },
-    programmingLanguage: project.tech.join(', '),
-    operatingSystem: 'Windows, macOS, Linux',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: 5.0,
-      ratingCount: 1
-    },
-    offers: {
-      '@type': 'Offer',
-      price: 0,
-      priceCurrency: 'USD',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Sardar Awais',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://sardarawais.com/logo.png'
+      }
     },
     url: project.link || `https://sardarawais.com/projects/${project.slug}`,
   };
