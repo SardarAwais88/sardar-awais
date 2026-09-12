@@ -46,6 +46,9 @@ export default function AboutPage() {
                 and trading bots to full e-commerce platforms and SaaS products. My
                 mission is to help businesses leverage cutting-edge technology to scale.
               </p>
+              <p className={styles.heroBio}>
+                Today, my focus is on <strong>developing custom software</strong> and AI solutions that directly impact business operations. Whether it&apos;s building a HIPAA-compliant <strong>medical call answering service</strong>, a reliable <strong>after hours answering service for lawyers</strong>, or a secure <strong>IVR payment system</strong>, I deliver robust engineering that modernizes outdated workflows.
+              </p>
 
               <div className={styles.quickStats}>
                 {stats.map((s, i) => (

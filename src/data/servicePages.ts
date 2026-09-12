@@ -199,5 +199,63 @@ export const servicePages: ServicePage[] = [
       "ai-automation-agency-pricing-2026",
       "how-ai-agents-for-business-automation-are-replacing-traditional-software"
     ]
+  },
+  {
+    slug: "medical-call-answering-service",
+    title: "Medical Call Answering Service",
+    metaTitle: "AI Medical Call Answering Service | HIPAA Compliant Voice Bots",
+    metaDescription: "Deploy a HIPAA-compliant AI medical call answering service. Never miss a patient call. Our voice bots handle scheduling, FAQs, and emergency routing 24/7.",
+    heroHeadline: "24/7 AI Medical Receptionist",
+    heroSubtext: "A HIPAA-compliant medical call answering service that sounds human, books appointments securely, and drastically reduces your front-desk workload.",
+    targetKeyword: "medical call answering service",
+    icon: "stethoscope",
+    color: "#3b82f6",
+    whatItIs: "A medical clinic's front desk is often overwhelmed, leading to missed calls and frustrated patients. We build custom, HIPAA-compliant AI voice agents that serve as a seamless medical call answering service. Unlike traditional offshore call centers, our AI agents understand complex medical terminology, can integrate securely with your EMR/EHR system to book appointments, and instantly triage emergency calls directly to on-call physicians.",
+    whatsIncluded: [
+      { title: "HIPAA Compliant Infrastructure", description: "End-to-end encryption ensuring patient data and transcriptions are strictly protected." },
+      { title: "EMR/EHR Integration", description: "Direct calendar and database integrations to allow the AI to schedule or cancel appointments." },
+      { title: "Emergency Triage Routing", description: "Natural language understanding to detect urgent scenarios and immediately transfer the call to a human." },
+      { title: "Multi-Lingual Support", description: "Serve a broader patient base with an AI agent that speaks Spanish, French, and 20+ other languages fluently." }
+    ],
+    caseStudy: {
+      clientType: "Multi-Location Dental Practice",
+      problem: "The practice was missing 30% of incoming calls during peak hours, resulting in lost bookings and poor patient satisfaction.",
+      solution: "Developed an AI medical call answering service using VAPI and custom secure webhooks to read/write to their scheduling software.",
+      result: "Achieved a 0% missed call rate, increased daily bookings by 18%, and saved $4,000/month in overflow call center fees.",
+      techStack: ["VAPI", "OpenAI GPT-4", "Custom EMR Webhooks", "AWS (HIPAA Secure)"]
+    },
+    relatedBlogSlugs: [
+      "vapi-vs-elevenlabs",
+      "after-hours-answering-service-for-lawyers"
+    ]
+  },
+  {
+    slug: "developing-custom-software",
+    title: "Developing Custom Software",
+    metaTitle: "Developing Custom Software | Enterprise B2B Solutions",
+    metaDescription: "We specialize in developing custom software for enterprise clients. From scalable web apps to secure backend APIs, we build what off-the-shelf software can't.",
+    heroHeadline: "Bespoke Enterprise Software",
+    heroSubtext: "Stop forcing your business into rigid off-the-shelf tools. We specialize in developing custom software tailored perfectly to your unique operations.",
+    targetKeyword: "developing custom software",
+    icon: "code",
+    color: "#10b981",
+    whatItIs: "When your business outgrows standard SaaS solutions, you need a system built specifically for your workflows. We are experts at developing custom software from the ground up. Whether you need a massive internal logistics dashboard, a specialized CRM, or a customer-facing SaaS application, our full-stack engineering team builds robust, scalable, and secure architectures using modern technologies like Next.js, Node, and Python.",
+    whatsIncluded: [
+      { title: "Full-Stack Development", description: "Complete front-end and back-end development using modern frameworks like React and Node.js." },
+      { title: "Database Architecture", description: "Scalable PostgreSQL or MongoDB database design for high-performance data querying." },
+      { title: "Cloud Deployment", description: "Secure, highly available deployment on AWS or Google Cloud with proper CI/CD pipelines." },
+      { title: "API Development", description: "Custom REST or GraphQL APIs to connect your new software with existing legacy systems." }
+    ],
+    caseStudy: {
+      clientType: "Logistics & Supply Chain",
+      problem: "The client was using 4 different software tools and endless spreadsheets to track shipments, leading to data silos and delays.",
+      solution: "Spent 4 months developing custom software—a centralized web application that consolidated tracking, billing, and driver dispatching into one real-time dashboard.",
+      result: "Eliminated data entry errors entirely and increased operational efficiency by 35%.",
+      techStack: ["Next.js", "Node.js", "PostgreSQL", "AWS EC2", "Docker"]
+    },
+    relatedBlogSlugs: [
+      "microservices-architecture-breaking-monoliths-into-scalable-services",
+      "ivr-payment-system"
+    ]
   }
 ];

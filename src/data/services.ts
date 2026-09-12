@@ -147,6 +147,40 @@ export const services: Service[] = [
     priceRange: '$5,000 - $25,000',
     color: '#f43f5e',
   },
+  {
+    id: 9,
+    title: 'Medical Call Answering Service',
+    description:
+      'HIPAA-compliant AI voice agents that act as a 24/7 medical call answering service for clinics and doctors, booking appointments and routing emergencies.',
+    icon: '🏥',
+    features: [
+      '24/7 Appointment Booking',
+      'HIPAA Compliant Infrastructure',
+      'Emergency Call Routing',
+      'EHR / EMR Integration',
+      'Patient FAQ Handling',
+      'Multi-lingual Support',
+    ],
+    priceRange: '$2,500 - $12,000',
+    color: '#3b82f6',
+  },
+  {
+    id: 10,
+    title: 'Developing Custom Software',
+    description:
+      'End-to-end bespoke solutions, developing custom software tailored perfectly to your unique business operations and enterprise needs.',
+    icon: '💻',
+    features: [
+      'Full-Stack Architecture',
+      'Enterprise Web Apps',
+      'Custom API Development',
+      'Database Modeling',
+      'Legacy System Modernization',
+      'Scalable Cloud Deployment',
+    ],
+    priceRange: '$5,000 - $30,000',
+    color: '#10b981',
+  },
 ];
 
 export const processSteps = [
