@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
 import { servicePages } from '@/data/servicePages';
 import { caseStudies } from '@/data/caseStudies';
+import { locations } from '@/data/locations';
 import fs from 'fs';
 import path from 'path';
 
@@ -67,5 +68,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     console.error('Error reading blogs for sitemap:', e);
   }
 
-  return [...staticPages, ...projectPages, ...serviceDetailPages, ...caseStudyPages, ...blogPages];
+  // Local SEO City Pages
+  let locationPages: MetadataRoute.Sitemap = [];
+  try {
+    locationPages = locations.map((loc: any) => ({
+      url: `${baseUrl}/locations/${loc.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }));
+  } catch (e) {
+    console.error('Error reading locations for sitemap:', e);
+  }
+
+  return [...staticPages, ...projectPages, ...serviceDetailPages, ...caseStudyPages, ...blogPages, ...locationPages];
 }

@@ -170,5 +170,34 @@ export const servicePages: ServicePage[] = [
       "microservices-architecture-breaking-monoliths-into-scalable-services",
       "terraform-infrastructure-as-code-managing-cloud-resources-like-a-pro"
     ]
+  },
+  {
+    slug: "ai-automation-consulting",
+    title: "AI Automation Consulting",
+    metaTitle: "Enterprise AI Automation Consulting | Sardar Awais",
+    metaDescription: "Top-tier AI automation consulting services for enterprises. We audit your workflows and design custom AI blueprints to scale operations effortlessly.",
+    heroHeadline: "Strategic AI Automation Consulting",
+    heroSubtext: "Don't just implement AI blindly. Let us audit your business workflows and build a scalable, ROI-driven AI architecture tailored for you.",
+    targetKeyword: "ai automation consulting",
+    icon: "lightbulb",
+    color: "#f43f5e",
+    whatItIs: "As a premier AI automation consulting firm, we don't just build chatbots; we fundamentally rethink how your business operates. We provide enterprise-level AI automation consulting, assessing your current software stack and human workflows. We then engineer a custom blueprint using Agentic AI, autonomous multi-agent systems, and bespoke LLM integrations that directly impact your bottom line.",
+    whatsIncluded: [
+      { title: "Deep Workflow Audit", description: "Comprehensive analysis of your manual processes to identify high-ROI automation targets." },
+      { title: "Technical Blueprinting", description: "Detailed architectural designs for integrating AI safely into your existing systems." },
+      { title: "Tool Stack Selection", description: "Unbiased recommendations on using VAPI, CrewAI, Make, or custom Node.js infrastructure." },
+      { title: "Executive AI Training", description: "Educating your C-suite on AI security, limitations, and strategic advantages." }
+    ],
+    caseStudy: {
+      clientType: "Global Logistics Firm",
+      problem: "Operations were bogged down by manual document verification and disjointed communication across 4 different time zones.",
+      solution: "Conducted a 2-week deep AI automation consulting sprint. Delivered a blueprint for an autonomous OCR document verification system coupled with an internal RAG-based knowledge retrieval bot.",
+      result: "Implementation of our blueprint reduced processing errors by 94% and saved the firm $240,000 annually.",
+      techStack: ["Process Mapping", "Enterprise AI Architecture", "ROI Modeling"]
+    },
+    relatedBlogSlugs: [
+      "ai-automation-agency-pricing-2026",
+      "how-ai-agents-for-business-automation-are-replacing-traditional-software"
+    ]
   }
 ];

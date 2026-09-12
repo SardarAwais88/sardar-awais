@@ -130,6 +130,23 @@ export const services: Service[] = [
     priceRange: '$2,000 - $12,000',
     color: '#ff8c42',
   },
+  {
+    id: 8,
+    title: 'AI Automation Consulting',
+    description:
+      'Strategic enterprise consulting to identify AI opportunities, map out workflows, and design scalable AI architectures for your business.',
+    icon: '💡',
+    features: [
+      'Workflow Analysis & Mapping',
+      'AI Feasibility Studies',
+      'ROI & Cost Projections',
+      'Tech Stack Selection',
+      'Proof of Concept (PoC) Design',
+      'Enterprise AI Strategy',
+    ],
+    priceRange: '$5,000 - $25,000',
+    color: '#f43f5e',
+  },
 ];
 
 export const processSteps = [
