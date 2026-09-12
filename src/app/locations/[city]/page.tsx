@@ -54,7 +54,7 @@ export default async function LocationPage({ params }: Props) {
             <div key={service.id} style={{ background: 'var(--surface-color)', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border-color)' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{service.icon}</div>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{service.title} in {location.city}</h3>
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{service.shortDescription}</p>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{service.description}</p>
             </div>
           ))}
         </div>
