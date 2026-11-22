@@ -53,12 +53,12 @@ export const servicePages: ServicePage[] = [
   },
   {
     slug: "ai-voice-agent-development",
-    title: "AI Voice Agent Development",
-    metaTitle: "AI Voice Agent Development | VAPI & Retell Voice Bots for Business",
-    metaDescription: "Develop custom AI voice agents using Vapi and Retell that answer calls 24/7, book appointments, and integrate seamlessly with your CRM and calendar.",
+    title: "Voice Bot Development Services",
+    metaTitle: "Voice Bot Development Services | Custom AI Voice Agents (VAPI & Retell)",
+    metaDescription: "Professional voice bot development services. We build custom conversational AI voice agents with sub-500ms latency to automate customer calls, appointments, and sales 24/7.",
     heroHeadline: "Conversational AI Voice Agents",
     heroSubtext: "Deploy intelligent voice bots that handle customer calls, book appointments, and scale your support 24/7 without breaking a sweat.",
-    targetKeyword: "AI voice agent development",
+    targetKeyword: "voice bot development services",
     icon: "mic",
     color: "#8b5cf6",
     whatItIs: "As a premier AI voice agent agency, we build advanced, conversational AI voice agents using platforms like Vapi and Retell AI. From enterprise solutions inspired by Lowe's AI voice agents to cutting-edge tech seen at the Y Combinator voice agents hackathon, we deliver robust voice infrastructure. Whether you need an AI voice agent cold calling B2B Austria GDPR legal compliant system or a high-volume VAPI voice agent restaurant Australia booking system, our dynamic, context-aware agents work 24/7. They handle interruptions, perform complex CRM actions, and significantly reduce operational costs.",
@@ -256,6 +256,64 @@ export const servicePages: ServicePage[] = [
     relatedBlogSlugs: [
       "microservices-architecture-breaking-monoliths-into-scalable-services",
       "ivr-payment-system"
+    ]
+  },
+  {
+    slug: "instagram-auto-reply-bot",
+    title: "Instagram Auto Reply Bot Development",
+    metaTitle: "Instagram Auto Reply Bot Development | DMs & Comment Automation",
+    metaDescription: "Custom Instagram auto reply bot development for DMs, post comments, and welcome messages. Safe official Meta API integration that turns followers into leads 24/7.",
+    heroHeadline: "Automate Your Instagram DMs & Comments",
+    heroSubtext: "Never miss a lead on Instagram. Deploy official Meta API-compliant auto reply bots that instantly respond to comments, answer DMs, and convert followers into customers 24/7.",
+    targetKeyword: "Instagram auto reply bot",
+    icon: "instagram",
+    color: "#e1306c",
+    whatItIs: "Managing hundreds of direct messages and post comments manually drains hours every day and leads to lost sales. We engineer custom Instagram auto reply bots that leverage the official Meta Graph API to automate your business account safely. When a user comments 'Price', 'Link', or sends a DM asking for product details, our bot instantly triggers tailored responses, shares checkout links, qualifies the lead, and hands off complex inquiries to your human team seamlessly.",
+    whatsIncluded: [
+      { title: "Comment-to-DM Automation", description: "Automatically send personalized DMs containing product links, discount codes, or booking URLs whenever someone comments on your posts or reels." },
+      { title: "24/7 Instant DM Auto Reply", description: "Instant replies to frequent customer questions (pricing, location, availability, shipping) with zero delay." },
+      { title: "New Follower Welcome Flow", description: "Send a friendly, automated welcome message introducing your services to new followers without spamming." },
+      { title: "Meta API Official Compliance", description: "100% compliant with Instagram Terms of Service using official webhook endpoints to keep your account safe from shadowbans." }
+    ],
+    caseStudy: {
+      clientType: "E-Commerce Fashion Brand",
+      problem: "The client ran viral Instagram Reels getting 500+ comments daily asking for purchase links, but lost 60% of potential buyers due to 4+ hour manual response delays.",
+      solution: "Engineered a Python and FastAPI Instagram webhook bot that detected trigger keywords in comments and instantly sent direct product checkout links via DM within 3 seconds.",
+      result: "Boosted direct DM checkout revenue by 42% and automated over 8,000 monthly customer inquiries with zero account warnings.",
+      techStack: ["Python", "FastAPI", "Meta Graph API", "PostgreSQL", "Docker", "Redis"]
+    },
+    relatedBlogSlugs: [
+      "how-to-build-instagram-auto-reply-bot-dms-comments",
+      "ai-agents-for-ecommerce"
+    ]
+  },
+  {
+    slug: "wazuh-siem-deployment",
+    title: "Enterprise Wazuh SIEM Deployment",
+    metaTitle: "Wazuh SIEM Deployment & Monitoring Services | UK & Enterprise SOC",
+    metaDescription: "Professional Wazuh SIEM deployment services. Open-source enterprise security information and event management, log analysis, threat detection, and compliance.",
+    heroHeadline: "Enterprise Wazuh SIEM Deployment",
+    heroSubtext: "Deploy a high-performance, cost-effective Security Information and Event Management (SIEM) solution. Real-time threat detection, PCI-DSS compliance, and automated response.",
+    targetKeyword: "Wazuh SIEM deployment",
+    icon: "shield",
+    color: "#0ea5e9",
+    whatItIs: "Commercial SIEM solutions like Splunk and Sentinel cost hundreds of thousands of dollars in license fees. Wazuh SIEM is the world's leading open-source security platform, offering enterprise-grade endpoint security, log analysis, vulnerability detection, and regulatory compliance (PCI-DSS, HIPAA, GDPR). We specialize in deploying, tuning, and managing Wazuh clusters for companies in the UK, US, and worldwide, delivering complete SOC visibility without commercial licensing costs.",
+    whatsIncluded: [
+      { title: "Wazuh Cluster Architecture", description: "High-availability deployment of Wazuh Indexer, Manager, and Dashboard on Docker, Kubernetes, or cloud servers." },
+      { title: "Agent Rollout & Configuration", description: "Deploying and configuring Wazuh agents across Linux, Windows, and macOS endpoints." },
+      { title: "Compliance & Audit Rules", description: "Tailored detection rules mapped to MITRE ATT&CK framework and compliance mandates." },
+      { title: "Custom Dashboard & Alerting", description: "Custom Python/Streamlit reporting dashboards with instant Slack, Telegram, or email security alerts." }
+    ],
+    caseStudy: {
+      clientType: "UK FinTech Infrastructure",
+      problem: "Required full SIEM visibility and PCI-DSS compliance across 60 cloud servers on AWS, but could not justify a $90,000 annual commercial SIEM license.",
+      solution: "Architected a multi-node Wazuh cluster with distributed indexers, configured file integrity monitoring (FIM), and created custom alert automation pipelines.",
+      result: "Passed PCI-DSS security audit with zero non-conformities and saved over $85,000 in first-year software licensing fees.",
+      techStack: ["Wazuh", "Docker Compose", "Python", "Streamlit", "AWS", "Elasticsearch"]
+    },
+    relatedBlogSlugs: [
+      "wazuh-siem-deployment-open-source-security-guide",
+      "terraform-infrastructure-as-code-managing-cloud-resources-like-a-pro"
     ]
   }
 ];

@@ -3,10 +3,16 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'AI Tools | Sardar Awais – Free & Premium AI Tools',
+  title: 'Sardar Tools AI & AI Toolkit | Free & Premium AI Developer Suite',
   description:
-    'Powerful AI tools built by Sardar Awais. Free tools: AI Proposal Writer, Client Reply Generator, Email Writer. Premium tools: AI Video Generator, AI Humanizer, Project Estimator, Code Reviewer. Start free today.',
+    'Explore the Sardar Tools AI toolkit by Sardar Awais. Free AI Proposal Writer, Client Reply Generator, Email Writer, AI Humanizer, Project Estimator, and Code Reviewer.',
   keywords: [
+    'sardar tools ai',
+    'sardar tools',
+    'sardar tool kit',
+    'sardar ai prompt',
+    'sardar ai',
+    'sarda ai tools',
     'AI tools for freelancers',
     'AI proposal writer free',
     'AI reply generator',
@@ -16,8 +22,6 @@ export const metadata: Metadata = {
     'AI video generator',
     'Upwork proposal AI',
     'Fiverr proposal generator',
-    'Sardar Awais tools',
-    'Sardar Awais AI',
   ],
 };
 

@@ -181,6 +181,41 @@ export const services: Service[] = [
     priceRange: '$5,000 - $30,000',
     color: '#10b981',
   },
+  {
+    id: 11,
+    title: 'Instagram Auto Reply & DM Bot Development',
+    description:
+      'Official Meta API-compliant Instagram automation bots that automatically reply to DMs, comments, FAQs, and send personalized welcome messages to turn followers into paying clients 24/7.',
+    icon: '📸',
+    features: [
+      'Instant Auto-Replies to Post Comments',
+      'AI-Powered DM Conversations & Lead Capture',
+      'Keyword-Triggered Direct Links & Offers',
+      'New Follower Welcome Workflows',
+      'Meta Graph API Official Integration (100% Safe)',
+      'Shopify & CRM Lead Handoff',
+    ],
+    priceRange: '$500 - $3,500',
+    color: '#e1306c',
+    popular: true,
+  },
+  {
+    id: 12,
+    title: 'Wazuh SIEM Deployment & Security Monitoring',
+    description:
+      'Enterprise-grade Wazuh SIEM implementation for continuous threat detection, compliance monitoring (PCI-DSS, HIPAA, GDPR), and active response for cloud and on-premise infrastructure.',
+    icon: '🛡️',
+    features: [
+      'Wazuh Manager & Indexer Architecture',
+      'Real-Time Log Analysis & Intrusion Detection',
+      'Vulnerability Assessment & File Integrity Monitoring',
+      'Automated Threat Alerting & Active Response',
+      'Custom Python & Streamlit Security Dashboards',
+      'Docker & Cloud Security Hardening',
+    ],
+    priceRange: '$2,500 - $15,000',
+    color: '#0ea5e9',
+  },
 ];
 
 export const processSteps = [
