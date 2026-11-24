@@ -260,26 +260,26 @@ export const servicePages: ServicePage[] = [
   },
   {
     slug: "instagram-auto-reply-bot",
-    title: "Instagram Auto Reply Bot Development",
-    metaTitle: "Instagram Auto Reply Bot Development | DMs & Comment Automation",
-    metaDescription: "Custom Instagram auto reply bot development for DMs, post comments, and welcome messages. Safe official Meta API integration that turns followers into leads 24/7.",
-    heroHeadline: "Automate Your Instagram DMs & Comments",
-    heroSubtext: "Never miss a lead on Instagram. Deploy official Meta API-compliant auto reply bots that instantly respond to comments, answer DMs, and convert followers into customers 24/7.",
-    targetKeyword: "Instagram auto reply bot",
-    icon: "instagram",
+    title: "Instagram & Facebook Auto Reply Bot Development",
+    metaTitle: "Instagram & Facebook Auto Reply Bot Development | DMs & Messenger Automation",
+    metaDescription: "Custom Instagram & Facebook auto reply bot development for DMs, Messenger, post comments, and welcome flows. Official Meta API integration that converts leads 24/7.",
+    heroHeadline: "Automate Your Instagram & Facebook Sales",
+    heroSubtext: "Never miss a lead across Meta. Deploy official Meta API-compliant auto reply bots that instantly respond to Instagram DMs, Facebook Messenger, and post comments 24/7.",
+    targetKeyword: "Instagram and Facebook auto reply bot",
+    icon: "message-circle",
     color: "#e1306c",
-    whatItIs: "Managing hundreds of direct messages and post comments manually drains hours every day and leads to lost sales. We engineer custom Instagram auto reply bots that leverage the official Meta Graph API to automate your business account safely. When a user comments 'Price', 'Link', or sends a DM asking for product details, our bot instantly triggers tailored responses, shares checkout links, qualifies the lead, and hands off complex inquiries to your human team seamlessly.",
+    whatItIs: "Managing hundreds of direct messages and post comments across both Instagram and Facebook manually drains hours every day and leads to lost revenue. We engineer unified Meta auto reply bots using the official Meta Graph API to automate your business accounts safely. When a user comments 'Price' on an Instagram Reel or messages your Facebook Page asking for service details, our bot instantly triggers tailored responses, shares checkout links, qualifies the lead, and hands off complex inquiries to your human team seamlessly.",
     whatsIncluded: [
-      { title: "Comment-to-DM Automation", description: "Automatically send personalized DMs containing product links, discount codes, or booking URLs whenever someone comments on your posts or reels." },
-      { title: "24/7 Instant DM Auto Reply", description: "Instant replies to frequent customer questions (pricing, location, availability, shipping) with zero delay." },
-      { title: "New Follower Welcome Flow", description: "Send a friendly, automated welcome message introducing your services to new followers without spamming." },
-      { title: "Meta API Official Compliance", description: "100% compliant with Instagram Terms of Service using official webhook endpoints to keep your account safe from shadowbans." }
+      { title: "Comment-to-DM Automation", description: "Automatically send personalized DMs and Messenger links containing product details or discount codes whenever someone comments on your Instagram posts, Reels, or Facebook ads." },
+      { title: "24/7 Instant DM & Messenger Replies", description: "Instant responses to common inquiries regarding pricing, store hours, shipping, and booking without human delay." },
+      { title: "New Follower Welcome Flows", description: "Send automated, friendly greeting messages to new followers introducing your portfolio or top offers without spamming." },
+      { title: "Meta API Official Compliance", description: "100% compliant with Meta Terms of Service using official webhook endpoints to protect your accounts from bans or restrictions." }
     ],
     caseStudy: {
-      clientType: "E-Commerce Fashion Brand",
-      problem: "The client ran viral Instagram Reels getting 500+ comments daily asking for purchase links, but lost 60% of potential buyers due to 4+ hour manual response delays.",
-      solution: "Engineered a Python and FastAPI Instagram webhook bot that detected trigger keywords in comments and instantly sent direct product checkout links via DM within 3 seconds.",
-      result: "Boosted direct DM checkout revenue by 42% and automated over 8,000 monthly customer inquiries with zero account warnings.",
+      clientType: "Omnichannel E-Commerce Brand",
+      problem: "The client ran ad campaigns across both Instagram and Facebook, receiving 800+ daily comments and DMs asking for pricing, resulting in massive sales drop-offs due to delayed manual replies.",
+      solution: "Engineered a unified Python and FastAPI webhook bot connecting both their Instagram Business account and Facebook Page, instantly dispatching product links to comments and inquiries within 3 seconds.",
+      result: "Boosted direct social checkout revenue by 48% and automated over 14,000 monthly inquiries with zero account warnings.",
       techStack: ["Python", "FastAPI", "Meta Graph API", "PostgreSQL", "Docker", "Redis"]
     },
     relatedBlogSlugs: [
