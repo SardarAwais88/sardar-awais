@@ -41,7 +41,7 @@ const techStack = [
 ];
 
 const featuredProjects = projects.filter((p) =>
-  [1, 21, 25, 32, 11, 43].includes(p.id)
+  [1000, 1, 21, 25, 32, 11, 43].includes(p.id)
 );
 
 export default function HomePage() {

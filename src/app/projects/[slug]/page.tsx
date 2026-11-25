@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { projects } from '@/data/projects';
+import YouTubeDashboard from '@/components/youtube/YouTubeDashboard';
 import styles from './page.module.css';
 
 interface Props {
@@ -92,17 +93,88 @@ export default async function ProjectDetailPage({ params }: Props) {
               <p className={styles.description}>{project.fullDescription || project.description}</p>
 
               {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                  style={{ alignSelf: 'flex-start', marginTop: '8px' }}
-                >
-                  View Live Project ↗
-                </a>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '8px' }}>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    View Live Demo ↗
+                  </a>
+                  {project.slug === 'youtube-data-api-dashboard' && (
+                    <a
+                      href="#live-interactive-demo"
+                      className="btn btn-outline"
+                    >
+                      Try Interactive Dashboard ↓
+                    </a>
+                  )}
+                </div>
               )}
             </div>
+
+            {/* YouTube Data API Dashboard Visual Preview & Live Interactive App */}
+            {project.slug === 'youtube-data-api-dashboard' && (
+              <div style={{ marginBottom: '40px' }}>
+                {/* Visual Preview Screenshot */}
+                <div
+                  style={{
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255, 0, 51, 0.3)',
+                    boxShadow: '0 16px 40px rgba(0, 0, 0, 0.6)',
+                    marginBottom: '32px',
+                    background: '#0a0a0f',
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/projects/youtube-api-dashboard.jpg"
+                    alt="YouTube Data API Integration Dashboard Visual Preview"
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                  <div
+                    style={{
+                      padding: '14px 20px',
+                      background: 'rgba(20, 20, 35, 0.9)',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      flexWrap: 'wrap',
+                      gap: '10px',
+                      fontSize: '0.85rem',
+                      color: '#a0a0b8',
+                    }}
+                  >
+                    <span>📸 Dashboard Interface Preview: Real-time telemetry, subscriber growth graphs, and video search.</span>
+                    <a
+                      href="/demos/youtube-dashboard"
+                      style={{ color: '#00f5d4', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                      Open Fullscreen Demo →
+                    </a>
+                  </div>
+                </div>
+
+                {/* Embedded Live Interactive Demo */}
+                <div id="live-interactive-demo" style={{ scrollMarginTop: '100px' }}>
+                  <div style={{ marginBottom: '16px' }}>
+                    <span className="badge" style={{ background: 'rgba(255, 0, 51, 0.15)', color: '#ff334b', borderColor: 'rgba(255, 0, 51, 0.3)' }}>
+                      Interactive Application
+                    </span>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '8px', color: '#fff' }}>
+                      Try The Live YouTube Data API Demo
+                    </h2>
+                    <p style={{ color: '#a0a0b8', fontSize: '0.92rem' }}>
+                      Interact directly with channel telemetry, search videos in real-time, view analytics charts, and inspect raw API JSON schemas below:
+                    </p>
+                  </div>
+                  <YouTubeDashboard />
+                </div>
+              </div>
+            )}
 
             {/* SEO Optimized Problem / Solution / Result (Dynamically generated if missing) */}
             <div className={styles.caseStudy}>

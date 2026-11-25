@@ -53,6 +53,38 @@ export const projects: Project[] = [
     color: '#00d2ff',
     featured: true,
   },
+  // ── YouTube Data API & Full-Stack Applications ────────────────────────
+  {
+    id: 1000,
+    slug: 'youtube-data-api-dashboard',
+    title: 'YouTube Data API Integration Dashboard',
+    description:
+      'A modern analytics and video exploration dashboard demonstrating deep integration with the YouTube Data API v3, channel telemetry, and video search.',
+    fullDescription:
+      'A comprehensive developer showcase demonstrating professional YouTube Data API v3 integration. The application features multi-channel telemetry (subscribers, views, video counts), real-time video search with keyword & category filters, analytics charts with monthly velocity metrics, cursor pagination, and an interactive REST API payload inspector.',
+    problem:
+      'Businesses, creators, and media agencies require custom dashboards to track YouTube channel KPIs, automate content research, and monitor video engagement. However, implementing the YouTube Data API requires managing strict daily quotas (10,000 units), complex JSON response schemas, token-based pagination, and secure API key handling.',
+    solution:
+      'Engineered a modern, responsive YouTube Data API dashboard utilizing Next.js, React, TypeScript, and simulated REST endpoints. The architecture demonstrates quota-conscious batching, debounced search filtering, SVG telemetry visualizations, and real-time payload debugging without exposing private credentials.',
+    result:
+      'Delivered an interactive, fully responsive demonstration showing potential clients how custom YouTube API integrations can automate reporting, power creator analytics tools, and ingest video metadata at enterprise scale.',
+    role: 'Full-Stack API Integration Engineer (Architecture, YouTube Data API integration, UI/UX Design, Responsive Dashboard).',
+    category: 'Full-Stack',
+    tech: [
+      'YouTube Data API v3',
+      'REST APIs',
+      'React / Next.js',
+      'TypeScript',
+      'Analytics Charts',
+      'CSS Modules',
+    ],
+    client: 'Developer Showcase',
+    platform: 'Web Application',
+    link: '/demos/youtube-dashboard',
+    image: '📺',
+    color: '#ff0033',
+    featured: true,
+  },
   // ── Full-Stack Web Applications ────────────────────────
   {
     id: 1,
