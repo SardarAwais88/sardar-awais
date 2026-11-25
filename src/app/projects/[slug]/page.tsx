@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { projects } from '@/data/projects';
 import YouTubeDashboard from '@/components/youtube/YouTubeDashboard';
+import WazuhShowcase from '@/components/wazuh/WazuhShowcase';
 import styles from './page.module.css';
 
 interface Props {
@@ -17,6 +18,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
+
+  if (project.slug === 'wazuh-siem-deployment') {
+    return {
+      title: 'Wazuh SIEM Production Deployment Guide & Enterprise Case Study | Sardar Awais',
+      description:
+        'Comprehensive Wazuh SIEM enterprise deployment by Sardar Awais. Production cluster architecture, Docker Compose, custom decoders, PCI-DSS compliance, and MITRE ATT&CK integration.',
+      alternates: {
+        canonical: `https://sardarawais.com/projects/${project.slug}`,
+      },
+    };
+  }
+
   return {
     title: `${project.title} | Project`,
     description: project.description,
@@ -34,28 +47,59 @@ export default async function ProjectDetailPage({ params }: Props) {
   
   // Removed redirect block so all projects have detail pages
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: project.title,
-    name: project.title,
-    description: project.description,
-    image: 'https://sardarawais.com/og-image.jpg',
-    author: {
-      '@type': 'Person',
-      name: 'Sardar Awais',
-      url: 'https://sardarawais.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Sardar Awais',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://sardarawais.com/logo.png'
-      }
-    },
-    url: project.link || `https://sardarawais.com/projects/${project.slug}`,
-  };
+  const jsonLd =
+    project.slug === 'wazuh-siem-deployment'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'TechArticle',
+          headline:
+            'Wazuh SIEM Production Deployment Guide & Enterprise Case Study',
+          name: 'Wazuh SIEM Production Deployment Guide & Enterprise Case Study',
+          description: project.description,
+          image: 'https://sardarawais.com/blog/wazuh-siem-banner.jpg',
+          proficiencyLevel: 'Expert',
+          author: {
+            '@type': 'Person',
+            name: 'Sardar Awais',
+            jobTitle: 'Cloud Security & SIEM Automation Engineer',
+            url: 'https://sardarawais.com',
+            sameAs: [
+              'https://github.com/SardarAwais88',
+              'https://sardarawais.com/about',
+            ],
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Sardar Awais',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://sardarawais.com/logo.png',
+            },
+          },
+          url: `https://sardarawais.com/projects/${project.slug}`,
+        }
+      : {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: project.title,
+          name: project.title,
+          description: project.description,
+          image: 'https://sardarawais.com/og-image.jpg',
+          author: {
+            '@type': 'Person',
+            name: 'Sardar Awais',
+            url: 'https://sardarawais.com',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Sardar Awais',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://sardarawais.com/logo.png',
+            },
+          },
+          url: project.link || `https://sardarawais.com/projects/${project.slug}`,
+        };
 
   return (
     <>
@@ -172,6 +216,68 @@ export default async function ProjectDetailPage({ params }: Props) {
                     </p>
                   </div>
                   <YouTubeDashboard />
+                </div>
+              </div>
+            )}
+
+            {/* Wazuh SIEM Production Architecture, Showcase & Compliance */}
+            {project.slug === 'wazuh-siem-deployment' && (
+              <div style={{ marginBottom: '40px' }}>
+                {/* Visual Preview Screenshot */}
+                <div
+                  style={{
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(0, 245, 212, 0.3)',
+                    boxShadow: '0 16px 40px rgba(0, 0, 0, 0.6)',
+                    marginBottom: '32px',
+                    background: '#0a0a0f',
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/blog/wazuh-siem-banner.jpg"
+                    alt="Enterprise Wazuh SIEM Security Operations Center Deployment Preview"
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                  <div
+                    style={{
+                      padding: '14px 20px',
+                      background: 'rgba(20, 20, 35, 0.9)',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      flexWrap: 'wrap',
+                      gap: '10px',
+                      fontSize: '0.85rem',
+                      color: '#a0a0b8',
+                    }}
+                  >
+                    <span>🛡️ Production SOC Architecture: Real-time threat detection, log correlation, and MITRE ATT&CK mapping.</span>
+                    <Link
+                      href="/services/wazuh-siem-deployment"
+                      style={{ color: '#00f5d4', fontWeight: 600, textDecoration: 'none' }}
+                    >
+                      View Consulting Services →
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Embedded Wazuh Showcase & Architecture Console */}
+                <div id="wazuh-showcase" style={{ scrollMarginTop: '100px' }}>
+                  <div style={{ marginBottom: '16px' }}>
+                    <span className="badge" style={{ background: 'rgba(0, 245, 212, 0.15)', color: '#00f5d4', borderColor: 'rgba(0, 245, 212, 0.3)' }}>
+                      Production Architecture Console
+                    </span>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '8px', color: '#fff' }}>
+                      Enterprise Wazuh SIEM Architecture & Implementation Blueprint
+                    </h2>
+                    <p style={{ color: '#a0a0b8', fontSize: '0.92rem' }}>
+                      Explore the production cluster blueprint, custom XML decoders, PCI-DSS / GDPR compliance mapping, and active response workflows below:
+                    </p>
+                  </div>
+                  <WazuhShowcase />
                 </div>
               </div>
             )}

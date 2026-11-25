@@ -895,17 +895,35 @@ export const projects: Project[] = [
   {
     id: 47,
     slug: 'wazuh-siem-deployment',
-    title: 'Wazuh SIEM Deployment',
+    title: 'Wazuh SIEM Production Deployment & Enterprise Case Study',
     description:
-      'Enterprise security information and event management system deployment with Docker Compose, Streamlit monitoring dashboard, Python auth scripts, and real-time threat detection.',
-    problem: 'Organization needed a cost-effective SIEM solution for security monitoring without a commercial license.',
-    solution: 'Deployed full Wazuh stack (manager + dashboard + indexer) via Docker Compose, with a custom Python Streamlit dashboard for non-technical staff.',
-    result: 'Fully operational SIEM monitoring network events with custom alerting and threat detection.',
+      'Enterprise-grade Wazuh SIEM cluster implementation with multi-node Docker Compose, custom Python/Streamlit SOC dashboard, real-time threat detection, and PCI-DSS/GDPR compliance mapping.',
+    fullDescription:
+      'Comprehensive Wazuh SIEM enterprise deployment by Sardar Awais. Features high-availability cluster architecture (Wazuh Indexer, Manager, Dashboard), automated agent rollout via GPO and Bash scripts, custom decoders/rules for cloud and firewall logs, file integrity monitoring (FIM), and active automated response workflows for enterprise SOC operations.',
+    problem:
+      'Enterprise organizations in the UK, Germany, and North America faced skyrocketing commercial SIEM licensing fees (often exceeding $80,000/year for Splunk or Microsoft Sentinel) while requiring strict compliance auditing (PCI-DSS 4.0, GDPR, BSI IT-Grundschutz, and HIPAA) and real-time threat detection without operational downtime.',
+    solution:
+      'Architected and deployed a hardened, distributed Wazuh SIEM cluster utilizing Docker Compose, OpenSearch-based Wazuh Indexers, and automated multi-platform agent enrollment. Engineered custom XML decoders for firewall and cloud logs, integrated MITRE ATT&CK detection mapping, and developed an internal Python Streamlit monitoring console with automated Slack incident response webhooks.',
+    result:
+      'Achieved 100% centralized security visibility across 250+ enterprise servers, passed external PCI-DSS compliance audits with zero non-conformities, reduced mean-time-to-detection (MTTD) to sub-3 seconds, and eliminated over $75,000 in annual commercial software licensing costs.',
+    role: 'Lead Cloud Security & SIEM Deployment Engineer (Architecture, Custom Decoders, Compliance Mapping, SOC Alerting).',
     category: 'DevOps',
-    tech: ['Docker', 'Docker Compose', 'Wazuh', 'Linux', 'Python', 'Streamlit'],
-    platform: 'Personal',
+    tech: [
+      'Wazuh SIEM',
+      'Docker Compose',
+      'Linux (Ubuntu/RHEL)',
+      'OpenSearch',
+      'Python',
+      'Streamlit',
+      'MITRE ATT&CK',
+      'PCI-DSS 4.0 / GDPR',
+      'Active Response',
+    ],
+    platform: 'Enterprise Client',
+    link: '/services/wazuh-siem-deployment',
     image: '🛡️',
     color: '#00f5d4',
+    featured: true,
   },
   {
     id: 48,
