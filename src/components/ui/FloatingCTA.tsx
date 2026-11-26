@@ -17,7 +17,7 @@ export default function FloatingCTA() {
       {/* Expanded actions */}
       <div className={`${styles.actions} ${expanded ? styles.actionsOpen : ''}`}>
         <a
-          href="https://wa.me/923472725754?text=Hi%20AyeshaLabs!%20I%20want%20to%20discuss%20a%20project."
+          href="https://wa.me/923472725754?text=Hi%20Sardar%20Awais!%20I%20want%20to%20discuss%20a%20project."
           target="_blank"
           rel="noopener noreferrer nofollow"
           className={`${styles.actionBtn} ${styles.whatsapp}`}

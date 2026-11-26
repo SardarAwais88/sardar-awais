@@ -1,0 +1,15 @@
+.blogActions {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.genBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.genBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

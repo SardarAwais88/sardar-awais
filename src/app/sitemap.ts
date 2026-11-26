@@ -3,6 +3,7 @@ import { projects } from '@/data/projects';
 import { servicePages } from '@/data/servicePages';
 import { caseStudies } from '@/data/caseStudies';
 import { locations } from '@/data/locations';
+import { getAllBlogs } from '@/lib/blogs';
 import fs from 'fs';
 import path from 'path';
 
@@ -52,19 +53,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic Blog Pages
   let blogPages: MetadataRoute.Sitemap = [];
   try {
-    const blogsDir = path.join(process.cwd(), 'src', 'data', 'blogs');
-    if (fs.existsSync(blogsDir)) {
-      const files = fs.readdirSync(blogsDir).filter((f) => f.endsWith('.json'));
-      blogPages = files.map((file) => {
-        const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.json$/, '');
-        return {
-          url: `${baseUrl}/blog/${slug}`,
-          lastModified: now,
-          changeFrequency: 'weekly' as const,
-          priority: 0.8,
-        };
-      });
-    }
+    const blogs = getAllBlogs();
+    blogPages = blogs.map((blog) => ({
+      url: `${baseUrl}/blog/${blog.slug}`,
+      lastModified: blog.date ? new Date(blog.date) : now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }));
   } catch (e) {
     console.error('Error reading blogs for sitemap:', e);
   }

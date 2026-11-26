@@ -1,69 +1,25 @@
-'use client';
-
-import { useState, useEffect } from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
+import { getAllBlogs } from '@/lib/blogs';
+import BlogGeneratorButton from '@/components/blog/BlogGeneratorButton';
 import styles from './page.module.css';
 
-interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  tags: string[];
-  readTime: string;
-  date: string;
-  author: string;
-}
+export const metadata: Metadata = {
+  title: 'Blog & AI Insights | Sardar Awais',
+  description: 'Deep dives into AI, web development, DevOps, cybersecurity, and emerging tech trends by Sardar Awais.',
+  alternates: {
+    canonical: 'https://sardarawais.com/blog',
+  },
+  openGraph: {
+    title: 'Blog & AI Insights | Sardar Awais',
+    description: 'Deep dives into AI, web development, DevOps, cybersecurity, and emerging tech trends by Sardar Awais.',
+    url: 'https://sardarawais.com/blog',
+    type: 'website',
+  },
+};
 
 export default function BlogPage() {
-  const [blogs, setBlogs] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [generating, setGenerating] = useState(false);
-
-  useEffect(() => {
-    fetchBlogs();
-    // Auto-trigger daily blog generation in the background
-    triggerDailyBlog();
-  }, []);
-
-  const fetchBlogs = async () => {
-    try {
-      const res = await fetch('/api/blog');
-      const data = await res.json();
-      setBlogs(data.blogs || []);
-    } catch {
-      console.error('Failed to fetch blogs');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const triggerDailyBlog = async () => {
-    try {
-      const res = await fetch('/api/cron/daily-blog');
-      const data = await res.json();
-      if (data.generated) {
-        // New blog was generated, refresh the list
-        await fetchBlogs();
-      }
-    } catch {
-      // Silent fail — will retry next visit
-    }
-  };
-
-  const generateBlog = async () => {
-    setGenerating(true);
-    try {
-      const res = await fetch('/api/blog', { method: 'POST' });
-      const data = await res.json();
-      if (data.success) {
-        await fetchBlogs();
-      }
-    } catch {
-      console.error('Failed to generate blog');
-    } finally {
-      setGenerating(false);
-    }
-  };
+  const blogs = getAllBlogs();
 
   return (
     <div className="page-content">
@@ -79,24 +35,9 @@ export default function BlogPage() {
             </p>
           </div>
 
-          <div className={styles.blogActions}>
-            <button
-              onClick={generateBlog}
-              disabled={generating}
-              className={`btn btn-primary ${styles.genBtn}`}
-            >
-              {generating ? '⏳ Generating...' : '🤖 Generate New Blog Post'}
-            </button>
-          </div>
+          <BlogGeneratorButton />
 
-          {loading ? (
-            <div className={styles.loadingState}>
-              <div className={styles.loadingDots}>
-                <span /><span /><span />
-              </div>
-              <p>Loading blog posts...</p>
-            </div>
-          ) : blogs.length === 0 ? (
+          {blogs.length === 0 ? (
             <div className={styles.emptyState}>
               <span className={styles.emptyIcon}>📝</span>
               <h3>No Blog Posts Yet</h3>
@@ -112,7 +53,7 @@ export default function BlogPage() {
                 >
                   <div className={styles.blogMeta}>
                     <span className={styles.blogDate}>{blog.date}</span>
-                    <span className={styles.blogReadTime}>{blog.readTime}</span>
+                    <span className={styles.blogReadTime}>{blog.readTime || '5 min read'}</span>
                   </div>
                   <h3 className={styles.blogTitle}>{blog.title}</h3>
                   <p className={styles.blogDesc}>{blog.description}</p>
